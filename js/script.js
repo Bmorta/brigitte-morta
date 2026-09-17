@@ -165,25 +165,33 @@ document.addEventListener("DOMContentLoaded", () => {
        Links inside the card remain normal links.
     --------------------------------------------------------- */
 
-    const projectCard = document.querySelector(".project-clickable");
-    const projectModalElement = document.getElementById("portfolioProjectModal");
+    const projectCards = document.querySelectorAll(".project-clickable");
 
-    if (projectCard && projectModalElement && window.bootstrap) {
-        const projectModal = new bootstrap.Modal(projectModalElement);
+    if (projectCards.length && window.bootstrap) {
+        projectCards.forEach((projectCard) => {
+            const modalId = projectCard.getAttribute("data-project-modal");
+            const projectModalElement = modalId
+                ? document.getElementById(modalId)
+                : null;
 
-        const openProjectModal = () => projectModal.show();
+            if (!projectModalElement) return;
 
-        projectCard.addEventListener("click", (event) => {
-            if (event.target.closest("a, button, input, textarea, select")) return;
-            openProjectModal();
-        });
+            const projectModal = new bootstrap.Modal(projectModalElement);
 
-        projectCard.addEventListener("keydown", (event) => {
-            if (event.key !== "Enter" && event.key !== " ") return;
-            if (event.target !== projectCard) return;
+            const openProjectModal = () => projectModal.show();
 
-            event.preventDefault();
-            openProjectModal();
+            projectCard.addEventListener("click", (event) => {
+                if (event.target.closest("a, button, input, textarea, select")) return;
+                openProjectModal();
+            });
+
+            projectCard.addEventListener("keydown", (event) => {
+                if (event.key !== "Enter" && event.key !== " ") return;
+                if (event.target !== projectCard) return;
+
+                event.preventDefault();
+                openProjectModal();
+            });
         });
     }
 
