@@ -2062,3 +2062,691 @@ html[data-theme="light"] .glow {
         min-height: 0;
     }
 }
+
+
+
+/* =========================================================
+   PORTFOLIO UPDATE — TECH ICONS & MINI PROJECTS
+   Added without altering existing component styles.
+========================================================= */
+
+.tech-icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(58px, 1fr));
+    gap: 12px;
+}
+
+.tech-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    padding: 8px 4px;
+    text-align: center;
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.tech-icon img,
+.tech-icon i {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.tech-icon i {
+    display: grid;
+    place-items: center;
+    color: var(--cyan);
+    font-size: 1.7rem;
+}
+
+.tech-icon span {
+    color: var(--text-soft);
+    font-size: 0.67rem;
+    font-weight: 700;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.mini-projects-section {
+    margin-top: 55px;
+}
+
+.mini-projects-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.mini-projects-heading .note-line {
+    width: 45px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+}
+
+.mini-projects-heading .eyebrow {
+    margin: 0 0 4px;
+}
+
+.mini-projects-heading h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.mini-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.mini-project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+    padding: 26px;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition:
+        transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.mini-project-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(56, 189, 248, 0.45);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.28),
+        0 0 12px rgba(56, 189, 248, 0.06);
+}
+
+.mini-project-icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin-bottom: 18px;
+    color: var(--cyan);
+    font-size: 1.2rem;
+    place-items: center;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.24);
+    border-radius: 10px;
+}
+
+.mini-project-card .project-type {
+    margin: 0 0 8px;
+}
+
+.mini-project-card h3 {
+    margin: 0 0 11px;
+    color: var(--text);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.mini-project-card > p:not(.project-type) {
+    margin: 0 0 20px;
+    color: var(--text-soft);
+    font-size: 0.82rem;
+}
+
+.mini-project-card .project-tech {
+    margin-top: auto;
+}
+
+.mini-project-card .project-actions {
+    margin-top: 18px;
+}
+
+@media (max-width: 991.98px) {
+    .mini-projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767.98px) {
+    .tech-icon-grid {
+        grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    }
+
+    .mini-projects-section {
+        margin-top: 42px;
+    }
+
+    .mini-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-project-card {
+        min-height: 0;
+        padding: 24px;
+    }
+}
+
+
+
+
+/* =========================================================
+   TECH ICON DRAGGING
+   Each technology card (icon + label) moves independently.
+========================================================= */
+
+.tech-icon {
+    position: relative;
+    min-height: 104px;
+    overflow: hidden;
+}
+
+.tech-icon {
+    position: relative;
+    z-index: 1;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    will-change: transform;
+}
+
+.tech-icon img {
+    -webkit-user-drag: none;
+}
+
+.tech-icon:active,
+.tech-icon.is-dragging {
+    cursor: grabbing;
+}
+
+/* =========================================================
+   ENHANCED MOTION — VISUAL POLISH
+   Animation-only additions. Existing layout/functionality preserved.
+========================================================= */
+
+.page-background::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    top: 12%;
+    left: 8%;
+    border-radius: 50%;
+    background: rgba(56, 189, 248, 0.65);
+    box-shadow:
+        90px 80px rgba(139, 92, 246, 0.55),
+        210px 20px rgba(56, 189, 248, 0.45),
+        340px 160px rgba(139, 92, 246, 0.5),
+        520px 70px rgba(56, 189, 248, 0.4),
+        680px 210px rgba(139, 92, 246, 0.45),
+        820px 40px rgba(56, 189, 248, 0.5),
+        980px 180px rgba(139, 92, 246, 0.4),
+        1120px 90px rgba(56, 189, 248, 0.45),
+        70px 420px rgba(139, 92, 246, 0.4),
+        260px 520px rgba(56, 189, 248, 0.45),
+        460px 390px rgba(139, 92, 246, 0.4),
+        700px 500px rgba(56, 189, 248, 0.4),
+        920px 410px rgba(139, 92, 246, 0.45),
+        1140px 540px rgba(56, 189, 248, 0.4);
+    opacity: 0.45;
+    animation: particleDrift 14s ease-in-out infinite alternate;
+}
+
+@keyframes particleDrift {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.28;
+    }
+    to {
+        transform: translate3d(18px, -28px, 0);
+        opacity: 0.62;
+    }
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: calc(var(--scroll-progress, 0) * 100%);
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--cyan));
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+    transition: width 0.08s linear;
+}
+
+.hero-content.is-visible > .availability-pill {
+    animation: motionReveal 0.65s var(--ease) both;
+}
+
+.hero-content.is-visible > .eyebrow {
+    animation: motionReveal 0.65s 0.08s var(--ease) both;
+}
+
+.hero-content.is-visible > h1 {
+    animation: motionReveal 0.75s 0.16s var(--ease) both;
+}
+
+.hero-content.is-visible > .hero-lead {
+    animation: motionReveal 0.65s 0.26s var(--ease) both;
+}
+
+.hero-content.is-visible > .hero-actions {
+    animation: motionReveal 0.65s 0.34s var(--ease) both;
+}
+
+.hero-content.is-visible > .hero-meta {
+    animation: motionReveal 0.65s 0.42s var(--ease) both;
+}
+
+.hero-content.is-visible > .social-links {
+    animation: motionReveal 0.65s 0.50s var(--ease) both;
+}
+
+@keyframes motionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 .gradient-text,
+.section-heading .gradient-text {
+    background-size: 220% 100%;
+    animation: gradientFlow 7s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-visual.is-visible .profile-frame {
+    animation: profileFloat 6s ease-in-out 0.3s infinite;
+}
+
+@keyframes profileFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-7px) rotate(0.4deg);
+    }
+}
+
+/* The draggable tech cards remain draggable; only their contents animate. */
+.tech-icon img,
+.tech-icon > i {
+    transition:
+        transform 0.3s var(--ease),
+        filter 0.3s ease;
+}
+
+.tech-icon span {
+    transition:
+        color 0.25s ease,
+        transform 0.25s var(--ease);
+}
+
+.tech-icon:hover img,
+.tech-icon:hover > i {
+    transform: translateY(-4px) scale(1.08);
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.28));
+}
+
+.tech-icon:hover span {
+    color: var(--text);
+    transform: translateY(-2px);
+}
+
+.project-image-wrap img {
+    transition:
+        transform 0.65s var(--ease),
+        filter 0.45s ease;
+}
+
+.project-clickable:hover .project-image-wrap img {
+    transform: scale(1.035);
+    filter: saturate(1.08) brightness(1.04);
+}
+
+.project-overlay {
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s var(--ease);
+}
+
+.project-clickable:hover .project-overlay {
+    transform: translateY(-3px);
+}
+
+.project-tech span {
+    transition:
+        transform 0.25s var(--ease),
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.project-tech span:hover {
+    transform: translateY(-2px);
+    color: var(--text);
+    border-color: rgba(56, 189, 248, 0.5);
+    background: rgba(56, 189, 248, 0.08);
+}
+
+.project-modal.show .modal-content {
+    animation: modalLift 0.42s var(--ease) both;
+}
+
+@keyframes modalLift {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Enhanced motion still respects accessibility settings. */
+@media (prefers-reduced-motion: reduce) {
+    .page-background::before,
+    .hero-content.is-visible > .availability-pill,
+    .hero-content.is-visible > .eyebrow,
+    .hero-content.is-visible > h1,
+    .hero-content.is-visible > .hero-lead,
+    .hero-content.is-visible > .hero-actions,
+    .hero-content.is-visible > .hero-meta,
+    .hero-content.is-visible > .social-links,
+    .hero h1 .gradient-text,
+    .section-heading .gradient-text,
+    .hero-visual.is-visible .profile-frame,
+    .project-modal.show .modal-content {
+        animation: none !important;
+    }
+
+    .project-image-wrap img,
+    .tech-icon img,
+    .tech-icon > i,
+    .tech-icon span {
+        transition: none !important;
+    }
+
+    .site-header::after {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   COMPACT COLORED TECH BADGES
+   Added to the existing stack styles only.
+   Existing functionality and draggable behavior preserved.
+========================================================= */
+
+.tech-icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 150px;
+    padding: 8px 4px;
+    position: relative;
+}
+
+.tech-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: auto;
+    min-width: 0;
+    min-height: 32px;
+    height: 32px;
+    padding: 4px 9px;
+    border: 0;
+    border-radius: 2px;
+    background: #263044;
+    color: #ffffff;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    font-size: 0.60rem;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: visible;
+    transition:
+        filter 0.18s ease,
+        box-shadow 0.18s ease;
+}
+
+.tech-icon img,
+.tech-icon i {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+.tech-icon i {
+    display: grid;
+    place-items: center;
+    color: currentColor;
+    font-size: 14px;
+}
+
+.tech-icon span {
+    color: inherit;
+    font-size: inherit;
+    font-weight: 800;
+    line-height: 1;
+    overflow-wrap: normal;
+    white-space: nowrap;
+}
+
+.tech-icon:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.24);
+}
+
+.tech-icon.is-dragging {
+    z-index: 50;
+    cursor: grabbing;
+    filter: brightness(1.15);
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.32),
+        0 0 14px rgba(56, 189, 248, 0.16);
+}
+
+/* Brand badge colors */
+
+.tech-icon[data-tech="html"] {
+    background: #e44d26;
+}
+
+.tech-icon[data-tech="css"] {
+    background: #1572b6;
+}
+
+.tech-icon[data-tech="javascript"] {
+    background: #f0db4f;
+    color: #111111;
+}
+
+.tech-icon[data-tech="bootstrap"] {
+    background: #7952b3;
+}
+
+.tech-icon[data-tech="react"] {
+    background: #149eca;
+}
+
+.tech-icon[data-tech="responsive"] {
+    background: #607d8b;
+}
+
+.tech-icon[data-tech="node"] {
+    background: #339933;
+}
+
+.tech-icon[data-tech="express"] {
+    background: #242424;
+}
+
+.tech-icon[data-tech="php"] {
+    background: #777bb4;
+}
+
+.tech-icon[data-tech="laravel"] {
+    background: #ff2d20;
+}
+
+.tech-icon[data-tech="csharp"] {
+    background: #68217a;
+}
+
+.tech-icon[data-tech="dotnet"] {
+    background: #512bd4;
+}
+
+.tech-icon[data-tech="rest"] {
+    background: #ff7043;
+}
+
+.tech-icon[data-tech="server"] {
+    background: #455a64;
+}
+
+.tech-icon[data-tech="authentication"] {
+    background: #6c63ff;
+}
+
+.tech-icon[data-tech="mongodb"] {
+    background: #47a248;
+}
+
+.tech-icon[data-tech="mongoose"] {
+    background: #880000;
+}
+
+.tech-icon[data-tech="mysql"] {
+    background: #4479a1;
+}
+
+.tech-icon[data-tech="sql"] {
+    background: #336791;
+}
+
+.tech-icon[data-tech="git"] {
+    background: #f05032;
+}
+
+.tech-icon[data-tech="github"] {
+    background: #181717;
+}
+
+.tech-icon[data-tech="vscode"] {
+    background: #007acc;
+}
+
+.tech-icon[data-tech="wordpress"] {
+    background: #21759b;
+}
+
+.tech-icon[data-tech="github-pages"] {
+    background: #24292f;
+}
+
+.tech-icon[data-tech="administration"] {
+    background: #607d8b;
+}
+
+.tech-icon[data-tech="data"] {
+    background: #536dfe;
+}
+
+.tech-icon[data-tech="documentation"] {
+    background: #6d4c41;
+}
+
+.tech-icon[data-tech="google"] {
+    background: #4285f4;
+}
+
+.tech-icon[data-tech="microsoft"] {
+    background: #737373;
+}
+
+.tech-icon[data-tech="photoshop"] {
+    background: #31a8ff;
+}
+
+.tech-icon[data-tech="canva"] {
+    background: #00c4cc;
+}
+
+.tech-icon[data-tech="capcut"] {
+    background: #111111;
+}
+
+/* Keep the existing animation on the contents, but make it compact. */
+.tech-icon:hover img,
+.tech-icon:hover > i {
+    transform: translateY(-2px) scale(1.06);
+}
+
+/* Keep enough vertical workspace for the draggable badges,
+   even when a category has only 3–5 technologies. */
+@media (max-width: 767.98px) {
+    .tech-icon-grid {
+        min-height: 165px;
+        gap: 5px;
+    }
+
+    .tech-icon {
+        min-height: 30px;
+        height: 30px;
+        padding: 4px 8px;
+        gap: 5px;
+        font-size: 0.56rem;
+    }
+
+    .tech-icon img,
+    .tech-icon i {
+        width: 15px;
+        height: 15px;
+        flex-basis: 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .tech-icon-grid {
+        min-height: 175px;
+    }
+
+    .tech-icon {
+        font-size: 0.53rem;
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}

@@ -220,4 +220,110 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href =
             `mailto:brigittemorta@gmail.com?subject=${subject}&body=${body}`;
     });
+
+    /* ---------------------------------------------------------
+       TECH ICON DRAGGING
+       Moves only the selected technology card (icon + label) and
+       constrains it to its own technical-stack grid. Positions reset
+       on refresh.
+    --------------------------------------------------------- */
+
+    const draggableTechIcons = document.querySelectorAll(".tech-icon");
+
+    draggableTechIcons.forEach((icon) => {
+        let dragState = null;
+
+        const getOffset = (axis) =>
+            Number.parseFloat(icon.dataset[`drag${axis}`] || "0");
+
+        const setOffset = (x, y) => {
+            icon.dataset.dragX = String(x);
+            icon.dataset.dragY = String(y);
+            icon.style.transform = `translate(${x}px, ${y}px)`;
+        };
+
+        const finishDrag = (event) => {
+            if (!dragState) return;
+
+            if (icon.hasPointerCapture?.(event.pointerId)) {
+                icon.releasePointerCapture(event.pointerId);
+            }
+
+            dragState = null;
+            icon.classList.remove("is-dragging");
+        };
+
+        icon.addEventListener("pointerdown", (event) => {
+            if (event.button !== 0) return;
+
+            const container = icon.closest(".tech-icon-grid");
+            if (!container) return;
+
+            const iconRect = icon.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+
+            dragState = {
+                pointerId: event.pointerId,
+                startX: event.clientX,
+                startY: event.clientY,
+                startOffsetX: getOffset("X"),
+                startOffsetY: getOffset("Y"),
+                minDeltaX: containerRect.left - iconRect.left,
+                maxDeltaX: containerRect.right - iconRect.right,
+                minDeltaY: containerRect.top - iconRect.top,
+                maxDeltaY: containerRect.bottom - iconRect.bottom,
+            };
+
+            icon.setPointerCapture?.(event.pointerId);
+            icon.classList.add("is-dragging");
+            event.preventDefault();
+        });
+
+        icon.addEventListener("pointermove", (event) => {
+            if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+            const rawDeltaX = event.clientX - dragState.startX;
+            const rawDeltaY = event.clientY - dragState.startY;
+            const deltaX = Math.min(
+                dragState.maxDeltaX,
+                Math.max(dragState.minDeltaX, rawDeltaX)
+            );
+            const deltaY = Math.min(
+                dragState.maxDeltaY,
+                Math.max(dragState.minDeltaY, rawDeltaY)
+            );
+
+            setOffset(
+                dragState.startOffsetX + deltaX,
+                dragState.startOffsetY + deltaY
+            );
+        });
+
+        icon.addEventListener("pointerup", finishDrag);
+        icon.addEventListener("pointercancel", finishDrag);
+    });
+
+
+    /* ---------------------------------------------------------
+       SCROLL PROGRESS
+       Visual-only enhancement; existing navigation/functionality
+       remains unchanged.
+    --------------------------------------------------------- */
+
+    const updateScrollProgress = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const scrollableHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress = scrollableHeight > 0
+            ? Math.min(1, Math.max(0, scrollTop / scrollableHeight))
+            : 0;
+
+        root.style.setProperty("--scroll-progress", progress.toFixed(4));
+    };
+
+    updateScrollProgress();
+    window.addEventListener("scroll", updateScrollProgress, { passive: true });
+
 });
+
