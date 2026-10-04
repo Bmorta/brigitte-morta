@@ -165,6 +165,26 @@ document.addEventListener("DOMContentLoaded", () => {
        Links inside the card remain normal links.
     --------------------------------------------------------- */
 
+    const projectReadMoreButtons = document.querySelectorAll(".project-read-more");
+
+    if (projectReadMoreButtons.length && window.bootstrap) {
+        projectReadMoreButtons.forEach((button) => {
+            button.addEventListener("click", (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+
+                const modalId = button.getAttribute("data-project-read-more");
+                const modalElement = modalId
+                    ? document.getElementById(modalId)
+                    : null;
+
+                if (!modalElement) return;
+
+                bootstrap.Modal.getOrCreateInstance(modalElement).show();
+            });
+        });
+    }
+
     const projectCards = document.querySelectorAll(".project-clickable");
 
     if (projectCards.length && window.bootstrap) {
