@@ -1977,14 +1977,15 @@ html[data-theme="light"] .glow {
 
 
 /* =========================================================
-   PROJECT GRID — TWO PROJECTS SIDE BY SIDE
-   Project 1 on the left, Project 2 on the right.
+   PROJECT GRID — THREE FEATURED PROJECTS
+   Featured projects stay aligned in one row on desktop.
+   Additional projects remain below this grid.
 ========================================================= */
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
     align-items: stretch;
 }
 
