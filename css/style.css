@@ -1977,26 +1977,29 @@ html[data-theme="light"] .glow {
 
 
 /* =========================================================
-   PROJECT GRID — THREE FEATURED PROJECTS
-   Featured projects stay aligned in one row on desktop.
-   Additional projects remain below this grid.
+   FEATURED PROJECTS
+   Three main projects in one dedicated grid.
+   Additional projects are kept in a separate section below.
 ========================================================= */
 
-.projects-grid {
+.featured-projects-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     align-items: stretch;
 }
 
-.projects-grid .project-feature {
+.featured-projects-grid .project-feature {
+    position: relative;
     display: flex;
     flex-direction: column;
     min-width: 0;
     height: 100%;
+    overflow: hidden;
 }
 
-.projects-grid .project-image-wrap {
+.featured-projects-grid .project-image-wrap {
+    flex: 0 0 260px;
     min-height: 260px;
     height: 260px;
     padding: 18px;
@@ -2004,67 +2007,73 @@ html[data-theme="light"] .glow {
     border-bottom: 1px solid var(--border);
 }
 
-.projects-grid .project-image-wrap img {
+.featured-projects-grid .project-image-wrap img {
     width: 100%;
     height: 100%;
     max-height: 100%;
     object-fit: contain;
 }
 
-.projects-grid .project-info {
+.featured-projects-grid .project-info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 30px;
 }
 
-.projects-grid .project-info h3 {
-    font-size: clamp(1.5rem, 2.2vw, 2rem);
+.featured-projects-grid .project-info h3 {
+    font-size: clamp(1.45rem, 2vw, 2rem);
 }
 
-.projects-grid .project-info > p:not(.project-type) {
-    min-height: 72px;
+.featured-projects-grid .project-info > p:not(.project-type) {
+    min-height: 88px;
 }
 
-.projects-grid .project-actions {
+.featured-projects-grid .project-tech.large {
     margin-top: auto;
 }
 
-/* Keep the two project cards stacked on smaller screens */
+.featured-projects-grid .project-actions {
+    margin-top: 22px;
+}
+
+/* Three columns on desktop/tablet landscape. */
 @media (max-width: 991.98px) {
-    .projects-grid {
+    .featured-projects-grid {
         grid-template-columns: 1fr;
         gap: 24px;
     }
 
-    .projects-grid .project-image-wrap {
+    .featured-projects-grid .project-image-wrap {
+        flex-basis: 330px;
         min-height: 330px;
         height: 330px;
     }
 
-    .projects-grid .project-info {
+    .featured-projects-grid .project-info {
         padding: 30px;
     }
-}
 
-@media (max-width: 575.98px) {
-    .projects-grid {
-        gap: 20px;
-    }
-
-    .projects-grid .project-image-wrap {
-        min-height: 250px;
-        height: 250px;
-    }
-
-    .projects-grid .project-info {
-        padding: 24px;
-    }
-
-    .projects-grid .project-info > p:not(.project-type) {
+    .featured-projects-grid .project-info > p:not(.project-type) {
         min-height: 0;
     }
 }
 
+@media (max-width: 575.98px) {
+    .featured-projects-grid {
+        gap: 20px;
+    }
 
+    .featured-projects-grid .project-image-wrap {
+        flex-basis: 250px;
+        min-height: 250px;
+        height: 250px;
+    }
+
+    .featured-projects-grid .project-info {
+        padding: 24px;
+    }
+}
 
 /* =========================================================
    PORTFOLIO UPDATE — TECH ICONS & MINI PROJECTS
