@@ -1978,26 +1978,25 @@ html[data-theme="light"] .glow {
 
 /* =========================================================
    FEATURED PROJECTS
-   Three main projects stay side-by-side on desktop.
-   Additional projects remain in their own section below.
+   Three equal-sized featured cards on desktop.
+   Full descriptions are available through Read More modals.
 ========================================================= */
 
 .featured-projects-grid {
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
     width: 100%;
+    align-items: stretch;
 }
 
 .featured-projects-grid .project-feature {
     position: relative;
-    flex: 1 1 0;
-    width: 0;
-    min-width: 0;
-    max-width: none;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-width: 0;
+    width: 100%;
+    height: 760px;
     overflow: hidden;
 }
 
@@ -2030,7 +2029,38 @@ html[data-theme="light"] .glow {
 }
 
 .featured-projects-grid .project-info > p:not(.project-type) {
-    min-height: 88px;
+    min-height: 0;
+    margin-bottom: 16px;
+}
+
+.featured-projects-grid .project-read-more {
+    width: fit-content;
+    margin: 0 0 20px;
+    padding: 0;
+    color: var(--text);
+    background: transparent;
+    border: 0;
+    font-size: 0.82rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s var(--ease);
+}
+
+.featured-projects-grid .project-read-more i {
+    margin-left: 5px;
+    color: var(--cyan);
+    transition: transform 0.2s var(--ease);
+}
+
+.featured-projects-grid .project-read-more:hover,
+.featured-projects-grid .project-read-more:focus-visible {
+    color: var(--cyan);
+    transform: translateX(2px);
+}
+
+.featured-projects-grid .project-read-more:hover i,
+.featured-projects-grid .project-read-more:focus-visible i {
+    transform: translateX(3px);
 }
 
 .featured-projects-grid .project-tech.large {
@@ -2044,12 +2074,14 @@ html[data-theme="light"] .glow {
 /* Stack featured projects on smaller screens. */
 @media (max-width: 991.98px) {
     .featured-projects-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 24px;
     }
 
     .featured-projects-grid .project-feature {
         width: 100%;
+        height: auto;
+        min-height: 0;
     }
 
     .featured-projects-grid .project-image-wrap {
@@ -2060,10 +2092,6 @@ html[data-theme="light"] .glow {
 
     .featured-projects-grid .project-info {
         padding: 30px;
-    }
-
-    .featured-projects-grid .project-info > p:not(.project-type) {
-        min-height: 0;
     }
 }
 
