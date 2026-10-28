@@ -239,7 +239,9 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const sizeCertificateItems = () => {
-            const viewport = certificateCarousel?.querySelector(".certificates-viewport");
+            const viewport =
+                certificateCarousel?.querySelector(".certificates-viewport");
+
             if (!viewport) return;
 
             const visibleCount = getVisibleCount();
@@ -255,51 +257,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const getStep = () => {
             const item = certificateItems[0];
-            const itemWidth = item ? item.getBoundingClientRect().width : 0;
+            const itemWidth = item
+                ? item.getBoundingClientRect().width
+                : 0;
+
             const trackStyle = window.getComputedStyle(certificateTrack);
-            const gap = parseFloat(trackStyle.columnGap || trackStyle.gap || "0");
+            const gap = parseFloat(
+                trackStyle.columnGap ||
+                trackStyle.gap ||
+                "0"
+            );
+
             return itemWidth + gap;
         };
 
-        const setImagePosition = (element, index) => {
-            const column = index % 5;
-            const row = Math.floor(index / 5);
+        certificateImages.forEach((button) => {
+            button.addEventListener("click", () => {
+                const modal =
+                    document.getElementById("certificatePreviewModal");
 
-            element.style.backgroundPosition =
-                (column * 25) + "% " + (row * 50) + "%";
-        };
+                const modalImage =
+                    document.getElementById("certificatePreviewImage");
 
-        certificateImages.forEach((image) => {
-            setImagePosition(image, Number(image.dataset.certificateIndex || 0));
+                const modalTitle =
+                    document.getElementById("certificatePreviewModalLabel");
 
-            image.addEventListener("click", () => {
-                const modal = document.getElementById("certificatePreviewModal");
-                const modalImage = document.getElementById("certificatePreviewImage");
-                const modalTitle = document.getElementById("certificatePreviewModalLabel");
-                const modalIssuer = document.getElementById("certificatePreviewIssuer");
+                const modalIssuer =
+                    document.getElementById("certificatePreviewIssuer");
 
-                if (!modal || !modalImage || !modalTitle || !modalIssuer || !window.bootstrap) {
+                if (
+                    !modal ||
+                    !modalImage ||
+                    !modalTitle ||
+                    !modalIssuer ||
+                    !window.bootstrap
+                ) {
                     return;
                 }
 
-                const index = Number(image.dataset.certificateIndex || 0);
-                setImagePosition(modalImage, index);
+                const source =
+                    button.querySelector(".certificate-image-src");
+
+                if (!source) return;
+
+                modalImage.innerHTML =
+                    '<img src="' +
+                    source.getAttribute("src") +
+                    '" alt="' +
+                    (button.dataset.certificateTitle || "Certificate") +
+                    '">';
 
                 modalTitle.textContent =
-                    image.dataset.certificateTitle || "Certificate";
+                    button.dataset.certificateTitle ||
+                    "Certificate";
 
                 modalIssuer.textContent =
-                    image.dataset.certificateIssuer || "";
+                    button.dataset.certificateIssuer ||
+                    "";
 
-                bootstrap.Modal.getOrCreateInstance(modal).show();
+                bootstrap.Modal
+                    .getOrCreateInstance(modal)
+                    .show();
             });
         });
 
         const renderDots = () => {
-            certificateDots.forEach((dot, i) => {
+            certificateDots.forEach((dot, index) => {
                 dot.classList.toggle(
                     "active",
-                    i === (certificateIndex % totalCertificates)
+                    index === certificateIndex % totalCertificates
                 );
             });
         };
@@ -310,7 +336,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 : "none";
 
             certificateTrack.style.transform =
-                "translate3d(" + (-certificateIndex * getStep()) + "px, 0, 0)";
+                "translate3d(" +
+                (-certificateIndex * getStep()) +
+                "px, 0, 0)";
 
             renderDots();
         };
@@ -354,13 +382,19 @@ document.addEventListener("DOMContentLoaded", () => {
             clearInterval(certificateTimer);
         });
 
-        certificateCarousel.addEventListener("mouseleave", restartTimer);
+        certificateCarousel.addEventListener(
+            "mouseleave",
+            restartTimer
+        );
 
         certificateCarousel.addEventListener("focusin", () => {
             clearInterval(certificateTimer);
         });
 
-        certificateCarousel.addEventListener("focusout", restartTimer);
+        certificateCarousel.addEventListener(
+            "focusout",
+            restartTimer
+        );
 
         window.addEventListener("resize", () => {
             sizeCertificateItems();
