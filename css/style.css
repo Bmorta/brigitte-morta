@@ -5587,3 +5587,27 @@ html[data-theme="light"] .glow {
 @media (max-width: 820px) {
   .portfolio-hub .hub-photo { width: 55%; opacity: .62; }
 }
+
+
+/* Feather the bottom edges of both landing workspace JPGs.
+   Preserve the distinct left/right images and narrow center transition. */
+.portfolio-hub .hub-photo-left {
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 0%, #000 67%, rgba(0,0,0,.80) 78%, rgba(0,0,0,.35) 90%, transparent 100%),
+    linear-gradient(to right, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, #000 0%, #000 67%, rgba(0,0,0,.80) 78%, rgba(0,0,0,.35) 90%, transparent 100%),
+    linear-gradient(to right, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+.portfolio-hub .hub-photo-right {
+  -webkit-mask-image:
+    linear-gradient(to bottom, #000 0%, #000 67%, rgba(0,0,0,.80) 78%, rgba(0,0,0,.35) 90%, transparent 100%),
+    linear-gradient(to left, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, #000 0%, #000 67%, rgba(0,0,0,.80) 78%, rgba(0,0,0,.35) 90%, transparent 100%),
+    linear-gradient(to left, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
