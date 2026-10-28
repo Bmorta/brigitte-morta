@@ -5840,3 +5840,15 @@ html[data-theme="light"] .glow {
 @media(max-width:900px){.admin-portfolio-page .admin-cert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.admin-portfolio-page .admin-cert-grid{grid-template-columns:1fr;gap:16px}}
 @media(prefers-reduced-motion:reduce){.admin-portfolio-page .admin-cert-card,.admin-portfolio-page .admin-cert-preview img{transition:none!important;transform:none!important}}
+
+/* Admin carousel: same responsive visible counts, 3.5s auto-advance,
+   pause on hover/focus, and clickable navigation dots as programmer. */
+.admin-portfolio-page .admin-cert-carousel { width:100%; margin-top:30px; }
+.admin-portfolio-page .admin-cert-viewport { overflow:hidden; width:100%; border-radius:18px; }
+.admin-portfolio-page .admin-cert-grid { display:flex; flex-wrap:nowrap; width:max-content; gap:16px; margin-top:0; }
+.admin-portfolio-page .admin-cert-card { flex:0 0 var(--admin-cert-width,220px); width:var(--admin-cert-width,220px); }
+.admin-portfolio-page .admin-cert-dots { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; margin-top:22px; }
+.admin-portfolio-page .admin-cert-dots button { width:9px; height:9px; padding:0; border:0; border-radius:50%; background:#cdb99d; cursor:pointer; transition:width .25s ease,background .25s ease; }
+.admin-portfolio-page .admin-cert-dots button.active { width:26px; border-radius:10px; background:#a36b2e; }
+.admin-portfolio-page .admin-cert-dots button:focus-visible { outline:2px solid #a36b2e; outline-offset:4px; }
+@media(prefers-reduced-motion:reduce) { .admin-portfolio-page .admin-cert-dots button { transition:none; } }
