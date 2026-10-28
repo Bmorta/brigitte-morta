@@ -1268,7 +1268,7 @@ html[data-theme="light"] .glow {
     aspect-ratio: 1.5 / 1;
     padding: 0;
     background-color: var(--surface);
-    background-image: url("../certificates/certificates-sprite.jpg");
+    background-image: url("../certificates/certificates-sprite.webp");
     background-repeat: no-repeat;
     background-size: 500% 300%;
     background-position: 0% 0%;
@@ -1365,7 +1365,7 @@ html[data-theme="light"] .glow {
     width: 100%;
     aspect-ratio: 1.5 / 1;
     background-color: var(--surface);
-    background-image: url("../certificates/certificates-sprite.jpg");
+    background-image: url("../certificates/certificates-sprite.webp");
     background-repeat: no-repeat;
     background-size: 500% 300%;
     background-position: 0% 0%;
