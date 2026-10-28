@@ -5142,3 +5142,50 @@ html[data-theme="light"] .glow {
         transform: none;
     }
 }
+
+
+/* Inward-sloping trapezoid perspective and CTAs outside portrait overlap. */
+@media (min-width: 1101px) {
+    .portfolio-hub .programmer-choice {
+        transform-origin: left center;
+        transform: rotateY(5deg);
+    }
+    .portfolio-hub .admin-choice {
+        transform-origin: right center;
+        transform: rotateY(-5deg);
+    }
+    .portfolio-hub .programmer-choice:hover,
+    .portfolio-hub .programmer-choice:focus-visible {
+        transform: rotateY(5deg) translateY(-6px);
+    }
+    .portfolio-hub .admin-choice:hover,
+    .portfolio-hub .admin-choice:focus-visible {
+        transform: rotateY(-5deg) translateY(-6px);
+    }
+    .portfolio-hub .portfolio-choice .choice-cta {
+        width: 78%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .portfolio-hub .programmer-choice .choice-cta {
+        align-self: flex-start;
+    }
+    .portfolio-hub .admin-choice .choice-cta {
+        align-self: flex-end;
+    }
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+    .portfolio-hub .portfolio-choice .choice-cta {
+        width: 82%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .portfolio-hub .programmer-choice .choice-cta { align-self: flex-start; }
+    .portfolio-hub .admin-choice .choice-cta { align-self: flex-end; }
+}
+@media (max-width: 820px) {
+    .portfolio-hub .portfolio-choice .choice-cta {
+        width: 100%;
+        align-self: stretch;
+    }
+}
