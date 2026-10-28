@@ -1228,6 +1228,185 @@ html[data-theme="light"] .glow {
 }
 
 /* =========================================================
+   CERTIFICATES
+   Five visible cards on desktop. Circulates one certificate at a time.
+========================================================= */
+
+.certificates-section {
+    background: var(--bg-soft);
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+}
+
+.certificates-carousel {
+    position: relative;
+}
+
+.certificates-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.certificates-track {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    transition: transform 0.55s var(--ease);
+    will-change: transform;
+}
+
+.certificate-item {
+    flex: 0 0 auto;
+    min-width: 0;
+}
+
+.certificate-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 160 / 113;
+    padding: 0;
+    background-color: var(--surface);
+    background-image: url("../certificates/certificates-sprite.jpg");
+    background-repeat: no-repeat;
+    background-size: 500% 300%;
+    background-position: 0% 0%;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.certificate-image:hover,
+.certificate-image:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.55);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24), 0 0 18px rgba(56, 189, 248, 0.08);
+    outline: none;
+}
+
+.certificate-caption {
+    padding: 12px 2px 0;
+}
+
+.certificate-caption strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.certificate-caption span {
+    display: block;
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 0.66rem;
+}
+
+.certificates-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 24px;
+}
+
+.certificate-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: width 0.25s var(--ease), background-color 0.25s ease, transform 0.25s var(--ease);
+}
+
+.certificate-dot.active {
+    width: 24px;
+    border-radius: 999px;
+    background: var(--cyan);
+}
+
+.certificate-modal .modal-content {
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.certificate-modal .modal-header {
+    border-color: var(--border);
+}
+
+.certificate-modal .modal-title {
+    color: var(--text);
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.certificate-modal-issuer {
+    margin: 4px 0 0;
+    color: var(--text-muted);
+    font-size: 0.76rem;
+}
+
+.certificate-modal .modal-body {
+    padding: 18px;
+    background: var(--bg-soft);
+}
+
+.certificate-modal-image {
+    width: 100%;
+    aspect-ratio: 160 / 113;
+    background-color: var(--surface);
+    background-image: url("../certificates/certificates-sprite.jpg");
+    background-repeat: no-repeat;
+    background-size: 500% 300%;
+    background-position: 0% 0%;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+@media (min-width: 1200px) {
+    .certificate-item {
+        width: calc((100% - 64px) / 5);
+    }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+    .certificate-item {
+        width: calc((100% - 48px) / 4);
+    }
+}
+
+@media (max-width: 991.98px) and (min-width: 768px) {
+    .certificate-item {
+        width: calc((100% - 32px) / 3);
+    }
+}
+
+@media (max-width: 767.98px) and (min-width: 576px) {
+    .certificate-item {
+        width: calc((100% - 12px) / 2);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .certificate-track {
+        gap: 12px;
+    }
+
+    .certificate-item {
+        width: 100%;
+    }
+}
+
+/* =========================================================
    CONTACT
 ========================================================= */
 
