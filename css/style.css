@@ -4647,3 +4647,62 @@ html[data-theme="light"] .glow {
         object-fit: contain;
     }
 }
+
+
+/* Reference-aligned landing composition: upper photo band, raised portrait, visible waves */
+.portfolio-hub .hub-photo {
+    bottom: auto;
+    height: 66%;
+    opacity: 0.58;
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgba(0,0,0,.85) 53%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 30%, rgba(0,0,0,.85) 53%, transparent 100%);
+}
+.portfolio-hub .hub-photo-left {
+    -webkit-mask-image: linear-gradient(to right, #000 0%, #000 52%, transparent 100%);
+    mask-image: linear-gradient(to right, #000 0%, #000 52%, transparent 100%);
+}
+.portfolio-hub .hub-photo-right {
+    -webkit-mask-image: linear-gradient(to left, #000 0%, #000 52%, transparent 100%);
+    mask-image: linear-gradient(to left, #000 0%, #000 52%, transparent 100%);
+}
+.portfolio-hub .hub-portrait {
+    bottom: 28px;
+    width: clamp(280px, 28vw, 410px);
+    aspect-ratio: 1.12;
+}
+.portfolio-hub .portrait-ring,
+.portfolio-hub .portrait-aura,
+.portfolio-hub .portrait-glow {
+    display: none;
+}
+.portfolio-hub .hub-wave {
+    bottom: 0;
+    height: 19vh;
+    width: 62vw;
+    border-top-width: 2px;
+    opacity: .95;
+    filter: drop-shadow(0 0 6px currentColor);
+}
+.portfolio-hub .hub-wave-left,
+.portfolio-hub .hub-wave-left-two { color: #38b7ff; }
+.portfolio-hub .hub-wave-right,
+.portfolio-hub .hub-wave-right-two { color: #ffd18b; }
+.portfolio-hub .hub-wave-left-two,
+.portfolio-hub .hub-wave-right-two {
+    bottom: -3vh;
+    opacity: .62;
+}
+@media (max-width: 1100px) and (min-width: 821px) {
+    .portfolio-hub .hub-portrait { width: clamp(250px, 27vw, 330px); bottom: 28px; }
+}
+@media (max-width: 820px) {
+    .portfolio-hub .hub-photo { height: 48%; opacity: .35; }
+    .portfolio-hub .hub-portrait {
+        position: relative;
+        bottom: auto;
+        width: min(290px, 72vw);
+        margin: -8px auto 8px;
+        aspect-ratio: 1.12;
+    }
+    .portfolio-hub .hub-wave { height: 14vh; }
+}
