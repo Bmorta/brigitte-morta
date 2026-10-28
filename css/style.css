@@ -5715,3 +5715,35 @@ html[data-theme="light"] .glow {
     translate: none !important;
   }
 }
+
+
+/* Tall, narrow desktop viewports (including Chrome's Desktop site on phones).
+   Prevent viewport-height stretching while preserving the two-card desktop layout. */
+@media (min-width: 821px) and (max-width: 1100px) and (min-height: 1050px) {
+  .portfolio-hub .hub-main {
+    min-height: 0;
+    height: auto;
+  }
+  .portfolio-hub .hub-showcase {
+    flex: 0 0 auto;
+    min-height: 0;
+    align-items: start;
+    gap: clamp(125px, 17vw, 190px);
+  }
+  .portfolio-hub .portfolio-choice {
+    height: 590px;
+    min-height: 0;
+  }
+  .portfolio-hub .hub-portrait {
+    width: clamp(245px, 27vw, 300px);
+    bottom: 18px;
+  }
+}
+/* Even when desktop mode exposes a wider CSS viewport, cap card stretching
+   on unusually tall portrait-shaped screens. */
+@media (min-width: 1101px) and (min-height: 1350px) and (max-aspect-ratio: 4/5) {
+  .portfolio-hub .hub-main { min-height: 0; height: auto; }
+  .portfolio-hub .hub-showcase { flex: 0 0 auto; min-height: 0; align-items: start; }
+  .portfolio-hub .portfolio-choice { height: 620px; min-height: 0; }
+  .portfolio-hub .hub-portrait { bottom: 12px; }
+}
