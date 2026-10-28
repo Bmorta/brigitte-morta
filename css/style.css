@@ -5094,3 +5094,19 @@ html[data-theme="light"] .glow {
         justify-self: end;
     }
 }
+
+
+/* Tighter portrait halo: keep blue and gold light close to the silhouette. */
+.portfolio-hub .hub-portrait::before {
+    inset: 12% -5% 9%;
+    background:
+        radial-gradient(ellipse at 31% 51%, rgba(0, 145, 255, .68) 0%, rgba(0, 125, 255, .24) 31%, transparent 62%),
+        radial-gradient(ellipse at 69% 51%, rgba(255, 185, 62, .68) 0%, rgba(255, 153, 34, .24) 31%, transparent 62%);
+    filter: blur(24px);
+    opacity: .85;
+}
+.portfolio-hub .hub-portrait::after {
+    inset: 14% 2% 12%;
+    filter: blur(11px);
+    opacity: .72;
+}
