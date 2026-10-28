@@ -23,13 +23,19 @@
   </head>
 
   <body class="admin-portfolio-page">
-    <a class="portfolio-hub-link admin-hub-link" href="index.html">
-      <i class="bi bi-grid-1x2-fill"></i>
-      Portfolio Hub
-    </a>
-
+    <header class="admin-site-header">
+      <nav class="container admin-nav" aria-label="Admin portfolio navigation">
+        <a class="admin-nav-brand" href="#top"><img src="images/logo.png" alt="" /> <span>Brigitte Morta<small>ADMIN / VIRTUAL ASSISTANT</small></span></a>
+        <button class="admin-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="adminMenu"><i class="bi bi-list"></i></button>
+        <div class="admin-nav-links" id="adminMenu">
+          <a href="#top">Home</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#skills">Skills &amp; Tools</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+          <a class="admin-nav-hub" href="index.html"><i class="bi bi-grid-1x2-fill"></i> Portfolio Hub</a>
+        </div>
+      </nav>
+    </header>
     <main class="admin-page-main">
-      <section class="admin-hero">
+
+      <section class="admin-hero" id="top">
         <div class="container">
           <div class="admin-hero-grid">
             <div class="admin-copy reveal">
@@ -46,6 +52,7 @@
 
               <div class="admin-actions">
                 <a href="#services" class="admin-btn admin-btn-primary">Explore Services <i class="bi bi-arrow-down-right"></i></a>
+                <a href="portfolio-download.html" class="admin-btn admin-btn-secondary"><i class="bi bi-download"></i> Download My Portfolio</a>
                 <a href="#work" class="admin-btn admin-btn-secondary">View My Work <i class="bi bi-arrow-down-right"></i></a>
                 <a href="programmer.html" class="admin-btn admin-btn-secondary">View Programmer Portfolio <i class="bi bi-code-slash"></i></a>
               </div>
@@ -111,18 +118,18 @@
             <article class="admin-work-card"><i class="bi bi-envelope-paper"></i><h3>Email &amp; Inbox Management</h3><p>Prioritize messages, organize inboxes with labels and filters, and configure professional vacation responses.</p><span>Gmail</span></article>
             <article class="admin-work-card"><i class="bi bi-people"></i><h3>Client Relationship Management</h3><p>Support client records, contact organization, lead tracking, and scheduling through CRM workflows.</p><span>Salesforce · Contacts · Leads</span></article>
             <article class="admin-work-card"><i class="bi bi-kanban"></i><h3>Project &amp; Team Coordination</h3><p>Track tasks and progress, organize project boards, and coordinate team communication.</p><span>Trello · Slack</span></article>
-            <article class="admin-work-card"><i class="bi bi-send"></i><h3>Email Marketing</h3><p>Design email campaigns, organize audiences, create engaging content, and review campaign performance.</p><span>Flodesk</span></article>
+            <article class="admin-work-card"><i class="bi bi-send"></i><h3>Email Marketing</h3><p>Design email campaigns, organize audiences, create engaging content, and review campaign performance.</p><span><i class="bi bi-envelope-paper-heart" aria-hidden="true"></i>Flodesk</span></article>
             <article class="admin-work-card"><i class="bi bi-megaphone"></i><h3>Social Media Management</h3><p>Plan and schedule posts, support audience engagement, and configure page messages and replies.</p><span>Facebook · Meta Business tools</span></article>
-            <article class="admin-work-card"><i class="bi bi-bullseye"></i><h3>Facebook Advertising</h3><p>Support campaign structure, audience targeting, ad sets, and creative preparation.</p><span>Facebook Ads</span></article>
-            <article class="admin-work-card"><i class="bi bi-receipt"></i><h3>Bookkeeping Support</h3><p>Assist with invoices, expense tracking, customer and supplier records, and payroll-related organization.</p><span>QuickBooks</span></article>
+            <article class="admin-work-card"><i class="bi bi-bullseye"></i><h3>Facebook Advertising</h3><p>Support campaign structure, audience targeting, ad sets, and creative preparation.</p><span><i class="bi bi-meta" aria-hidden="true"></i>Facebook Ads</span></article>
+            <article class="admin-work-card"><i class="bi bi-receipt"></i><h3>Bookkeeping Support</h3><p>Assist with invoices, expense tracking, customer and supplier records, and payroll-related organization.</p><span><i class="bi bi-calculator" aria-hidden="true"></i>QuickBooks</span></article>
             <article class="admin-work-card"><i class="bi bi-window"></i><h3>Website Design</h3><p>Create and update easy-to-navigate, responsive websites that support a business's online presence.</p><span>WordPress · Wix</span></article>
-            <article class="admin-work-card"><i class="bi bi-palette"></i><h3>Graphic Design</h3><p>Create social graphics, promotional materials, branding assets, and marketing visuals.</p><span>Canva</span></article>
+            <article class="admin-work-card"><i class="bi bi-palette"></i><h3>Graphic Design</h3><p>Create social graphics, promotional materials, branding assets, and marketing visuals.</p><span><i class="bi bi-palette" aria-hidden="true"></i>Canva</span></article>
             <article class="admin-work-card"><i class="bi bi-camera-reels"></i><h3>Photo &amp; Video Editing</h3><p>Refine images and video content through editing, color adjustments, and visual storytelling.</p><span>CapCut · Adobe Photoshop</span></article>
           </div>
         </div>
       </section>
 
-      <section class="admin-section admin-proof-section">
+      <section class="admin-section admin-proof-section" id="testimonials">
         <div class="container">
           <div class="admin-section-heading">
             <p class="eyebrow admin-eyebrow">CLIENT &amp; COLLEAGUE FEEDBACK</p>
@@ -134,11 +141,11 @@
             <blockquote><p>“Brigitte is a talented graphic designer with a keen eye for aesthetics, consistently creating visually engaging and impactful designs.”</p><cite>Rose Marnelli Surban</cite></blockquote>
             <blockquote><p>“Brigitte has outstanding soft skills, effortlessly combining strong communication, empathy, and adaptability.”</p><cite>Delfin Dan Apolonio</cite></blockquote>
           </div>
-          <div class="admin-credentials-note"><i class="bi bi-award"></i><div><h3>Training &amp; Credentials</h3><p>My original portfolio also includes a gallery of training and completion certificates.</p></div></div>
+          <div class="admin-credentials-note"><i class="bi bi-award"></i><div><h3>Training &amp; Credentials</h3><p>Training and completion certificates are included in my original portfolio PDF.</p></div></div>
         </div>
       </section>
 
-      <section class="admin-section admin-tools-section">
+      <section class="admin-section admin-tools-section" id="skills">
         <div class="container">
           <div class="admin-split">
             <div>
@@ -146,25 +153,25 @@
               <h2>Tools I use to keep work efficient.</h2>
             </div>
             <div class="admin-tool-list">
-              <span>Microsoft Office</span>
-              <span>Google Workspace</span>
+              <span><i class="bi bi-file-earmark-word" aria-hidden="true"></i>Microsoft Office</span>
+              <span><i class="bi bi-google" aria-hidden="true"></i>Google Workspace</span>
               <span>QuickBooks</span>
               <span>Canva</span>
-              <span>CapCut</span>
-              <span>WordPress</span>
-              <span>Google Sheets</span>
-              <span>Slack</span>
-              <span>Trello</span>
-              <span>Salesforce</span>
+              <span><i class="bi bi-film" aria-hidden="true"></i>CapCut</span>
+              <span><i class="bi bi-wordpress" aria-hidden="true"></i>WordPress</span>
+              <span><i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>Google Sheets</span>
+              <span><i class="bi bi-slack" aria-hidden="true"></i>Slack</span>
+              <span><i class="bi bi-kanban" aria-hidden="true"></i>Trello</span>
+              <span><i class="bi bi-cloud" aria-hidden="true"></i>Salesforce</span>
               <span>Flodesk</span>
               <span>Facebook Ads</span>
-              <span>Adobe Photoshop</span>
+              <span><i class="bi bi-image" aria-hidden="true"></i>Adobe Photoshop</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="admin-contact">
+      <section class="admin-contact" id="contact">
         <div class="container">
           <div class="admin-contact-card">
             <div>
@@ -180,5 +187,25 @@
         </div>
       </section>
     </main>
+    <script>
+      (() => {
+        const button = document.querySelector(".admin-menu-toggle");
+        const menu = document.getElementById("adminMenu");
+        if (!button || !menu) return;
+        const close = () => {
+          menu.classList.remove("is-open");
+          button.setAttribute("aria-expanded", "false");
+          button.querySelector("i").className = "bi bi-list";
+        };
+        button.addEventListener("click", () => {
+          const open = menu.classList.toggle("is-open");
+          button.setAttribute("aria-expanded", String(open));
+          button.querySelector("i").className = open ? "bi bi-x-lg" : "bi bi-list";
+        });
+        menu.querySelectorAll("a").forEach(link => link.addEventListener("click", close));
+        document.addEventListener("keydown", event => { if (event.key === "Escape") close(); });
+        document.addEventListener("click", event => { if (!event.target.closest(".admin-nav")) close(); });
+      })();
+    </script>
   </body>
 </html>
