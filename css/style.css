@@ -5611,3 +5611,28 @@ html[data-theme="light"] .glow {
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
+
+
+/* Mobile landing: portrait first, then Programmer and Admin cards.
+   Desktop absolute-centered composition is unchanged. */
+@media (max-width: 820px) {
+  .portfolio-hub .hub-showcase {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .portfolio-hub .hub-portrait {
+    position: relative;
+    order: -1;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    transform: none;
+    width: min(290px, 72vw);
+    margin: 0 auto 4px;
+    flex: 0 0 auto;
+  }
+  .portfolio-hub .programmer-choice { order: 1; }
+  .portfolio-hub .admin-choice { order: 2; }
+}
