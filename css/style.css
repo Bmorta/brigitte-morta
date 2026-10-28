@@ -3883,29 +3883,23 @@ html[data-theme="light"] .glow {
     top: 0;
     bottom: 0;
     width: 50%;
-    opacity: 0.52;
+    opacity: 0.72;
 }
 
 .portfolio-hub .hub-photo-left {
     left: 0;
     background:
-        linear-gradient(90deg, rgba(1, 17, 35, 0.95), rgba(4, 30, 56, 0.22)),
-        radial-gradient(circle at 18% 18%, rgba(44, 158, 255, 0.22), transparent 26%),
-        repeating-linear-gradient(
-            0deg,
-            transparent 0 7px,
-            rgba(45, 164, 255, 0.09) 7px 8px
-        );
-    mask-image: linear-gradient(90deg, #000 0 92%, transparent 100%);
+        linear-gradient(90deg, rgba(2, 14, 33, 0.30), rgba(3, 16, 30, 0.88)),
+        url("../images/landing-programmer-bg.jpg") center center / cover no-repeat;
+    mask-image: linear-gradient(90deg, #000 0%, #000 55%, transparent 100%);
 }
 
 .portfolio-hub .hub-photo-right {
     right: 0;
     background:
-        linear-gradient(90deg, rgba(21, 16, 11, 0.08), rgba(48, 29, 16, 0.72)),
-        radial-gradient(circle at 75% 21%, rgba(255, 211, 152, 0.20), transparent 22%),
-        linear-gradient(145deg, rgba(255, 219, 167, 0.07), transparent 38%);
-    mask-image: linear-gradient(90deg, transparent 0, #000 8% 100%);
+        linear-gradient(90deg, rgba(16, 13, 14, 0.88), rgba(36, 22, 13, 0.30)),
+        url("../images/landing-admin-bg.jpg") center center / cover no-repeat;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 45%, #000 100%);
 }
 
 .portfolio-hub .hub-blue-wash,
