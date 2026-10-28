@@ -145,7 +145,7 @@
         </div>
       </section>
 
-      <section class="admin-section admin-certificates-section" id="certificates"><div class="container"><div class="admin-section-heading"><p class="eyebrow admin-eyebrow">CERTIFICATES &amp; TRAINING</p><h2>Credentials that support my work.</h2><p>Administrative, bookkeeping, creative, and technical training certificates. Tap any certificate to view it larger.</p></div><div class="admin-cert-grid"><article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Administrative Virtual Assistant (AVA)"><img src="images/certificate-04-administrative-virtual-assistant.png" alt="Administrative Virtual Assistant (AVA) certificate" loading="lazy"></button><h3>Administrative Virtual Assistant (AVA)</h3><p>SURGE Marketplace · 2024</p></article>
+      <section class="admin-section admin-certificates-section" id="certificates"><div class="container"><div class="admin-section-heading"><p class="eyebrow admin-eyebrow">CERTIFICATES &amp; TRAINING</p><h2>Credentials that support my work.</h2><p>Administrative, bookkeeping, creative, and technical training certificates. Tap any certificate to view it larger.</p></div><div class="admin-cert-carousel" aria-label="Certificates carousel"><div class="admin-cert-viewport"><div class="admin-cert-grid"><article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Administrative Virtual Assistant (AVA)"><img src="images/certificate-04-administrative-virtual-assistant.png" alt="Administrative Virtual Assistant (AVA) certificate" loading="lazy"></button><h3>Administrative Virtual Assistant (AVA)</h3><p>SURGE Marketplace · 2024</p></article>
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Administrative Virtual Assistant Training"><img src="images/certificate-12-administrative-assistant.png" alt="Administrative Virtual Assistant Training certificate" loading="lazy"></button><h3>Administrative Virtual Assistant Training</h3><p>SURGE Marketplace · 2024</p></article>
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Online Bookkeeping Using QuickBooks"><img src="images/certificate-11-online-bookkeeping-quickbooks.png" alt="Online Bookkeeping Using QuickBooks certificate" loading="lazy"></button><h3>Online Bookkeeping Using QuickBooks</h3><p>SURGE Marketplace · 2024</p></article>
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Bookkeeping with Philippine Taxation and QuickBooks Online"><img src="images/certificate-10-bookkeeping-taxation-quickbooks.jpg" alt="Bookkeeping with Philippine Taxation and QuickBooks Online certificate" loading="lazy"></button><h3>Bookkeeping with Philippine Taxation and QuickBooks Online</h3><p>EZAcc Training Center · 2023</p></article>
@@ -156,7 +156,7 @@
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Adobe Premiere Pro Master Class"><img src="images/certificate-07-adobe-premiere-pro.png" alt="Adobe Premiere Pro Master Class certificate" loading="lazy"></button><h3>Adobe Premiere Pro Master Class</h3><p>Graphics Media Training Philippines · 2024</p></article>
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Full-Stack Web Development Intensive Bootcamp"><img src="images/certificate-01-full-stack-web-development.jpg" alt="Full-Stack Web Development Intensive Bootcamp certificate" loading="lazy"></button><h3>Full-Stack Web Development Intensive Bootcamp</h3><p>MSTCONNECT PH · 2026</p></article>
 <article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Python Programming for Beginners"><img src="images/certificate-02-python-programming.jpg" alt="Python Programming for Beginners certificate" loading="lazy"></button><h3>Python Programming for Beginners</h3><p>MSTCONNECT PH · 2026</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: JavaScript 101: Learn JavaScript from Scratch"><img src="images/certificate-03-javascript-101.jpg" alt="JavaScript 101: Learn JavaScript from Scratch certificate" loading="lazy"></button><h3>JavaScript 101: Learn JavaScript from Scratch</h3><p>MSTCONNECT PH · 2023</p></article></div></div></section><dialog class="admin-cert-dialog" aria-label="Certificate preview"><button type="button" class="admin-cert-close" aria-label="Close certificate preview"><i class="bi bi-x-lg"></i></button><img alt="Selected certificate enlarged"></dialog>
+<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: JavaScript 101: Learn JavaScript from Scratch"><img src="images/certificate-03-javascript-101.jpg" alt="JavaScript 101: Learn JavaScript from Scratch certificate" loading="lazy"></button><h3>JavaScript 101: Learn JavaScript from Scratch</h3><p>MSTCONNECT PH · 2023</p></article></div></div><div class="admin-cert-dots" aria-label="Select certificate"></div></div></div></section><dialog class="admin-cert-dialog" aria-label="Certificate preview"><button type="button" class="admin-cert-close" aria-label="Close certificate preview"><i class="bi bi-x-lg"></i></button><img alt="Selected certificate enlarged"></dialog>
       <section class="admin-section admin-tools-section" id="skills">
         <div class="container">
           <div class="admin-split">
@@ -200,6 +200,54 @@
       </section>
     </main>
     <script>
+      (() => {
+        const carousel = document.querySelector(".admin-cert-carousel");
+        const viewport = carousel?.querySelector(".admin-cert-viewport");
+        const track = carousel?.querySelector(".admin-cert-grid");
+        const cards = Array.from(track?.querySelectorAll(".admin-cert-card") || []);
+        const dots = carousel?.querySelector(".admin-cert-dots");
+        if (!carousel || !viewport || !track || !cards.length || !dots) return;
+        let index = 0;
+        let timer;
+        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const visibleCount = () => window.innerWidth <= 575 ? 1 : window.innerWidth <= 767 ? 2 : window.innerWidth <= 991 ? 3 : window.innerWidth <= 1199 ? 4 : 5;
+        const gap = () => window.innerWidth <= 767 ? 12 : 16;
+        const draw = (animate = true) => {
+          const count = visibleCount();
+          const width = (viewport.clientWidth - (count - 1) * gap()) / count;
+          track.style.setProperty("--admin-cert-width", width + "px");
+          track.style.gap = gap() + "px";
+          track.style.transition = animate && !reducedMotion.matches ? "transform .55s ease" : "none";
+          track.style.transform = "translate3d(" + (-index * (width + gap())) + "px,0,0)";
+          dots.querySelectorAll("button").forEach((dot, i) => {
+            dot.classList.toggle("active", i === index);
+            dot.setAttribute("aria-current", String(i === index));
+          });
+        };
+        const go = (next) => { index = (next + cards.length) % cards.length; draw(); };
+        cards.forEach((_, i) => {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.setAttribute("aria-label", "Show certificate " + (i + 1));
+          dot.addEventListener("click", () => { go(i); restart(); });
+          dots.appendChild(dot);
+        });
+        const pause = () => clearInterval(timer);
+        const restart = () => {
+          pause();
+          if (!reducedMotion.matches && !document.hidden) timer = setInterval(() => go(index + 1), 3500);
+        };
+        carousel.addEventListener("mouseenter", pause);
+        carousel.addEventListener("mouseleave", restart);
+        carousel.addEventListener("focusin", pause);
+        carousel.addEventListener("focusout", event => { if (!carousel.contains(event.relatedTarget)) restart(); });
+        document.addEventListener("visibilitychange", restart);
+        reducedMotion.addEventListener?.("change", () => { draw(false); restart(); });
+        window.addEventListener("resize", () => draw(false));
+        draw(false);
+        restart();
+      })();
+
       (() => {
         const dialog = document.querySelector(".admin-cert-dialog");
         const preview = dialog?.querySelector("img");
