@@ -230,6 +230,29 @@ document.addEventListener("DOMContentLoaded", () => {
         let certificateIndex = 0;
         let certificateTimer = null;
 
+        const getVisibleCount = () => {
+            if (window.innerWidth <= 575.98) return 1;
+            if (window.innerWidth <= 767.98) return 2;
+            if (window.innerWidth <= 991.98) return 3;
+            if (window.innerWidth <= 1199.98) return 4;
+            return 5;
+        };
+
+        const sizeCertificateItems = () => {
+            const viewport = certificateCarousel?.querySelector(".certificates-viewport");
+            if (!viewport) return;
+
+            const visibleCount = getVisibleCount();
+            const gap = window.innerWidth <= 767.98 ? 12 : 16;
+            const itemWidth =
+                (viewport.clientWidth - gap * (visibleCount - 1)) / visibleCount;
+
+            certificateTrack.style.setProperty(
+                "--certificate-item-width",
+                itemWidth + "px"
+            );
+        };
+
         const getStep = () => {
             const item = certificateItems[0];
             const itemWidth = item ? item.getBoundingClientRect().width : 0;
@@ -241,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const setImagePosition = (element, index) => {
             const column = index % 5;
             const row = Math.floor(index / 5);
+
             element.style.backgroundPosition =
                 (column * 25) + "% " + (row * 50) + "%";
         };
@@ -260,8 +284,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const index = Number(image.dataset.certificateIndex || 0);
                 setImagePosition(modalImage, index);
-                modalTitle.textContent = image.dataset.certificateTitle || "Certificate";
-                modalIssuer.textContent = image.dataset.certificateIssuer || "";
+
+                modalTitle.textContent =
+                    image.dataset.certificateTitle || "Certificate";
+
+                modalIssuer.textContent =
+                    image.dataset.certificateIssuer || "";
 
                 bootstrap.Modal.getOrCreateInstance(modal).show();
             });
@@ -269,7 +297,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const renderDots = () => {
             certificateDots.forEach((dot, i) => {
-                dot.classList.toggle("active", i === (certificateIndex % totalCertificates));
+                dot.classList.toggle(
+                    "active",
+                    i === (certificateIndex % totalCertificates)
+                );
             });
         };
 
@@ -277,21 +308,26 @@ document.addEventListener("DOMContentLoaded", () => {
             certificateTrack.style.transition = useTransition
                 ? "transform 0.55s var(--ease)"
                 : "none";
+
             certificateTrack.style.transform =
                 "translate3d(" + (-certificateIndex * getStep()) + "px, 0, 0)";
+
             renderDots();
         };
 
         const resetLoop = () => {
             certificateIndex = 0;
             move(false);
+
             requestAnimationFrame(() => {
-                certificateTrack.style.transition = "transform 0.55s var(--ease)";
+                certificateTrack.style.transition =
+                    "transform 0.55s var(--ease)";
             });
         };
 
         const advance = () => {
             certificateIndex += 1;
+
             if (certificateIndex > totalCertificates) {
                 resetLoop();
             } else {
@@ -306,24 +342,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
         certificateDots.forEach((dot) => {
             dot.addEventListener("click", () => {
-                certificateIndex = Number(dot.dataset.certificateSlide || 0);
+                certificateIndex =
+                    Number(dot.dataset.certificateSlide || 0);
+
                 move(true);
                 restartTimer();
             });
         });
 
-        certificateCarousel.addEventListener("mouseenter", () => clearInterval(certificateTimer));
+        certificateCarousel.addEventListener("mouseenter", () => {
+            clearInterval(certificateTimer);
+        });
+
         certificateCarousel.addEventListener("mouseleave", restartTimer);
-        certificateCarousel.addEventListener("focusin", () => clearInterval(certificateTimer));
+
+        certificateCarousel.addEventListener("focusin", () => {
+            clearInterval(certificateTimer);
+        });
+
         certificateCarousel.addEventListener("focusout", restartTimer);
 
-        window.addEventListener("resize", () => move(false));
+        window.addEventListener("resize", () => {
+            sizeCertificateItems();
+            move(false);
+        });
 
+        sizeCertificateItems();
         move(false);
         restartTimer();
     }
 
-    /* ---------------------------------------------------------
+/* ---------------------------------------------------------
        CONTACT FORM
        Front-end only for now. Directs the user to email.
     --------------------------------------------------------- */
