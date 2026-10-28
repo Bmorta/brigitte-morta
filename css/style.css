@@ -5049,3 +5049,48 @@ html[data-theme="light"] .glow {
         align-items: stretch;
     }
 }
+
+
+/* Balanced desktop card typography and matching call-to-action buttons */
+@media (min-width: 821px) {
+    .portfolio-hub .portfolio-choice {
+        padding-top: 28px;
+        padding-bottom: 22px;
+    }
+    .portfolio-hub .portfolio-choice h2 {
+        font-size: clamp(1.65rem, 2.7vw, 2.75rem);
+        line-height: 1.04;
+        letter-spacing: 0;
+        min-height: 2.1em;
+    }
+    .portfolio-hub .portfolio-choice .choice-kicker {
+        margin-top: 15px;
+    }
+    .portfolio-hub .portfolio-choice .choice-role {
+        min-height: 2.2em;
+        line-height: 1.45;
+    }
+    .portfolio-hub .portfolio-choice ul {
+        gap: 10px;
+    }
+    .portfolio-hub .portfolio-choice li {
+        line-height: 1.45;
+    }
+    .portfolio-hub .portfolio-choice .choice-cta,
+    .portfolio-hub .admin-choice .choice-cta {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        text-align: center;
+        padding: 13px 18px;
+        min-height: 46px;
+    }
+    .portfolio-hub .portfolio-choice .choice-cta > span {
+        grid-column: 2;
+        text-align: center;
+    }
+    .portfolio-hub .portfolio-choice .choice-cta > i {
+        grid-column: 3;
+        justify-self: end;
+    }
+}
