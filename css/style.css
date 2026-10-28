@@ -5913,3 +5913,14 @@ html[data-theme="light"] .glow {
 @media(max-width:767px) { .admin-portfolio-page .admin-footer-top { grid-template-columns:1fr 1fr; gap:32px; } .admin-portfolio-page .admin-footer-about { grid-column:1/-1; } }
 @media(max-width:480px) { .admin-portfolio-page .admin-footer-top { grid-template-columns:1fr; } .admin-portfolio-page .admin-footer-about { grid-column:auto; } .admin-portfolio-page .admin-footer-bottom { flex-direction:column; align-items:flex-start; } }
 @media(prefers-reduced-motion:reduce) { .admin-portfolio-page .admin-hero-socials a { transition:none; } }
+
+
+/* Programmer skills: keep Design & Content aligned with the other stack cards.
+   The old tablet last-child spanning rule caused the sixth card to stretch
+   across both columns instead of sitting beside Administration & Business. */
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .stack-grid > .stack-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
