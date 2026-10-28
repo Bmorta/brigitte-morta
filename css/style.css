@@ -5549,3 +5549,16 @@ html[data-theme="light"] .glow {
   .portfolio-hub .hub-floor-reflection { margin-top: -8px; }
   .portfolio-hub .floor-portrait::before { opacity: .44; filter: blur(3px); }
 }
+
+
+/* Seat the floor reflection directly against the portrait's lower edge. */
+@media (min-width: 821px) {
+  .portfolio-hub .hub-floor-reflection {
+    margin-top: -35px;
+  }
+}
+@media (max-width: 820px) {
+  .portfolio-hub .hub-floor-reflection {
+    margin-top: -16px;
+  }
+}
