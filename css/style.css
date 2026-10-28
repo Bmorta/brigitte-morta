@@ -5649,3 +5649,33 @@ html[data-theme="light"] .glow {
     -webkit-box-reflect: unset !important;
   }
 }
+
+
+/* Seamless blue-to-gold color lighting: overlapping washes without a
+   visible 50% split. Background photographs retain their own separation. */
+.portfolio-hub .hub-blue-wash,
+.portfolio-hub .hub-gold-wash {
+  width: 78%;
+  top: 0;
+  bottom: 0;
+  mix-blend-mode: screen;
+  opacity: .82;
+}
+.portfolio-hub .hub-blue-wash {
+  left: 0;
+  right: auto;
+  background:
+    radial-gradient(ellipse 75% 65% at 25% 48%, rgba(21,135,255,.17), transparent 100%),
+    linear-gradient(to right, rgba(12,106,235,.11) 0%, rgba(12,106,235,.07) 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 32%, rgba(0,0,0,.72) 57%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, #000 32%, rgba(0,0,0,.72) 57%, transparent 100%);
+}
+.portfolio-hub .hub-gold-wash {
+  right: 0;
+  left: auto;
+  background:
+    radial-gradient(ellipse 75% 65% at 75% 48%, rgba(255,171,63,.16), transparent 100%),
+    linear-gradient(to left, rgba(236,146,48,.11) 0%, rgba(236,146,48,.07) 40%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, #000 0%, #000 32%, rgba(0,0,0,.72) 57%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 0%, #000 32%, rgba(0,0,0,.72) 57%, transparent 100%);
+}
