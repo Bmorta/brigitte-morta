@@ -5352,3 +5352,63 @@ html[data-theme="light"] .glow {
         height: 35px;
     }
 }
+
+
+/* Polished landing blend + visibly reflected lower silhouette.
+   Keep the reflection cropped and flipped inside its own floor strip. */
+.portfolio-hub .hub-photo {
+    width: 72%;
+    height: 85%;
+    opacity: .63;
+}
+.portfolio-hub .hub-photo-left {
+    left: 0;
+    right: auto;
+    -webkit-mask-image: radial-gradient(ellipse 90% 85% at 25% 20%, #000 0%, #000 37%, rgba(0,0,0,.82) 58%, rgba(0,0,0,.30) 79%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 85% at 25% 20%, #000 0%, #000 37%, rgba(0,0,0,.82) 58%, rgba(0,0,0,.30) 79%, transparent 100%);
+}
+.portfolio-hub .hub-photo-right {
+    right: 0;
+    left: auto;
+    -webkit-mask-image: radial-gradient(ellipse 90% 85% at 75% 20%, #000 0%, #000 37%, rgba(0,0,0,.82) 58%, rgba(0,0,0,.30) 79%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 85% at 75% 20%, #000 0%, #000 37%, rgba(0,0,0,.82) 58%, rgba(0,0,0,.30) 79%, transparent 100%);
+}
+.portfolio-hub .hub-background::after {
+    width: min(62vw, 1050px);
+    background: radial-gradient(ellipse at center, rgba(7,13,22,.32), rgba(7,13,22,.14) 45%, transparent 80%);
+}
+.portfolio-hub .hub-floor-reflection {
+    flex: 0 0 108px;
+    width: min(820px, 85vw);
+    height: 108px;
+    margin: -2px auto -50px;
+    background:
+        radial-gradient(ellipse at 29% 0%, rgba(36,159,255,.35), transparent 68%),
+        radial-gradient(ellipse at 71% 0%, rgba(255,185,72,.33), transparent 68%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.82) 30%, rgba(0,0,0,.28) 75%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, rgba(0,0,0,.82) 30%, rgba(0,0,0,.28) 75%, transparent 100%);
+}
+.portfolio-hub .hub-floor-reflection::before {
+    top: 0;
+    width: clamp(390px, 34vw, 540px);
+    height: 108px;
+    transform: translateX(-50%) scaleY(-1);
+    transform-origin: center center;
+    background-position: center bottom;
+    background-size: 100% auto;
+    opacity: .57;
+    filter: blur(2.5px) saturate(.85);
+}
+@media (max-width: 820px) {
+    .portfolio-hub .hub-photo { width: 82%; height: 65%; opacity: .45; }
+    .portfolio-hub .hub-floor-reflection {
+        flex-basis: 62px;
+        height: 62px;
+        margin-bottom: -28px;
+    }
+    .portfolio-hub .hub-floor-reflection::before {
+        width: min(290px, 72vw);
+        height: 62px;
+        opacity: .38;
+    }
+}
