@@ -5773,3 +5773,27 @@ html[data-theme="light"] .glow {
     transform: none;
   }
 }
+
+/* Admin / VA expanded portfolio: isolated from the programmer and hub pages. */
+.admin-portfolio-page .admin-work-section { background: #fffaf4; }
+.admin-portfolio-page .admin-section-heading > p:not(.eyebrow) { max-width: 680px; color: #6d6257; }
+.admin-portfolio-page .admin-work-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; margin-top: 34px; }
+.admin-portfolio-page .admin-work-card { background: #fff; border: 1px solid #eadcc9; border-radius: 20px; padding: 26px; box-shadow: 0 12px 30px rgba(65,41,20,.045); }
+.admin-portfolio-page .admin-work-card > i { color: #ad702e; font-size: 1.7rem; }
+.admin-portfolio-page .admin-work-card h3 { font-size: 1.12rem; margin: 15px 0 10px; color: #3a2a1d; }
+.admin-portfolio-page .admin-work-card p { color: #6b6057; line-height: 1.7; font-size: .94rem; }
+.admin-portfolio-page .admin-work-card span { display: block; color: #986326; font-size: .78rem; font-weight: 700; margin-top: 16px; }
+.admin-portfolio-page .admin-proof-section { background: #f3e9dc; }
+.admin-portfolio-page .admin-quote-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 30px; }
+.admin-portfolio-page .admin-quote-grid blockquote { margin: 0; padding: 26px; border: 1px solid #e5d3bc; border-radius: 18px; background: #fffaf4; }
+.admin-portfolio-page .admin-quote-grid p { color: #514337; line-height: 1.75; }
+.admin-portfolio-page .admin-quote-grid cite { color: #926026; font-weight: 700; font-style: normal; }
+.admin-portfolio-page .admin-credentials-note { display: flex; align-items: flex-start; gap: 16px; margin-top: 28px; padding: 22px; border: 1px solid #dfccb5; border-radius: 16px; }
+.admin-portfolio-page .admin-credentials-note > i { color: #9b672e; font-size: 1.8rem; }
+.admin-portfolio-page .admin-credentials-note h3 { font-size: 1.1rem; }
+.admin-portfolio-page .admin-credentials-note p { margin: 0; color: #68594c; }
+@media (max-width: 991px) { .admin-portfolio-page .admin-work-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width: 600px) {
+  .admin-portfolio-page .admin-work-grid, .admin-portfolio-page .admin-quote-grid { grid-template-columns: 1fr; }
+  .admin-portfolio-page .admin-work-card, .admin-portfolio-page .admin-quote-grid blockquote { padding: 22px; }
+}
