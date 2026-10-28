@@ -5529,3 +5529,23 @@ html[data-theme="light"] .glow {
   .portfolio-hub .hub-floor-reflection { margin-top: -12px; }
   .portfolio-hub .floor-portrait::before { opacity: .25; filter: blur(5px); }
 }
+
+
+/* Restore visible portrait reflection. The earlier narrow radial mask erased
+   the actual reflected pixels; use a wide feathered mask instead. */
+.portfolio-hub .hub-floor-reflection {
+  margin-top: -14px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.95) 0%, rgba(0,0,0,.70) 38%, rgba(0,0,0,.20) 77%, transparent 100%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.95) 0%, rgba(0,0,0,.70) 38%, rgba(0,0,0,.20) 77%, transparent 100%);
+}
+.portfolio-hub .floor-portrait::before {
+  top: 0;
+  opacity: .68;
+  filter: blur(3px);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.65) 18%, #000 35%, #000 65%, rgba(0,0,0,.65) 82%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.65) 18%, #000 35%, #000 65%, rgba(0,0,0,.65) 82%, transparent 100%);
+}
+@media (max-width: 820px) {
+  .portfolio-hub .hub-floor-reflection { margin-top: -8px; }
+  .portfolio-hub .floor-portrait::before { opacity: .44; filter: blur(3px); }
+}
