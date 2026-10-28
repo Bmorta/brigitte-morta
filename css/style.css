@@ -5887,3 +5887,29 @@ html[data-theme="light"] .glow {
     scale: none !important;
   }
 }
+
+/* Admin hero availability and social connections */
+.admin-portfolio-page .admin-opportunity { display:inline-flex; align-items:center; gap:10px; width:max-content; max-width:100%; margin-bottom:18px; padding:10px 17px; border:1px solid rgba(136,103,61,.23); border-radius:999px; background:rgba(255,255,255,.55); color:#5d472f; font-weight:750; font-size:.88rem; box-shadow:0 8px 20px rgba(83,52,25,.06); }
+.admin-portfolio-page .admin-status-dot { display:inline-block; flex:none; width:9px; height:9px; border-radius:50%; background:#23a36b; box-shadow:0 0 0 4px rgba(35,163,107,.13); }
+.admin-portfolio-page .admin-hero-socials { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:24px; }
+.admin-portfolio-page .admin-hero-socials a { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:14px; border:1px solid #d8bf9f; color:#815324; background:rgba(255,255,255,.65); font-size:1.3rem; text-decoration:none; transition:transform .2s ease,background .2s ease,box-shadow .2s ease; }
+.admin-portfolio-page .admin-hero-socials a:hover,.admin-portfolio-page .admin-hero-socials a:focus-visible { transform:translateY(-4px); background:#fff; box-shadow:0 10px 25px rgba(102,64,30,.15); }
+/* Admin portfolio footer */
+.admin-portfolio-page .admin-footer { padding:60px 0 0; background:#2b2118; color:#f4e9dc; }
+.admin-portfolio-page .admin-footer-top { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:42px; padding-bottom:45px; }
+.admin-portfolio-page .admin-footer-brand { display:inline-flex; align-items:center; gap:12px; color:#fff4e6; text-decoration:none; font-size:1.25rem; font-weight:800; }
+.admin-portfolio-page .admin-footer-brand img { width:46px; height:46px; object-fit:contain; }
+.admin-portfolio-page .admin-footer-about p { margin:15px 0 0; line-height:1.75; color:#c9b8a4; }
+.admin-portfolio-page .admin-footer h2 { color:#f5d3a6; font-size:1rem; font-weight:800; margin:0 0 17px; }
+.admin-portfolio-page .admin-footer-links { display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+.admin-portfolio-page .admin-footer-links h2 { margin-bottom:6px; }
+.admin-portfolio-page .admin-footer a { text-decoration:none; }
+.admin-portfolio-page .admin-footer-links a,.admin-portfolio-page .admin-footer-email { color:#e3d0bc; }
+.admin-portfolio-page .admin-footer a:hover,.admin-portfolio-page .admin-footer a:focus-visible { color:#f3b969; }
+.admin-portfolio-page .admin-footer-socials { display:flex; gap:12px; margin-top:20px; }
+.admin-portfolio-page .admin-footer-socials a { display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:12px; border:1px solid #6c5139; color:#f4d5aa; font-size:1.15rem; }
+.admin-portfolio-page .admin-footer-bottom { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; border-top:1px solid #5a4431; padding:22px 0; font-size:.85rem; color:#bda993; }
+.admin-portfolio-page .admin-footer-bottom a { color:#e4c9a6; }
+@media(max-width:767px) { .admin-portfolio-page .admin-footer-top { grid-template-columns:1fr 1fr; gap:32px; } .admin-portfolio-page .admin-footer-about { grid-column:1/-1; } }
+@media(max-width:480px) { .admin-portfolio-page .admin-footer-top { grid-template-columns:1fr; } .admin-portfolio-page .admin-footer-about { grid-column:auto; } .admin-portfolio-page .admin-footer-bottom { flex-direction:column; align-items:flex-start; } }
+@media(prefers-reduced-motion:reduce) { .admin-portfolio-page .admin-hero-socials a { transition:none; } }
