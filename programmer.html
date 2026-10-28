@@ -1,0 +1,1706 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="Brigitte Morta — Full-Stack Web Developer portfolio featuring selected projects, technical skills, and professional background." />
+    <meta name="author" content="Brigitte Morta" />
+    <meta name="theme-color" content="#080b1a" />
+
+    <meta property="og:title" content="Brigitte Morta | Programmer Portfolio" />
+    <meta
+      property="og:description"
+      content="Portfolio of Brigitte Morta, a Full-Stack Web Developer building responsive, user-focused web experiences."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://bmorta.github.io/brigitte-morta/"
+    />
+    <meta
+      property="og:image"
+      content="https://bmorta.github.io/brigitte-morta/images/portfolio-preview.png"
+    />
+
+    <title>Brigitte Morta | Programmer Portfolio</title>
+
+    <link rel="icon" type="image/png" href="images/logo.png" />
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <a class="portfolio-hub-link" href="index.html">
+      <i class="bi bi-grid-1x2-fill"></i>
+      Portfolio Hub
+    </a>
+    <!-- Animated background -->
+    <div class="page-background" aria-hidden="true">
+      <span class="grid-overlay"></span>
+      <span class="glow glow-one"></span>
+      <span class="glow glow-two"></span>
+      <span class="glow glow-three"></span>
+    </div>
+
+    <!-- Navigation -->
+    <header class="site-header" id="top">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a
+            class="navbar-brand brand"
+            href="#home"
+            aria-label="Brigitte Morta home"
+          >
+            <img src="images/logo.png" alt="BM logo" class="brand-logo" />
+            <span class="brand-copy">
+              <span class="brand-name">Brigitte Morta</span>
+              <span class="brand-role">Full-Stack Web Developer</span>
+            </span>
+          </a>
+
+          <div class="nav-actions">
+            <button
+              class="theme-toggle"
+              id="themeToggle"
+              type="button"
+              aria-label="Switch to light mode"
+              title="Switch to light mode"
+            >
+              <i class="bi bi-sun-fill" id="themeIcon"></i>
+            </button>
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNavigation"
+              aria-controls="mainNavigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+
+          <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Stack</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#certificates">Certificates</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link nav-contact" href="#contact"
+                  >Let's Talk <i class="bi bi-arrow-up-right"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero section-space" id="home">
+        <div class="container position-relative">
+          <div class="hero-grid">
+            <div class="hero-content reveal">
+              <div class="availability-pill">
+                <span class="status-dot"></span>
+                Open to opportunities
+              </div>
+
+              <p class="eyebrow">HELLO, I'M BRIGITTE</p>
+
+              <h1>
+                I build
+                <span class="gradient-text">modern web experiences.</span>
+              </h1>
+
+              <p class="hero-lead">
+                Full-Stack Web Developer focused on creating responsive,
+                practical, and user-centered web applications from interface to
+                functionality.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#projects" class="btn primary-btn">
+                  View My Work
+                  <i class="bi bi-arrow-down-right"></i>
+                </a>
+                <a
+                  href="files/Brigitte_Morta_CV.pdf"
+                  class="btn secondary-btn"
+                  download
+                >
+                  Download CV <i class="bi bi-download"></i>
+                </a>
+                <a href="#contact" class="btn secondary-btn"> Let's Connect </a>
+              </div>
+
+              <div class="hero-meta">
+                <div class="meta-item">
+                  <span class="meta-label">BASED IN</span>
+                  <strong>Davao City, PH</strong>
+                </div>
+                <div class="meta-divider"></div>
+                <div class="meta-item">
+                  <span class="meta-label">FOCUS</span>
+                  <strong>Full-Stack Development</strong>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a
+                  href="https://github.com/Bmorta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  title="GitHub"
+                >
+                  <i class="bi bi-github"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/brigittemorta"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                >
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/bri.gitte0604"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  title="Facebook"
+                >
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a
+                  href="mailto:brigittemorta@gmail.com"
+                  aria-label="Email"
+                  title="Email"
+                >
+                  <i class="bi bi-envelope-fill"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-visual reveal reveal-delay">
+              <div class="code-orbit orbit-one"></div>
+              <div class="code-orbit orbit-two"></div>
+
+              <div class="profile-frame">
+                <div class="profile-glow"></div>
+                <div class="profile-grid"></div>
+                <img
+                  src="images/profile.jpg"
+                  alt="Brigitte Morta"
+                  class="profile-image"
+                />
+              </div>
+
+              <div class="floating-card card-top">
+                <span class="floating-icon"
+                  ><i class="bi bi-code-slash"></i
+                ></span>
+                <div>
+                  <small>BUILD</small>
+                  <strong>Clean & Responsive</strong>
+                </div>
+              </div>
+
+              <div class="floating-card card-bottom">
+                <span class="floating-icon purple"
+                  ><i class="bi bi-layers"></i
+                ></span>
+                <div>
+                  <small>STACK</small>
+                  <strong>Frontend → Backend</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="scroll-cue" aria-hidden="true">
+            <span></span>
+            Scroll to explore
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section-space about-section" id="about">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">ABOUT ME</p>
+              <h2>
+                Full-Stack Development
+                <span class="gradient-text">with a practical mindset.</span>
+              </h2>
+            </div>
+            <p>
+              Full-Stack Web Developer focused on building responsive,
+              database-driven applications and practical solutions for real-world
+              users and business needs.
+            </p>
+          </div>
+
+          <div class="about-grid">
+            <article class="about-main glass-card reveal">
+              <div class="card-kicker">01 / PROFILE</div>
+              <h3>From interfaces to APIs, databases, and deployment.</h3>
+              <p>
+                I am a Full-Stack Web Developer and BSIT graduate with hands-on
+                experience building responsive web applications across the
+                frontend and backend. I work with React, JavaScript, Node.js,
+                Express.js, REST APIs, MongoDB, and Mongoose, with a focus on
+                clean structure, usability, and reliable functionality.
+              </p>
+              <p>
+                I have hands-on Full-Stack Web Development training through MSTCONNECT PH
+                and have applied those skills through practical applications,
+                including REST API development, authentication, database
+                persistence, CRUD workflows, validation, and deployment.
+              </p>
+              <p>
+                My professional background in technical support, administration,
+                systems, documentation, and client coordination also helps me
+                understand requirements, solve problems, and build solutions
+                around real business needs.
+              </p>
+            </article>
+
+            <div class="about-side">
+              <article class="mini-card reveal reveal-delay">
+                <span class="mini-icon"
+                  ><i class="bi bi-mortarboard-fill"></i
+                ></span>
+                <div>
+                  <span class="mini-label">EDUCATION</span>
+                  <h4>BSIT • BSREM</h4>
+                  <p>Technology + Real Estate Management</p>
+                </div>
+              </article>
+
+              <article class="mini-card reveal reveal-delay-2">
+                <span class="mini-icon"><i class="bi bi-braces"></i></span>
+                <div>
+                  <span class="mini-label">CORE STRENGTH</span>
+                  <h4>Full-Stack Development</h4>
+                  <p>React, Node.js, APIs, MongoDB & deployment</p>
+                </div>
+              </article>
+
+              <article class="mini-card reveal reveal-delay-3">
+                <span class="mini-icon"
+                  ><i class="bi bi-lightning-charge-fill"></i
+                ></span>
+                <div>
+                  <span class="mini-label">DEVELOPMENT APPROACH</span>
+                  <h4>Build → Test → Improve</h4>
+                  <p>Practical, user-focused and maintainable solutions</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section class="section-space stack-section" id="skills">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">TECHNICAL STACK</p>
+              <h2>Tools I use to <span class="gradient-text">build.</span></h2>
+            </div>
+            <p>
+              A practical full-stack toolkit covering the technologies I use to
+              build responsive interfaces, APIs, database-driven applications,
+              and deployable web solutions. <strong>Drag the technology badges to explore the stack.</strong>
+            </p>
+          </div>
+
+          <div class="stack-grid">
+            <article class="stack-card featured reveal">
+              <div class="stack-card-top">
+                <span class="stack-icon"
+                  ><i class="bi bi-window-stack"></i
+                ></span>
+                <span class="stack-index">01</span>
+              </div>
+              <h3>Frontend</h3>
+              <p>
+                Responsive interfaces with clean structure and thoughtful visual
+                design.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="html">
+                  <img
+                    src="https://skillicons.dev/icons?i=html"
+                    alt="HTML5"
+                  /><span>HTML5</span>
+                </div>
+                <div class="tech-icon" data-tech="css">
+                  <img
+                    src="https://skillicons.dev/icons?i=css"
+                    alt="CSS3"
+                  /><span>CSS3</span>
+                </div>
+                <div class="tech-icon" data-tech="javascript">
+                  <img
+                    src="https://skillicons.dev/icons?i=js"
+                    alt="JavaScript"
+                  /><span>JavaScript</span>
+                </div>
+                <div class="tech-icon" data-tech="bootstrap">
+                  <img
+                    src="https://skillicons.dev/icons?i=bootstrap"
+                    alt="Bootstrap"
+                  /><span>Bootstrap</span>
+                </div>
+                <div class="tech-icon" data-tech="react">
+                  <img
+                    src="https://skillicons.dev/icons?i=react"
+                    alt="React"
+                  /><span>React</span>
+                </div>
+                <div class="tech-icon" data-tech="responsive">
+                  <i class="bi bi-phone"></i><span>Responsive UI</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stack-card reveal reveal-delay">
+              <div class="stack-card-top">
+                <span class="stack-icon purple"
+                  ><i class="bi bi-server"></i
+                ></span>
+                <span class="stack-index">02</span>
+              </div>
+              <h3>Backend & Programming</h3>
+              <p>
+                Building the foundation for applications beyond the interface.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="node">
+                  <img
+                    src="https://skillicons.dev/icons?i=nodejs"
+                    alt="Node.js"
+                  /><span>Node.js</span>
+                </div>
+                <div class="tech-icon" data-tech="express">
+                  <img
+                    src="https://skillicons.dev/icons?i=express"
+                    alt="Express.js"
+                  /><span>Express</span>
+                </div>
+                <div class="tech-icon" data-tech="python">
+                  <img
+                    src="https://skillicons.dev/icons?i=python"
+                    alt="Python"
+                  /><span>Python</span>
+                </div>
+
+                <div class="tech-icon" data-tech="php">
+                  <img
+                    src="https://skillicons.dev/icons?i=php"
+                    alt="PHP"
+                  /><span>PHP</span>
+                </div>
+                <div class="tech-icon" data-tech="laravel">
+                  <img
+                    src="https://skillicons.dev/icons?i=laravel"
+                    alt="Laravel"
+                  /><span>Laravel</span>
+                </div>
+                <div class="tech-icon" data-tech="csharp">
+                  <img src="https://skillicons.dev/icons?i=cs" alt="C#" /><span
+                    >C#</span
+                  >
+                </div>
+                <div class="tech-icon" data-tech="dotnet">
+                  <img
+                    src="https://skillicons.dev/icons?i=dotnet"
+                    alt=".NET"
+                  /><span>.NET</span>
+                </div>
+                <div class="tech-icon" data-tech="rest">
+                  <i class="bi bi-plug"></i><span>REST APIs</span>
+                </div>
+                <div class="tech-icon" data-tech="server">
+                  <i class="bi bi-hdd-stack"></i
+                  ><span>Server-side Concepts</span>
+                </div>
+                <div class="tech-icon" data-tech="authentication">
+                  <i class="bi bi-shield-lock"></i><span>Authentication</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stack-card reveal reveal-delay-2">
+              <div class="stack-card-top">
+                <span class="stack-icon"><i class="bi bi-database"></i></span>
+                <span class="stack-index">03</span>
+              </div>
+              <h3>Databases</h3>
+              <p>
+                Learning how to structure, store, and work with application
+                data.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="mongodb">
+                  <img
+                    src="https://skillicons.dev/icons?i=mongodb"
+                    alt="MongoDB"
+                  /><span>MongoDB</span>
+                </div>
+                <div class="tech-icon" data-tech="mongoose">
+                  <i class="bi bi-diagram-3"></i><span>Mongoose</span>
+                </div>
+                <div class="tech-icon" data-tech="mysql">
+                  <img
+                    src="https://skillicons.dev/icons?i=mysql"
+                    alt="MySQL"
+                  /><span>MySQL</span>
+                </div>
+                <!-- <div class="tech-icon">
+                  <img
+                    src="https://skillicons.dev/icons?i=postgres"
+                    alt="PostgreSQL"
+                  /><span>PostgreSQL</span>
+                </div> -->
+                <div class="tech-icon" data-tech="sql">
+                  <i class="bi bi-database-check"></i><span>SQL</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stack-card reveal">
+              <div class="stack-card-top">
+                <span class="stack-icon purple"><i class="bi bi-git"></i></span>
+                <span class="stack-index">04</span>
+              </div>
+              <h3>Tools & Workflow</h3>
+              <p>
+                Organized development workflows for building and maintaining
+                projects.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="git">
+                  <img
+                    src="https://skillicons.dev/icons?i=git"
+                    alt="Git"
+                  /><span>Git</span>
+                </div>
+                <div class="tech-icon" data-tech="github">
+                  <img
+                    src="https://skillicons.dev/icons?i=github"
+                    alt="GitHub"
+                  /><span>GitHub</span>
+                </div>
+                <div class="tech-icon" data-tech="vscode">
+                  <img
+                    src="https://skillicons.dev/icons?i=vscode"
+                    alt="VS Code"
+                  /><span>VS Code</span>
+                </div>
+                <div class="tech-icon" data-tech="bootstrap">
+                  <img
+                    src="https://skillicons.dev/icons?i=bootstrap"
+                    alt="Bootstrap"
+                  /><span>Bootstrap</span>
+                </div>
+                <div class="tech-icon" data-tech="wordpress">
+                  <img
+                    src="https://skillicons.dev/icons?i=wordpress"
+                    alt="WordPress"
+                  /><span>WordPress</span>
+                </div>
+                <div class="tech-icon" data-tech="github-pages">
+                  <i class="bi bi-globe2"></i><span>GitHub Pages</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stack-card reveal reveal-delay">
+              <div class="stack-card-top">
+                <span class="stack-icon purple"
+                  ><i class="bi bi-briefcase"></i
+                ></span>
+                <span class="stack-index">05</span>
+              </div>
+              <h3>Administration & Business</h3>
+              <p>
+                Administrative, organizational, and business skills that support
+                practical digital solutions.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="administration">
+                  <i class="bi bi-person-workspace"></i
+                  ><span>Administration</span>
+                </div>
+                <div class="tech-icon" data-tech="data">
+                  <i class="bi bi-clipboard-data"></i
+                  ><span>Data Organization</span>
+                </div>
+                <div class="tech-icon" data-tech="documentation">
+                  <i class="bi bi-file-earmark-text"></i
+                  ><span>Documentation</span>
+                </div>
+                <div class="tech-icon" data-tech="google">
+                  <img
+                    src="https://cdn.simpleicons.org/google/4285F4"
+                    alt="Google Apps"
+                  /><span>Google Apps</span>
+                </div>
+                <div class="tech-icon" data-tech="microsoft">
+                  <img
+                    src="./images/microsoft.png"
+                    alt="Microsoft Office"
+                  /><span>Microsoft Office</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="stack-card reveal reveal-delay-2">
+              <div class="stack-card-top">
+                <span class="stack-icon"
+                  ><i class="bi bi-palette-fill"></i
+                ></span>
+                <span class="stack-index">06</span>
+              </div>
+              <h3>Design & Content</h3>
+              <p>
+                Visual and content tools that support clear, polished digital
+                work.
+              </p>
+              <div class="tech-icon-grid">
+                <div class="tech-icon" data-tech="photoshop">
+                  <img
+                    src="https://skillicons.dev/icons?i=ps"
+                    alt="Photoshop"
+                  />
+                  <span>Photoshop</span>
+                </div>
+
+                <div class="tech-icon" data-tech="canva">
+                  <img src="./images/canva.png" alt="Canva" />
+                  <span>Canva</span>
+                </div>
+
+                <div class="tech-icon" data-tech="capcut">
+                  <img src="./images/capcut.jpg" alt="CapCut" />
+                  <span>CapCut</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="capability-strip reveal">
+            <span>ALSO BRINGING</span>
+            <div>
+              <span>UI Design</span>
+              <span>Graphic Design</span>
+              <span>Data Organization</span>
+              <span>Documentation</span>
+              <span>Business Context</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section-space projects-section" id="projects">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">SELECTED WORK</p>
+              <h2>
+                Projects that
+                <span class="gradient-text">show the process.</span>
+              </h2>
+            </div>
+            <p>
+              Three featured applications demonstrating frontend development, backend
+              APIs, database integration, authentication, CRUD workflows, and
+              deployment.
+            </p>
+          </div>
+
+          <div class="featured-projects-grid">
+            <article
+              class="project-feature glass-card reveal project-clickable"
+              data-project-modal="portfolioProjectModal"
+              tabindex="0"
+              role="button"
+              aria-label="Open project preview for Brigitte Morta Portfolio"
+            >
+              <div class="project-image-wrap">
+                <img
+                  src="images/portfolio-preview.png"
+                  alt="Preview of Brigitte Morta's personal portfolio website"
+                />
+                <div class="project-overlay">
+                  <span>LIVE PROJECT</span>
+                </div>
+              </div>
+
+              <div class="project-info">
+                <div class="project-number">01</div>
+                <p class="project-type">PERSONAL PORTFOLIO • WEB DEVELOPMENT</p>
+                <h3>Brigitte Morta — Portfolio</h3>
+                <p>
+                  A responsive portfolio showcasing my development work, technical stack, and professional background.
+                </p>
+                <a
+                  href="#"
+                  class="project-read-more"
+                  data-project-read-more="portfolioProjectModal"
+                >
+                  Read More →
+                </a>
+
+<div class="project-tech large">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                  <span>GitHub Pages</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/brigitte-morta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://bmorta.github.io/brigitte-morta/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Live Demo <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <article
+              class="project-feature glass-card reveal project-clickable"
+              data-project-modal="inventoryProjectModal"
+              tabindex="0"
+              role="button"
+              aria-label="Open project preview for Inventory Management System"
+            >
+              <div class="project-image-wrap">
+                <img
+                  src="images/inventory-management-preview.png"
+                  alt="Preview of Inventory Management System"
+                />
+                <div class="project-overlay">
+                  <span>LIVE PROJECT</span>
+                </div>
+              </div>
+
+              <div class="project-info">
+                <div class="project-number">02</div>
+                <p class="project-type">
+                  INVENTORY MANAGEMENT • WEB APPLICATION
+                </p>
+                <h3>Inventory Management System</h3>
+                <p>
+                  A responsive inventory management application for product organization, stock tracking, and CRUD workflows.
+                </p>
+                <a
+                  href="#"
+                  class="project-read-more"
+                  data-project-read-more="inventoryProjectModal"
+                >
+                  Read More →
+                </a>
+
+                <div class="project-tech large">
+                  <span>HTML5</span>
+                  <span>CSS3</span>
+                  <span>JavaScript</span>
+                  <span>Bootstrap</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/inventory-management-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://bmorta.github.io/inventory-management-system/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Live Demo <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+<article
+              class="project-feature glass-card reveal project-clickable"
+              data-project-modal="taskManagementProjectModal"
+              tabindex="0"
+              role="button"
+              aria-label="Open project preview for Task Management System"
+            >
+              <div class="project-image-wrap">
+                <img
+                  src="images/task-manager-preview.png"
+                  alt="Preview of Task Management System"
+                />
+                <div class="project-overlay">
+                  <span>LIVE PROJECT</span>
+                </div>
+              </div>
+
+              <div class="project-info">
+                <div class="project-number">03</div>
+                <p class="project-type">
+                  FULL-STACK • TASK MANAGEMENT SYSTEM
+                </p>
+                <h3>Task Management System</h3>
+                <p>
+                  A full-stack task management system with authentication, task assignment, collaboration, and MongoDB persistence.
+                </p>
+                <a
+                  href="#"
+                  class="project-read-more"
+                  data-project-read-more="taskManagementProjectModal"
+                >
+                  Read More →
+                </a>
+
+<div class="project-tech large">
+                  <span>React</span>
+                  <span>Vite</span>
+                  <span>Node.js</span>
+                  <span>Express</span>
+                  <span>MongoDB</span>
+                  <span>JWT</span>
+                  <span>REST API</span>
+                  <span>Render</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/task-management-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://task-management-system-67yq.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Live Demo <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Mini Projects -->
+          <div class="mini-projects-section reveal">
+            <div class="mini-projects-heading">
+              <span class="note-line"></span>
+              <div>
+                <p class="eyebrow">ADDITIONAL PROJECTS</p>
+                <h3>Focused builds and technical case studies.</h3>
+              </div>
+            </div>
+
+            <div class="mini-projects-grid">
+
+
+
+
+              <article class="mini-project-card">
+                <span class="mini-project-icon"
+                  ><i class="bi bi-check2-square"></i
+                ></span>
+                <p class="project-type">TASK MANAGEMENT · WEB APPLICATION</p>
+                <h3>Task Manager Application</h3>
+                <p>
+                  A responsive task management application with CRUD
+                  functionality, task completion, clearing completed tasks, and
+                  custom confirmation popups.
+                </p>
+                <div class="project-tech">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>JSON</span><span>LocalStorage</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/task-manager-application"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                    >Repository <i class="bi bi-github"></i
+                  ></a>
+                  <a
+                    href="https://bmorta.github.io/task-manager-application/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                    >Live Demo <i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+
+              <article class="mini-project-card">
+                <span class="mini-project-icon"
+                  ><i class="bi bi-person-vcard"></i
+                ></span>
+                <p class="project-type">STUDENT RECORD · WEB APPLICATION</p>
+                <h3>Student Record Application</h3>
+                <p>
+                  A web-based student record application focused on structured data
+                  management, client-side CRUD workflows, and a responsive
+                  user interface.
+                </p>
+                <div class="project-tech">
+                  <span>HTML</span><span>CSS</span><span>JavaScript</span
+                  ><span>DOM</span>
+                </div>
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/student-record-application"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                    >Repository <i class="bi bi-github"></i
+                  ></a>
+                  <a
+                    href="https://bmorta.github.io/student-record-application/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                    >Live Demo <i class="bi bi-arrow-up-right"></i
+                  ></a>
+                </div>
+              </article>
+
+              <article class="mini-project-card reveal">
+                <div class="mini-project-icon">
+                  <i class="bi bi-cart3"></i>
+                </div>
+
+                <p class="project-type">FULL-STACK • REST API</p>
+
+                <h3>E-commerce API Interface</h3>
+
+                <p>
+                  An e-commerce product management application combining a REST
+                  API with a clean web interface for product CRUD, search, and
+                  category filtering.
+                </p>
+
+                <div class="project-tech">
+                  <span>Node.js</span>
+                  <span>Express</span>
+                  <span>MongoDB</span>
+                  <span>Mongoose</span>
+                  <span>REST API</span>
+                </div>
+
+                <div class="project-actions">
+                  <a
+                    href="https://github.com/Bmorta/ecommerce-api"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    View Repository
+                    <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://ecommerce-api-bmorta.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Live Demo
+                    <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="project-note reveal">
+            <span class="note-line"></span>
+            <p>
+              Selected work reflects my current full-stack capabilities across
+              frontend development, APIs, databases, authentication, and
+              deployment.
+            </p>
+          </div>
+
+          <!-- Project Preview Modal -->
+          <div
+            class="modal fade project-modal"
+            id="portfolioProjectModal"
+            tabindex="-1"
+            aria-labelledby="portfolioProjectModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <p class="eyebrow mb-1">PROJECT PREVIEW</p>
+                    <h3 class="modal-title" id="portfolioProjectModalLabel">
+                      Brigitte Morta — Portfolio
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close project preview"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="project-modal-image-wrap">
+                    <img
+                      src="images/portfolio-preview.png"
+                      alt="Full preview of Brigitte Morta's personal portfolio website"
+                    />
+                  </div>
+                  <div class="project-modal-details">
+                    <p>
+                      Responsive personal portfolio built to present my
+                      development work, technical stack, professional
+                      background, and contact information.
+                    </p>
+                    <div class="project-tech large">
+                      <span>HTML5</span>
+                      <span>CSS3</span>
+                      <span>JavaScript</span>
+                      <span>Bootstrap</span>
+                      <span>GitHub Pages</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a
+                    href="https://github.com/Bmorta/brigitte-morta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://bmorta.github.io/brigitte-morta/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Open Live Site <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Task Management System Preview Modal -->
+          <div
+            class="modal fade project-modal"
+            id="taskManagementProjectModal"
+            tabindex="-1"
+            aria-labelledby="taskManagementProjectModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <p class="eyebrow mb-1">PROJECT PREVIEW</p>
+                    <h3 class="modal-title" id="taskManagementProjectModalLabel">
+                      Task Management System
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close project preview"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="project-modal-image-wrap">
+                    <img
+                      src="images/task-manager-preview.png"
+                      alt="Preview of Task Management System"
+                    />
+                  </div>
+                  <div class="project-modal-details">
+                    <p>
+                      Full-stack task management application with authentication,
+                      role-based administration, task assignment and collaboration,
+                      filtering, pagination, and MongoDB persistence.
+                    </p>
+                    <div class="project-tech large">
+                      <span>React</span>
+                      <span>Vite</span>
+                      <span>Node.js</span>
+                      <span>Express</span>
+                      <span>MongoDB</span>
+                      <span>JWT</span>
+                      <span>REST API</span>
+                      <span>Render</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a
+                    href="https://github.com/Bmorta/task-management-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://task-management-system-67yq.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Open Live Site <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inventory Management System Preview Modal -->
+          <div
+            class="modal fade project-modal"
+            id="inventoryProjectModal"
+            tabindex="-1"
+            aria-labelledby="inventoryProjectModalLabel"
+            aria-hidden="true"
+          >
+            <div
+              class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable"
+            >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div>
+                    <p class="eyebrow mb-1">PROJECT PREVIEW</p>
+                    <h3 class="modal-title" id="inventoryProjectModalLabel">
+                      Inventory Management System
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close project preview"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="project-modal-image-wrap">
+                    <img
+                      src="images/inventory-management-preview.png"
+                      alt="Full preview of Inventory Management System"
+                    />
+                  </div>
+                  <div class="project-modal-details">
+                    <p>
+                      Web-based inventory management project focused on
+                      organizing products, tracking stock information, and
+                      presenting inventory data through a practical interface.
+                    </p>
+                    <div class="project-tech large">
+                      <span>HTML5</span>
+                      <span>CSS3</span>
+                      <span>JavaScript</span>
+                      <span>Bootstrap</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <a
+                    href="https://github.com/Bmorta/inventory-management-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn primary-btn"
+                  >
+                    View Repository <i class="bi bi-github"></i>
+                  </a>
+                  <a
+                    href="https://bmorta.github.io/inventory-management-system/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-link"
+                  >
+                    Open Live Site <i class="bi bi-arrow-up-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificates -->
+      <section class="section-space certificates-section" id="certificates">
+        <div class="container">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">CERTIFICATES & TRAINING</p>
+              <h2>
+                Credentials that
+                <span class="gradient-text">support the work.</span>
+              </h2>
+            </div>
+            <p>
+              Programming and professional certifications are prioritized first,
+              followed by additional technical and professional training.
+            </p>
+          </div>
+
+          <div class="certificates-carousel reveal">
+            <div class="certificates-viewport">
+              <div class="certificates-track">
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="0"
+                    data-certificate-title="Full-Stack Web Development Intensive Bootcamp"
+                    data-certificate-issuer="MSTCONNECT PH · 2026"
+                    aria-label="View certificate: Full-Stack Web Development Intensive Bootcamp"
+                  ><img class="certificate-image-src" src="images/certificate-01-full-stack-web-development.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Full-Stack Web Development Intensive Bootcamp</strong>
+                    <span>MSTCONNECT PH · 2026</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="1"
+                    data-certificate-title="Python Programming for Beginners"
+                    data-certificate-issuer="MSTCONNECT PH · 2026"
+                    aria-label="View certificate: Python Programming for Beginners"
+                  ><img class="certificate-image-src" src="images/certificate-02-python-programming.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Python Programming for Beginners</strong>
+                    <span>MSTCONNECT PH · 2026</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="2"
+                    data-certificate-title="JavaScript 101: Learn JavaScript from Scratch"
+                    data-certificate-issuer="MSTCONNECT PH · 2023"
+                    aria-label="View certificate: JavaScript 101: Learn JavaScript from Scratch"
+                  ><img class="certificate-image-src" src="images/certificate-03-javascript-101.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>JavaScript 101: Learn JavaScript from Scratch</strong>
+                    <span>MSTCONNECT PH · 2023</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="3"
+                    data-certificate-title="Administrative Virtual Assistant (AVA)"
+                    data-certificate-issuer="SURGE Marketplace · 2024"
+                    aria-label="View certificate: Administrative Virtual Assistant (AVA)"
+                  ><img class="certificate-image-src" src="images/certificate-04-administrative-virtual-assistant.png" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Administrative Virtual Assistant (AVA)</strong>
+                    <span>SURGE Marketplace · 2024</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="4"
+                    data-certificate-title="Viral Creator Online Bootcamp"
+                    data-certificate-issuer="LUCEED · 2025"
+                    aria-label="View certificate: Viral Creator Online Bootcamp"
+                  ><img class="certificate-image-src" src="images/certificate-05-viral-creator.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Viral Creator Online Bootcamp</strong>
+                    <span>LUCEED · 2025</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="5"
+                    data-certificate-title="CapCut Workshop"
+                    data-certificate-issuer="MSTCONNECT PH · 2025"
+                    aria-label="View certificate: CapCut Workshop"
+                  ><img class="certificate-image-src" src="images/certificate-06-capcut-workshop.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>CapCut Workshop</strong>
+                    <span>MSTCONNECT PH · 2025</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="6"
+                    data-certificate-title="Adobe Premiere Pro Master Class"
+                    data-certificate-issuer="Graphics Media Training Philippines · 2024"
+                    aria-label="View certificate: Adobe Premiere Pro Master Class"
+                  ><img class="certificate-image-src" src="images/certificate-07-adobe-premiere-pro.png" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Adobe Premiere Pro Master Class</strong>
+                    <span>Graphics Media Training Philippines · 2024</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="7"
+                    data-certificate-title="Microsoft Excel Automation Workshop"
+                    data-certificate-issuer="MSTCONNECT PH · 2026"
+                    aria-label="View certificate: Microsoft Excel Automation Workshop"
+                  ><img class="certificate-image-src" src="images/certificate-08-excel-automation.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Microsoft Excel Automation Workshop</strong>
+                    <span>MSTCONNECT PH · 2026</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="8"
+                    data-certificate-title="Selling Digital Products Using Canva & AI Marketing"
+                    data-certificate-issuer="MSTCONNECT PH · 2025"
+                    aria-label="View certificate: Selling Digital Products Using Canva & AI Marketing"
+                  ><img class="certificate-image-src" src="images/certificate-09-digital-products-canva-ai.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Selling Digital Products Using Canva & AI Marketing</strong>
+                    <span>MSTCONNECT PH · 2025</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="9"
+                    data-certificate-title="Bookkeeping with Philippine Taxation and QuickBooks Online"
+                    data-certificate-issuer="EZAcc Training Center · 2023"
+                    aria-label="View certificate: Bookkeeping with Philippine Taxation and QuickBooks Online"
+                  ><img class="certificate-image-src" src="images/certificate-10-bookkeeping-taxation-quickbooks.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Bookkeeping with Philippine Taxation and QuickBooks Online</strong>
+                    <span>EZAcc Training Center · 2023</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="10"
+                    data-certificate-title="Online Bookkeeping Using QuickBooks"
+                    data-certificate-issuer="SURGE Marketplace · 2024"
+                    aria-label="View certificate: Online Bookkeeping Using QuickBooks"
+                  ><img class="certificate-image-src" src="images/certificate-11-online-bookkeeping-quickbooks.png" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Online Bookkeeping Using QuickBooks</strong>
+                    <span>SURGE Marketplace · 2024</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="11"
+                    data-certificate-title="Administrative Virtual Assistant Training"
+                    data-certificate-issuer="SURGE Marketplace · 2024"
+                    aria-label="View certificate: Administrative Virtual Assistant Training"
+                  ><img class="certificate-image-src" src="images/certificate-12-administrative-assistant.png" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Administrative Virtual Assistant Training</strong>
+                    <span>SURGE Marketplace · 2024</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="0"
+                    data-certificate-title="Full-Stack Web Development Intensive Bootcamp"
+                    data-certificate-issuer="MSTCONNECT PH · 2026"
+                    aria-label="View certificate: Full-Stack Web Development Intensive Bootcamp"
+                  ><img class="certificate-image-src" src="images/certificate-01-full-stack-web-development.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Full-Stack Web Development Intensive Bootcamp</strong>
+                    <span>MSTCONNECT PH · 2026</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="1"
+                    data-certificate-title="Python Programming for Beginners"
+                    data-certificate-issuer="MSTCONNECT PH · 2026"
+                    aria-label="View certificate: Python Programming for Beginners"
+                  ><img class="certificate-image-src" src="images/certificate-02-python-programming.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Python Programming for Beginners</strong>
+                    <span>MSTCONNECT PH · 2026</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="2"
+                    data-certificate-title="JavaScript 101: Learn JavaScript from Scratch"
+                    data-certificate-issuer="MSTCONNECT PH · 2023"
+                    aria-label="View certificate: JavaScript 101: Learn JavaScript from Scratch"
+                  ><img class="certificate-image-src" src="images/certificate-03-javascript-101.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>JavaScript 101: Learn JavaScript from Scratch</strong>
+                    <span>MSTCONNECT PH · 2023</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="3"
+                    data-certificate-title="Administrative Virtual Assistant (AVA)"
+                    data-certificate-issuer="SURGE Marketplace · 2024"
+                    aria-label="View certificate: Administrative Virtual Assistant (AVA)"
+                  ><img class="certificate-image-src" src="images/certificate-04-administrative-virtual-assistant.png" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Administrative Virtual Assistant (AVA)</strong>
+                    <span>SURGE Marketplace · 2024</span>
+                  </div>
+                </article>
+
+                <article class="certificate-item">
+                  <button
+                    type="button"
+                    class="certificate-image"
+                    data-certificate-index="4"
+                    data-certificate-title="Viral Creator Online Bootcamp"
+                    data-certificate-issuer="LUCEED · 2025"
+                    aria-label="View certificate: Viral Creator Online Bootcamp"
+                  ><img class="certificate-image-src" src="images/certificate-05-viral-creator.jpg" alt="Certificate" loading="lazy"></button>
+                  <div class="certificate-caption">
+                    <strong>Viral Creator Online Bootcamp</strong>
+                    <span>LUCEED · 2025</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="certificates-dots" aria-label="Certificate navigation">
+
+                <button
+                  type="button"
+                  class="certificate-dot active"
+                  data-certificate-slide="0"
+                  aria-label="Show certificate 1"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="1"
+                  aria-label="Show certificate 2"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="2"
+                  aria-label="Show certificate 3"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="3"
+                  aria-label="Show certificate 4"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="4"
+                  aria-label="Show certificate 5"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="5"
+                  aria-label="Show certificate 6"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="6"
+                  aria-label="Show certificate 7"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="7"
+                  aria-label="Show certificate 8"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="8"
+                  aria-label="Show certificate 9"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="9"
+                  aria-label="Show certificate 10"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="10"
+                  aria-label="Show certificate 11"
+                ></button>
+                <button
+                  type="button"
+                  class="certificate-dot"
+                  data-certificate-slide="11"
+                  aria-label="Show certificate 12"
+                ></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certificate Preview Modal -->
+      <div class="modal fade certificate-modal" id="certificatePreviewModal" tabindex="-1"
+        aria-labelledby="certificatePreviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div>
+                <p class="eyebrow mb-1">CERTIFICATE</p>
+                <h3 class="modal-title" id="certificatePreviewModalLabel">Certificate</h3>
+                <p class="certificate-modal-issuer" id="certificatePreviewIssuer"></p>
+              </div>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close certificate preview"></button>
+            </div>
+            <div class="modal-body">
+              <div class="certificate-modal-image" id="certificatePreviewImage" aria-label="Certificate preview"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <section class="section-space contact-section" id="contact">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-copy reveal">
+              <p class="eyebrow">GET IN TOUCH</p>
+              <h2>
+                Let's build something <span class="gradient-text">useful.</span>
+              </h2>
+              <p>
+                I'm interested in opportunities where I can contribute, learn,
+                and grow as a full-stack web developer.
+              </p>
+
+              <a href="mailto:brigittemorta@gmail.com" class="contact-email">
+                <span class="contact-icon"
+                  ><i class="bi bi-envelope-fill"></i
+                ></span>
+                <span>
+                  <small>EMAIL ME</small>
+                  <strong>brigittemorta@gmail.com</strong>
+                </span>
+              </a>
+            </div>
+
+            <form
+              class="contact-form glass-card reveal reveal-delay"
+              id="contactForm"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Tell me about your project or opportunity..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn primary-btn w-100">
+                Send Message <i class="bi bi-arrow-up-right"></i>
+              </button>
+
+              <p class="form-note">
+                Prefer email? Reach me directly at brigittemorta@gmail.com.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <a href="#top" class="footer-brand">
+            <img src="images/logo.png" alt="BM logo" />
+            <span>Brigitte Morta</span>
+          </a>
+
+          <p>Designed & built with purpose.</p>
+
+          <div class="footer-socials">
+            <a
+              href="https://github.com/Bmorta"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/brigittemorta"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="mailto:brigittemorta@gmail.com" aria-label="Email"
+              ><i class="bi bi-envelope-fill"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Brigitte Morta. All rights reserved.</span>
+          <span>Full-Stack Web Developer</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Custom JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
