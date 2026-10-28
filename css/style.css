@@ -1257,14 +1257,15 @@ html[data-theme="light"] .glow {
 }
 
 .certificate-item {
-    flex: 0 0 auto;
+    flex: 0 0 var(--certificate-item-width, 220px);
+    width: var(--certificate-item-width, 220px);
     min-width: 0;
 }
 
 .certificate-image {
     display: block;
     width: 100%;
-    aspect-ratio: 160 / 113;
+    aspect-ratio: 1.5 / 1;
     padding: 0;
     background-color: var(--surface);
     background-image: url("../certificates/certificates-sprite.jpg");
@@ -1287,13 +1288,13 @@ html[data-theme="light"] .glow {
 }
 
 .certificate-caption {
-    padding: 12px 2px 0;
+    padding: 10px 2px 0;
 }
 
 .certificate-caption strong {
     display: block;
     color: var(--text);
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     font-weight: 800;
     line-height: 1.25;
 }
@@ -1302,7 +1303,7 @@ html[data-theme="light"] .glow {
     display: block;
     margin-top: 4px;
     color: var(--text-muted);
-    font-size: 0.66rem;
+    font-size: 0.62rem;
 }
 
 .certificates-dots {
@@ -1362,7 +1363,7 @@ html[data-theme="light"] .glow {
 
 .certificate-modal-image {
     width: 100%;
-    aspect-ratio: 160 / 113;
+    aspect-ratio: 1.5 / 1;
     background-color: var(--surface);
     background-image: url("../certificates/certificates-sprite.jpg");
     background-repeat: no-repeat;
@@ -1372,37 +1373,9 @@ html[data-theme="light"] .glow {
     border-radius: 12px;
 }
 
-@media (min-width: 1200px) {
-    .certificate-item {
-        width: calc((100% - 64px) / 5);
-    }
-}
-
-@media (max-width: 1199.98px) and (min-width: 992px) {
-    .certificate-item {
-        width: calc((100% - 48px) / 4);
-    }
-}
-
-@media (max-width: 991.98px) and (min-width: 768px) {
-    .certificate-item {
-        width: calc((100% - 32px) / 3);
-    }
-}
-
-@media (max-width: 767.98px) and (min-width: 576px) {
-    .certificate-item {
-        width: calc((100% - 12px) / 2);
-    }
-}
-
-@media (max-width: 575.98px) {
-    .certificate-track {
+@media (max-width: 767.98px) {
+    .certificates-track {
         gap: 12px;
-    }
-
-    .certificate-item {
-        width: 100%;
     }
 }
 
