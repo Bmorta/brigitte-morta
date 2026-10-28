@@ -5747,3 +5747,29 @@ html[data-theme="light"] .glow {
   .portfolio-hub .portfolio-choice { height: 620px; min-height: 0; }
   .portfolio-hub .hub-portrait { bottom: 12px; }
 }
+
+
+/* Programmer portfolio: put the hub navigation in the header actions on
+   mobile so it never overlaps the brand or hero content. */
+@media (max-width: 991.98px) {
+  .site-header .nav-actions .portfolio-hub-link {
+    position: static;
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 18px;
+    transform: none;
+  }
+  .site-header .nav-actions .portfolio-hub-link .hub-link-label {
+    display: none;
+  }
+  .site-header .nav-actions .portfolio-hub-link:hover {
+    transform: none;
+  }
+}
