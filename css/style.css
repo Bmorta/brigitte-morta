@@ -5110,3 +5110,35 @@ html[data-theme="light"] .glow {
     filter: blur(11px);
     opacity: .72;
 }
+
+
+/* Subtle trapezoid cards inspired by the reference, using perspective so
+   rounded corners, glowing borders, text, and clickable buttons remain intact. */
+@media (min-width: 1101px) {
+    .portfolio-hub .hub-showcase {
+        perspective: 1800px;
+        perspective-origin: center center;
+    }
+    .portfolio-hub .programmer-choice {
+        transform-origin: left center;
+        transform: rotateY(-5deg);
+    }
+    .portfolio-hub .admin-choice {
+        transform-origin: right center;
+        transform: rotateY(5deg);
+    }
+    .portfolio-hub .programmer-choice:hover,
+    .portfolio-hub .programmer-choice:focus-visible {
+        transform: rotateY(-5deg) translateY(-6px);
+    }
+    .portfolio-hub .admin-choice:hover,
+    .portfolio-hub .admin-choice:focus-visible {
+        transform: rotateY(5deg) translateY(-6px);
+    }
+}
+@media (max-width: 1100px) {
+    .portfolio-hub .programmer-choice,
+    .portfolio-hub .admin-choice {
+        transform: none;
+    }
+}
