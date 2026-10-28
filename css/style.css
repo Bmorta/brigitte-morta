@@ -4805,3 +4805,27 @@ html[data-theme="light"] .glow {
     .portfolio-hub .admin-choice { padding-left: 30px; }
     .portfolio-hub .programmer-choice { padding-right: 65px; }
 }
+
+
+/* Right-align Admin / VA card content, keeping the center portrait unobstructed. */
+@media (min-width: 821px) {
+    .portfolio-hub .admin-choice {
+        text-align: right;
+    }
+    .portfolio-hub .admin-choice .choice-icon {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .portfolio-hub .admin-choice .choice-divider {
+        margin-left: auto;
+        margin-right: 0;
+    }
+    .portfolio-hub .admin-choice li {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+    .portfolio-hub .admin-choice .choice-cta {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+}
