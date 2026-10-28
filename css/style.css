@@ -5822,3 +5822,21 @@ html[data-theme="light"] .glow {
   .admin-portfolio-page .admin-nav-links .admin-nav-hub { margin-top: 8px; text-align: center; }
 }
 @media (prefers-reduced-motion: reduce) { .admin-portfolio-page { scroll-behavior: auto; } }
+
+/* Admin certificates: same images as programmer portfolio, animated gallery */
+.admin-portfolio-page .admin-certificates-section{background:#fffaf4}
+.admin-portfolio-page .admin-cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:30px}
+.admin-portfolio-page .admin-cert-card{min-width:0;background:#fff;border:1px solid #e8d8c3;border-radius:18px;padding:12px 12px 18px;box-shadow:0 12px 30px #4630180d;transition:transform .3s ease,box-shadow .3s ease}
+.admin-portfolio-page .admin-cert-card:hover{transform:translateY(-7px);box-shadow:0 20px 40px #46301824}
+.admin-portfolio-page .admin-cert-preview{display:block;width:100%;aspect-ratio:1.48;border:0;border-radius:12px;padding:0;overflow:hidden;background:#f5eee6;cursor:zoom-in}
+.admin-portfolio-page .admin-cert-preview img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .5s ease}
+.admin-portfolio-page .admin-cert-preview:hover img,.admin-portfolio-page .admin-cert-preview:focus-visible img{transform:scale(1.06)}
+.admin-portfolio-page .admin-cert-card h3{font-size:1rem;color:#3e2d1e;margin:14px 5px 5px}
+.admin-portfolio-page .admin-cert-card p{font-size:.78rem;color:#936635;margin:0 5px}
+.admin-cert-dialog{position:fixed;max-width:min(94vw,1100px);max-height:92vh;border:1px solid #dfc6a8;border-radius:16px;padding:35px 14px 14px;background:#fffaf4;box-shadow:0 25px 90px #0007}
+.admin-cert-dialog::backdrop{background:#140d08cc;backdrop-filter:blur(5px)}
+.admin-cert-dialog img{display:block;max-width:100%;max-height:calc(92vh - 55px);object-fit:contain;margin:auto}
+.admin-cert-close{position:absolute;right:8px;top:5px;border:0;background:transparent;font-size:1.4rem;color:#5b3921;padding:3px 10px;cursor:pointer}
+@media(max-width:900px){.admin-portfolio-page .admin-cert-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.admin-portfolio-page .admin-cert-grid{grid-template-columns:1fr;gap:16px}}
+@media(prefers-reduced-motion:reduce){.admin-portfolio-page .admin-cert-card,.admin-portfolio-page .admin-cert-preview img{transition:none!important;transform:none!important}}
