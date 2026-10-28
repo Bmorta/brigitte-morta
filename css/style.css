@@ -5562,3 +5562,28 @@ html[data-theme="light"] .glow {
     margin-top: -16px;
   }
 }
+
+
+/* Keep the two workspace photos distinct, with only a narrow soft join. */
+.portfolio-hub .hub-photo {
+  width: 53%;
+  opacity: .76;
+}
+.portfolio-hub .hub-photo-left {
+  left: 0;
+  right: auto;
+  -webkit-mask-image: linear-gradient(to right, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  mask-image: linear-gradient(to right, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+}
+.portfolio-hub .hub-photo-right {
+  right: 0;
+  left: auto;
+  -webkit-mask-image: linear-gradient(to left, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+  mask-image: linear-gradient(to left, #000 0%, #000 82%, rgba(0,0,0,.88) 90%, transparent 100%);
+}
+.portfolio-hub .hub-background::after {
+  background: radial-gradient(ellipse at center, rgba(7,13,22,.13), transparent 64%);
+}
+@media (max-width: 820px) {
+  .portfolio-hub .hub-photo { width: 55%; opacity: .62; }
+}
