@@ -216,6 +216,114 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* ---------------------------------------------------------
+       CERTIFICATE CAROUSEL
+    --------------------------------------------------------- */
+
+    const certificateTrack = document.querySelector(".certificates-track");
+    const certificateItems = document.querySelectorAll(".certificate-item");
+    const certificateImages = document.querySelectorAll(".certificate-image");
+    const certificateDots = document.querySelectorAll(".certificate-dot");
+    const certificateCarousel = document.querySelector(".certificates-carousel");
+
+    if (certificateTrack && certificateItems.length) {
+        const totalCertificates = 12;
+        let certificateIndex = 0;
+        let certificateTimer = null;
+
+        const getStep = () => {
+            const item = certificateItems[0];
+            const itemWidth = item ? item.getBoundingClientRect().width : 0;
+            const trackStyle = window.getComputedStyle(certificateTrack);
+            const gap = parseFloat(trackStyle.columnGap || trackStyle.gap || "0");
+            return itemWidth + gap;
+        };
+
+        const setImagePosition = (element, index) => {
+            const column = index % 5;
+            const row = Math.floor(index / 5);
+            element.style.backgroundPosition =
+                (column * 25) + "% " + (row * 50) + "%";
+        };
+
+        certificateImages.forEach((image) => {
+            setImagePosition(image, Number(image.dataset.certificateIndex || 0));
+
+            image.addEventListener("click", () => {
+                const modal = document.getElementById("certificatePreviewModal");
+                const modalImage = document.getElementById("certificatePreviewImage");
+                const modalTitle = document.getElementById("certificatePreviewModalLabel");
+                const modalIssuer = document.getElementById("certificatePreviewIssuer");
+
+                if (!modal || !modalImage || !modalTitle || !modalIssuer || !window.bootstrap) {
+                    return;
+                }
+
+                const index = Number(image.dataset.certificateIndex || 0);
+                setImagePosition(modalImage, index);
+                modalTitle.textContent = image.dataset.certificateTitle || "Certificate";
+                modalIssuer.textContent = image.dataset.certificateIssuer || "";
+
+                bootstrap.Modal.getOrCreateInstance(modal).show();
+            });
+        });
+
+        const renderDots = () => {
+            certificateDots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === (certificateIndex % totalCertificates));
+            });
+        };
+
+        const move = (useTransition = true) => {
+            certificateTrack.style.transition = useTransition
+                ? "transform 0.55s var(--ease)"
+                : "none";
+            certificateTrack.style.transform =
+                "translate3d(" + (-certificateIndex * getStep()) + "px, 0, 0)";
+            renderDots();
+        };
+
+        const resetLoop = () => {
+            certificateIndex = 0;
+            move(false);
+            requestAnimationFrame(() => {
+                certificateTrack.style.transition = "transform 0.55s var(--ease)";
+            });
+        };
+
+        const advance = () => {
+            certificateIndex += 1;
+            if (certificateIndex > totalCertificates) {
+                resetLoop();
+            } else {
+                move(true);
+            }
+        };
+
+        const restartTimer = () => {
+            clearInterval(certificateTimer);
+            certificateTimer = setInterval(advance, 3500);
+        };
+
+        certificateDots.forEach((dot) => {
+            dot.addEventListener("click", () => {
+                certificateIndex = Number(dot.dataset.certificateSlide || 0);
+                move(true);
+                restartTimer();
+            });
+        });
+
+        certificateCarousel.addEventListener("mouseenter", () => clearInterval(certificateTimer));
+        certificateCarousel.addEventListener("mouseleave", restartTimer);
+        certificateCarousel.addEventListener("focusin", () => clearInterval(certificateTimer));
+        certificateCarousel.addEventListener("focusout", restartTimer);
+
+        window.addEventListener("resize", () => move(false));
+
+        move(false);
+        restartTimer();
+    }
+
+    /* ---------------------------------------------------------
        CONTACT FORM
        Front-end only for now. Directs the user to email.
     --------------------------------------------------------- */
