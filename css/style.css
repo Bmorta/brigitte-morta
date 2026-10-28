@@ -3881,3 +3881,10 @@ html[data-theme="light"] .glow {
         transition: none;
     }
 }
+
+/* Static portfolio pages do not require the main site's reveal JavaScript */
+.portfolio-hub .reveal,
+.admin-portfolio-page .reveal {
+    opacity: 1;
+    transform: none;
+}
