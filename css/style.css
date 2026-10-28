@@ -4954,3 +4954,48 @@ html[data-theme="light"] .glow {
     .portfolio-hub .hub-portrait::before { filter: blur(22px); opacity: .7; }
     .portfolio-hub .hub-portrait::after { filter: blur(15px); opacity: .55; }
 }
+
+
+/* Wider edge-to-edge card placement and reference-style blue/gold halo */
+@media (min-width: 1101px) {
+    .portfolio-hub .hub-main {
+        width: min(1650px, calc(100% - 56px));
+    }
+    .portfolio-hub .hub-showcase {
+        gap: clamp(260px, 21vw, 370px);
+    }
+    .portfolio-hub .hub-portrait {
+        width: clamp(410px, 34vw, 540px);
+        bottom: -8px;
+    }
+    .portfolio-hub .programmer-choice {
+        padding-left: clamp(24px, 2.5vw, 40px);
+        padding-right: 24px;
+    }
+    .portfolio-hub .admin-choice {
+        padding-left: clamp(24px, 2.5vw, 40px);
+        padding-right: 24px;
+    }
+}
+.portfolio-hub .hub-portrait::before {
+    inset: 1% -24% -4%;
+    background:
+        radial-gradient(ellipse at 24% 48%, rgba(0, 143, 255, .85) 0%, rgba(0, 133, 255, .48) 31%, transparent 68%),
+        radial-gradient(ellipse at 76% 48%, rgba(255, 177, 47, .85) 0%, rgba(255, 153, 34, .48) 31%, transparent 68%);
+    filter: blur(44px);
+    opacity: 1;
+}
+.portfolio-hub .hub-portrait::after {
+    inset: 7% -13% 6%;
+    background:
+        radial-gradient(ellipse at 27% 50%, transparent 45%, rgba(45, 173, 255, .72) 52%, transparent 62%),
+        radial-gradient(ellipse at 73% 50%, transparent 45%, rgba(255, 193, 87, .72) 52%, transparent 62%);
+    filter: blur(16px);
+    opacity: .95;
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+    .portfolio-hub .hub-main { width: calc(100% - 30px); }
+    .portfolio-hub .hub-showcase { gap: clamp(125px, 17vw, 190px); }
+    .portfolio-hub .programmer-choice { padding-left: 20px; padding-right: 18px; }
+    .portfolio-hub .admin-choice { padding-left: 25px; padding-right: 18px; }
+}
