@@ -5505,3 +5505,27 @@ html[data-theme="light"] .glow {
   .portfolio-hub .floor-portrait { height: 48px; }
   .portfolio-hub .floor-portrait::before { width: 190px; height: 190px; opacity: .25; }
 }
+
+
+/* Refine portrait reflection: pull it up to the subject's base and feather
+   every side so the source image cannot show rectangular boundaries. */
+.portfolio-hub .hub-floor-reflection {
+  margin-top: -23px;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,.72) 0%, rgba(0,0,0,.40) 36%, transparent 95%);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,.72) 0%, rgba(0,0,0,.40) 36%, transparent 95%);
+}
+.portfolio-hub .floor-portrait {
+  overflow: visible;
+  background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,195,104,.15), rgba(42,150,255,.08) 52%, transparent 100%);
+}
+.portfolio-hub .floor-portrait::before {
+  top: -2px;
+  opacity: .34;
+  filter: blur(7px);
+  -webkit-mask-image: radial-gradient(ellipse 43% 45% at 50% 9%, #000 0%, rgba(0,0,0,.80) 40%, rgba(0,0,0,.25) 69%, transparent 100%);
+  mask-image: radial-gradient(ellipse 43% 45% at 50% 9%, #000 0%, rgba(0,0,0,.80) 40%, rgba(0,0,0,.25) 69%, transparent 100%);
+}
+@media (max-width: 820px) {
+  .portfolio-hub .hub-floor-reflection { margin-top: -12px; }
+  .portfolio-hub .floor-portrait::before { opacity: .25; filter: blur(5px); }
+}
