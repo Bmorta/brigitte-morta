@@ -3567,76 +3567,38 @@ html[data-theme="light"] .glow {
 .admin-profile {
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
-    min-height: 520px;
-    align-items: center;
+    min-height: 600px;
+    isolation: isolate;
 }
 
-.admin-profile::before {
-    content: "";
+.admin-art-glow {
     position: absolute;
-    width: 390px;
-    height: 390px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.66), rgba(255, 204, 132, 0.28), transparent 68%);
-}
-
-.admin-profile img {
-    position: relative;
-    width: min(390px, 78%);
-    aspect-ratio: 0.82;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 42% 42% 22% 22%;
-    box-shadow: 0 30px 80px rgba(88, 58, 25, 0.18);
-    border: 10px solid rgba(255,255,255,0.54);
-}
-
-.admin-photo-ring {
-    position: absolute;
-    width: min(450px, 86%);
+    width: min(560px, 96%);
     aspect-ratio: 1;
-    border: 1px solid rgba(155, 113, 67, 0.3);
     border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(196, 139, 64, 0.28) 0%,
+            rgba(232, 190, 119, 0.16) 36%,
+            transparent 70%
+        );
+    filter: blur(18px);
+    z-index: -1;
 }
 
-.admin-floating-card {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 13px 15px;
-    border-radius: 16px;
-    background: rgba(255, 249, 239, 0.74);
-    border: 1px solid rgba(151, 117, 78, 0.18);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 14px 32px rgba(93, 62, 29, 0.1);
-}
-
-.admin-floating-card > i {
-    color: #aa783f;
-    font-size: 1.2rem;
-}
-
-.admin-floating-card small,
-.admin-floating-card strong {
+.admin-hero-art {
+    position: relative;
     display: block;
+    width: min(680px, 106%);
+    height: auto;
+    max-height: 640px;
+    object-fit: contain;
+    object-position: center;
+    filter: drop-shadow(0 28px 50px rgba(92, 61, 28, 0.18));
 }
-
-.admin-floating-card small {
-    color: #90785a;
-    font-size: 0.55rem;
-    letter-spacing: 0.14em;
-}
-
-.admin-floating-card strong {
-    color: #3e3020;
-    font-size: 0.74rem;
-}
-
-.admin-card-one { left: 2%; top: 22%; }
-.admin-card-two { right: 0; bottom: 21%; }
 
 .admin-section {
     padding: 92px 0;
@@ -3846,19 +3808,13 @@ html[data-theme="light"] .glow {
     }
 
     .admin-profile {
-        min-height: 360px;
+        min-height: 390px;
     }
 
-    .admin-profile img {
-        width: min(290px, 78%);
+    .admin-hero-art {
+        width: min(520px, 112%);
+        max-height: 500px;
     }
-
-    .admin-photo-ring {
-        width: min(330px, 86%);
-    }
-
-    .admin-card-one { left: 0; top: 16%; }
-    .admin-card-two { right: 0; bottom: 12%; }
 
     .admin-section {
         padding: 70px 0;
