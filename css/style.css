@@ -4920,3 +4920,37 @@ html[data-theme="light"] .glow {
     .portfolio-hub .hub-wave-left { transform: rotate(8deg); }
     .portfolio-hub .hub-wave-right { transform: rotate(-8deg); }
 }
+
+
+/* Dual-color ambient glow behind the center portrait (not over the photo). */
+.portfolio-hub .hub-portrait {
+    isolation: isolate;
+}
+.portfolio-hub .hub-portrait::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    inset: 8% -13% 4%;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse at 28% 50%, rgba(33, 159, 255, .70) 0%, rgba(20, 125, 255, .30) 30%, transparent 66%),
+        radial-gradient(ellipse at 75% 50%, rgba(255, 195, 81, .68) 0%, rgba(255, 165, 42, .28) 32%, transparent 68%);
+    filter: blur(32px);
+    opacity: .92;
+}
+.portfolio-hub .hub-portrait::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    inset: 12% -7% 7%;
+    border-radius: 50%;
+    background: conic-gradient(from 90deg, rgba(255, 190, 77, .42), transparent 27%, rgba(43, 174, 255, .40) 54%, transparent 77%, rgba(255, 190, 77, .42));
+    filter: blur(19px);
+    opacity: .75;
+}
+@media (max-width: 820px) {
+    .portfolio-hub .hub-portrait::before { filter: blur(22px); opacity: .7; }
+    .portfolio-hub .hub-portrait::after { filter: blur(15px); opacity: .55; }
+}
