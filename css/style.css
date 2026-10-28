@@ -3844,3 +3844,769 @@ html[data-theme="light"] .glow {
     opacity: 1;
     transform: none;
 }
+
+
+/* =========================================================
+   LANDING PAGE — CINEMATIC SPLIT PORTFOLIO HUB
+   Scoped only to .portfolio-hub
+========================================================= */
+
+.portfolio-hub {
+    --hub-blue: #26b4ff;
+    --hub-blue-deep: #063767;
+    --hub-gold: #ffd18b;
+    --hub-gold-deep: #704620;
+    --hub-dark: #070b13;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    color: #fff;
+    background: #07101b;
+    position: relative;
+    isolation: isolate;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.portfolio-hub .hub-background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 50% 48%, rgba(17, 33, 52, 0.86), transparent 37%),
+        linear-gradient(90deg, #031428 0%, #08111c 47%, #17100c 100%);
+}
+
+.portfolio-hub .hub-photo {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    opacity: 0.52;
+}
+
+.portfolio-hub .hub-photo-left {
+    left: 0;
+    background:
+        linear-gradient(90deg, rgba(1, 17, 35, 0.95), rgba(4, 30, 56, 0.22)),
+        radial-gradient(circle at 18% 18%, rgba(44, 158, 255, 0.22), transparent 26%),
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 7px,
+            rgba(45, 164, 255, 0.09) 7px 8px
+        );
+    mask-image: linear-gradient(90deg, #000 0 92%, transparent 100%);
+}
+
+.portfolio-hub .hub-photo-right {
+    right: 0;
+    background:
+        linear-gradient(90deg, rgba(21, 16, 11, 0.08), rgba(48, 29, 16, 0.72)),
+        radial-gradient(circle at 75% 21%, rgba(255, 211, 152, 0.20), transparent 22%),
+        linear-gradient(145deg, rgba(255, 219, 167, 0.07), transparent 38%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 8% 100%);
+}
+
+.portfolio-hub .hub-blue-wash,
+.portfolio-hub .hub-gold-wash {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    mix-blend-mode: screen;
+    pointer-events: none;
+}
+
+.portfolio-hub .hub-blue-wash {
+    left: 0;
+    background:
+        radial-gradient(circle at 42% 62%, rgba(29, 165, 255, 0.15), transparent 33%),
+        linear-gradient(145deg, rgba(0, 133, 255, 0.09), transparent 55%);
+}
+
+.portfolio-hub .hub-gold-wash {
+    right: 0;
+    background:
+        radial-gradient(circle at 58% 62%, rgba(255, 194, 104, 0.13), transparent 33%),
+        linear-gradient(145deg, transparent 20%, rgba(255, 189, 105, 0.08));
+}
+
+.portfolio-hub .hub-code-lines {
+    position: absolute;
+    left: 3%;
+    top: 12%;
+    width: 34%;
+    height: 42%;
+    opacity: 0.26;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent 0 14px,
+            rgba(94, 193, 255, 0.16) 14px 15px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 28px,
+            rgba(94, 193, 255, 0.08) 28px 29px
+        );
+    transform: perspective(420px) rotateY(14deg) rotateX(4deg);
+    filter: blur(0.25px);
+    mask-image: linear-gradient(90deg, #000, transparent);
+}
+
+.portfolio-hub .hub-office-lines {
+    position: absolute;
+    right: 2%;
+    top: 11%;
+    width: 31%;
+    height: 48%;
+    opacity: 0.18;
+    background:
+        linear-gradient(90deg, transparent 0 72%, rgba(255, 225, 188, 0.22) 72% 73%, transparent 73%),
+        linear-gradient(0deg, transparent 0 67%, rgba(255, 225, 188, 0.16) 67% 68%, transparent 68%),
+        radial-gradient(circle at 74% 38%, rgba(255, 230, 196, 0.35), transparent 16%);
+    filter: blur(1px);
+}
+
+.portfolio-hub .hub-grid-floor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    opacity: 0.5;
+    transform: perspective(480px) rotateX(58deg);
+    transform-origin: bottom center;
+    background:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 46px 46px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.7), transparent 82%);
+}
+
+.portfolio-hub .hub-wave {
+    position: absolute;
+    width: 58vw;
+    height: 26vh;
+    bottom: -11vh;
+    border-top: 2px solid rgba(80, 193, 255, 0.3);
+    border-radius: 50%;
+    opacity: 0.7;
+    filter: blur(0.2px);
+}
+
+.portfolio-hub .hub-wave-left {
+    left: -9vw;
+    transform: rotate(-6deg);
+    box-shadow: 0 -16px 0 rgba(80, 193, 255, 0.10), 0 -31px 0 rgba(80, 193, 255, 0.06);
+}
+
+.portfolio-hub .hub-wave-left-two {
+    left: -5vw;
+    bottom: -14vh;
+    transform: rotate(-8deg) scale(1.05);
+    opacity: 0.35;
+}
+
+.portfolio-hub .hub-wave-right {
+    right: -9vw;
+    border-color: rgba(255, 206, 135, 0.28);
+    transform: rotate(6deg);
+    box-shadow: 0 -16px 0 rgba(255, 206, 135, 0.10), 0 -31px 0 rgba(255, 206, 135, 0.06);
+}
+
+.portfolio-hub .hub-wave-right-two {
+    right: -5vw;
+    bottom: -14vh;
+    transform: rotate(8deg) scale(1.05);
+    opacity: 0.35;
+}
+
+.portfolio-hub .hub-main {
+    position: relative;
+    width: min(1450px, calc(100% - 42px));
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 18px 0 28px;
+    display: flex;
+    flex-direction: column;
+}
+
+.portfolio-hub .hub-intro {
+    position: relative;
+    z-index: 5;
+    max-width: 940px;
+    margin: 0 auto;
+    padding: 18px 0 0;
+    text-align: center;
+}
+
+.portfolio-hub .hub-script {
+    margin: 0;
+    color: rgba(255,255,255,0.9);
+    font-family: "Brush Script MT", "Segoe Script", cursive;
+    font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+    font-style: italic;
+    line-height: 1;
+}
+
+.portfolio-hub .hub-intro h1 {
+    margin: 3px 0 5px;
+    font-size: clamp(3.2rem, 7vw, 6.4rem);
+    font-weight: 900;
+    letter-spacing: 0.055em;
+    line-height: 0.94;
+    text-shadow: 0 9px 28px rgba(0,0,0,0.25);
+}
+
+.portfolio-hub .hub-intro h1 span {
+    background: linear-gradient(90deg, #fff, #b7e5ff 46%, #ffdbad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.portfolio-hub .hub-subtitle {
+    margin: 0;
+    color: rgba(255,255,255,0.82);
+    font-size: clamp(0.58rem, 1vw, 0.78rem);
+    font-weight: 700;
+    letter-spacing: 0.30em;
+}
+
+.portfolio-hub .hub-accent-line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 12px auto 10px;
+}
+
+.portfolio-hub .hub-accent-line span,
+.portfolio-hub .hub-accent-line b {
+    display: block;
+    height: 2px;
+    border-radius: 99px;
+}
+
+.portfolio-hub .hub-accent-line span {
+    width: 30px;
+    background: var(--hub-blue);
+    box-shadow: 0 0 14px rgba(35, 178, 255, 0.8);
+}
+
+.portfolio-hub .hub-accent-line b {
+    width: 16px;
+    background: var(--hub-gold);
+    box-shadow: 0 0 12px rgba(255, 209, 139, 0.65);
+}
+
+.portfolio-hub .hub-tagline {
+    max-width: 740px;
+    margin: 0 auto;
+    color: rgba(255,255,255,0.86);
+    font-size: clamp(0.72rem, 1.2vw, 1rem);
+    line-height: 1.45;
+}
+
+.portfolio-hub .hub-choice {
+    margin: 3px auto 0;
+    color: rgba(255,255,255,0.62);
+    font-size: clamp(0.64rem, 1vw, 0.8rem);
+}
+
+.portfolio-hub .hub-showcase {
+    position: relative;
+    z-index: 3;
+    flex: 1;
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 34px;
+    align-items: stretch;
+    margin-top: 16px;
+}
+
+.portfolio-hub .portfolio-choice {
+    position: relative;
+    min-width: 0;
+    min-height: 460px;
+    display: flex;
+    flex-direction: column;
+    padding: 26px 30px 22px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 24px;
+    overflow: hidden;
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        border-color 0.28s ease;
+}
+
+.portfolio-hub .programmer-choice {
+    justify-self: stretch;
+    background:
+        linear-gradient(145deg, rgba(8, 39, 73, 0.90), rgba(4, 17, 33, 0.74));
+    border: 1px solid rgba(69, 190, 255, 0.75);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.28),
+        0 0 34px rgba(30, 156, 255, 0.10);
+}
+
+.portfolio-hub .admin-choice {
+    justify-self: stretch;
+    background:
+        linear-gradient(145deg, rgba(91, 57, 28, 0.86), rgba(34, 22, 14, 0.78));
+    border: 1px solid rgba(255, 218, 166, 0.67);
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.28),
+        0 0 34px rgba(255, 192, 107, 0.09);
+}
+
+.portfolio-hub .portfolio-choice::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+        linear-gradient(145deg, rgba(255,255,255,0.10), transparent 32%, transparent 70%, rgba(255,255,255,0.02));
+    pointer-events: none;
+}
+
+.portfolio-hub .portfolio-choice:hover,
+.portfolio-hub .portfolio-choice:focus-visible {
+    transform: translateY(-6px);
+    color: #fff;
+    outline: none;
+}
+
+.portfolio-hub .programmer-choice:hover,
+.portfolio-hub .programmer-choice:focus-visible {
+    border-color: #6ed0ff;
+    box-shadow:
+        0 28px 78px rgba(0,0,0,0.34),
+        0 0 38px rgba(31, 168, 255, 0.20);
+}
+
+.portfolio-hub .admin-choice:hover,
+.portfolio-hub .admin-choice:focus-visible {
+    border-color: #ffe2b5;
+    box-shadow:
+        0 28px 78px rgba(0,0,0,0.34),
+        0 0 38px rgba(255, 199, 113, 0.16);
+}
+
+.portfolio-hub .choice-sheen {
+    position: absolute;
+    width: 65%;
+    height: 110%;
+    top: -45%;
+    left: -40%;
+    transform: rotate(19deg);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    pointer-events: none;
+}
+
+.portfolio-hub .choice-corner {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    right: -45px;
+    top: -45px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 0 36px rgba(255,255,255,0.05);
+}
+
+.portfolio-hub .choice-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.17);
+    font-size: 1.45rem;
+}
+
+.portfolio-hub .programmer-choice .choice-icon {
+    color: #43beff;
+    box-shadow: inset 0 0 28px rgba(49, 180, 255, 0.09);
+}
+
+.portfolio-hub .admin-choice .choice-icon {
+    color: #ffd28f;
+    box-shadow: inset 0 0 28px rgba(255, 200, 114, 0.07);
+}
+
+.portfolio-hub .choice-kicker {
+    margin: 0 0 6px;
+    color: rgba(255,255,255,0.57);
+    font-size: 0.57rem;
+    font-weight: 800;
+    letter-spacing: 0.17em;
+}
+
+.portfolio-hub .portfolio-choice h2 {
+    position: relative;
+    margin: 0;
+    font-size: clamp(1.95rem, 3.45vw, 3.15rem);
+    font-weight: 900;
+    letter-spacing: 0.018em;
+    line-height: 0.93;
+}
+
+.portfolio-hub .choice-role {
+    margin: 9px 0 0;
+    color: rgba(255,255,255,0.76);
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.portfolio-hub .choice-divider {
+    width: 50px;
+    height: 2px;
+    margin: 17px 0 13px;
+    border-radius: 99px;
+}
+
+.portfolio-hub .programmer-choice .choice-divider {
+    background: #48c2ff;
+    box-shadow: 0 0 10px rgba(72,194,255,0.65);
+}
+
+.portfolio-hub .admin-choice .choice-divider {
+    background: #ffd091;
+    box-shadow: 0 0 10px rgba(255,208,145,0.54);
+}
+
+.portfolio-hub .portfolio-choice ul {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: rgba(255,255,255,0.80);
+}
+
+.portfolio-hub .portfolio-choice li {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: clamp(0.66rem, 0.95vw, 0.78rem);
+    line-height: 1.3;
+}
+
+.portfolio-hub .portfolio-choice li i {
+    flex: 0 0 auto;
+    margin-top: 1px;
+    font-size: 0.78rem;
+}
+
+.portfolio-hub .programmer-choice li i {
+    color: #56c5ff;
+}
+
+.portfolio-hub .admin-choice li i {
+    color: #ffd08f;
+}
+
+.portfolio-hub .choice-cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding: 12px 16px;
+    border-radius: 999px;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.10em;
+    transition: transform 0.22s ease, filter 0.22s ease;
+}
+
+.portfolio-hub .programmer-choice .choice-cta {
+    background: linear-gradient(90deg, #2eb7fb, #096fc9);
+    box-shadow: 0 9px 22px rgba(0, 133, 221, 0.22);
+}
+
+.portfolio-hub .admin-choice .choice-cta {
+    color: #24190e;
+    background: linear-gradient(90deg, #ffd58d, #f2b65e);
+    box-shadow: 0 9px 22px rgba(208, 151, 70, 0.20);
+}
+
+.portfolio-hub .portfolio-choice:hover .choice-cta {
+    transform: translateX(2px);
+    filter: brightness(1.04);
+}
+
+.portfolio-hub .hub-portrait {
+    position: absolute;
+    z-index: 8;
+    left: 50%;
+    bottom: -4px;
+    width: clamp(230px, 24vw, 330px);
+    aspect-ratio: 0.78;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.portfolio-hub .hub-portrait img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 95%;
+    height: 100%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 52% 52% 18% 18%;
+    border: 8px solid rgba(255,255,255,0.62);
+    box-shadow:
+        0 0 30px rgba(78, 187, 255, 0.17),
+        0 0 55px rgba(255, 195, 110, 0.09),
+        0 26px 55px rgba(0,0,0,0.24);
+}
+
+.portfolio-hub .portrait-aura {
+    position: absolute;
+    inset: 8% 0 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle, rgba(69, 170, 255, 0.22), rgba(116, 83, 255, 0.10) 35%, rgba(255, 188, 98, 0.05) 54%, transparent 71%);
+    filter: blur(16px);
+}
+
+.portfolio-hub .portrait-glow {
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 3%;
+    height: 7px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, transparent, #4bc6ff 35%, #ffd18f 68%, transparent);
+    filter: blur(4px);
+    opacity: 0.8;
+}
+
+.portfolio-hub .portrait-ring {
+    position: absolute;
+    left: 4%;
+    right: 4%;
+    top: 4%;
+    aspect-ratio: 1;
+    border: 2px solid rgba(89, 197, 255, 0.55);
+    border-radius: 50%;
+    box-shadow: 0 0 18px rgba(64, 193, 255, 0.24);
+}
+
+.portfolio-hub .portrait-ring-two {
+    left: 11%;
+    right: 11%;
+    top: 12%;
+    border-color: rgba(168, 103, 255, 0.42);
+    box-shadow: 0 0 18px rgba(146, 91, 255, 0.18);
+}
+
+.portfolio-hub .hub-bottom {
+    position: relative;
+    z-index: 10;
+    width: min(720px, 100%);
+    margin: 12px auto 0;
+    text-align: center;
+}
+
+.portfolio-hub .hub-bottom-rule {
+    width: 70px;
+    height: 1px;
+    margin: 0 auto 8px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+}
+
+.portfolio-hub .hub-bottom-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.portfolio-hub .hub-bottom-icons i {
+    font-size: 0.95rem;
+}
+
+.portfolio-hub .hub-bottom-icons i:first-child {
+    color: #4ec4ff;
+}
+
+.portfolio-hub .hub-bottom-icons i:last-child {
+    color: #ffd18f;
+}
+
+.portfolio-hub .hub-bottom-icons span {
+    width: 34px;
+    height: 1px;
+    background: rgba(255,255,255,0.34);
+}
+
+.portfolio-hub .hub-bottom p {
+    margin: 3px 0 0;
+    color: rgba(255,255,255,0.71);
+    font-size: 0.58rem;
+    letter-spacing: 0.34em;
+}
+
+.portfolio-hub .hub-bottom small {
+    display: block;
+    margin-top: 2px;
+    color: rgba(255,255,255,0.44);
+    font-size: 0.49rem;
+    letter-spacing: 0.25em;
+}
+
+@media (max-width: 1100px) {
+    .portfolio-hub .hub-showcase {
+        gap: 24px;
+        min-height: 490px;
+    }
+
+    .portfolio-hub .portfolio-choice {
+        padding: 24px 24px 20px;
+    }
+
+    .portfolio-hub .hub-portrait {
+        width: clamp(210px, 25vw, 290px);
+    }
+}
+
+@media (max-width: 820px) {
+    .portfolio-hub .hub-main {
+        width: min(100% - 24px, 720px);
+        padding-bottom: 20px;
+    }
+
+    .portfolio-hub .hub-intro {
+        padding-top: 8px;
+    }
+
+    .portfolio-hub .hub-intro h1 {
+        font-size: clamp(2.55rem, 11vw, 4.4rem);
+    }
+
+    .portfolio-hub .hub-subtitle {
+        letter-spacing: 0.18em;
+    }
+
+    .portfolio-hub .hub-showcase {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        min-height: auto;
+        margin-top: 18px;
+    }
+
+    .portfolio-hub .portfolio-choice {
+        min-height: 340px;
+    }
+
+    .portfolio-hub .hub-portrait {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: min(250px, 60vw);
+        margin: -72px auto -10px;
+        transform: none;
+        order: 3;
+    }
+
+    .portfolio-hub .hub-bottom {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 520px) {
+    .portfolio-hub .hub-main {
+        width: calc(100% - 18px);
+    }
+
+    .portfolio-hub .hub-intro {
+        padding-top: 2px;
+    }
+
+    .portfolio-hub .hub-script {
+        font-size: 1.35rem;
+    }
+
+    .portfolio-hub .hub-intro h1 {
+        font-size: clamp(2.05rem, 12.5vw, 3.25rem);
+        letter-spacing: 0.035em;
+    }
+
+    .portfolio-hub .hub-tagline {
+        font-size: 0.68rem;
+    }
+
+    .portfolio-hub .hub-choice {
+        font-size: 0.6rem;
+    }
+
+    .portfolio-hub .portfolio-choice {
+        min-height: 330px;
+        padding: 20px 18px 18px;
+        border-radius: 20px;
+    }
+
+    .portfolio-hub .choice-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+    }
+
+    .portfolio-hub .choice-kicker {
+        font-size: 0.52rem;
+    }
+
+    .portfolio-hub .portfolio-choice h2 {
+        font-size: 2rem;
+    }
+
+    .portfolio-hub .choice-role {
+        font-size: 0.56rem;
+    }
+
+    .portfolio-hub .portfolio-choice li {
+        font-size: 0.63rem;
+    }
+
+    .portfolio-hub .choice-cta {
+        font-size: 0.53rem;
+        padding: 11px 13px;
+    }
+
+    .portfolio-hub .hub-portrait {
+        width: min(210px, 66vw);
+        margin-top: -56px;
+    }
+
+    .portfolio-hub .hub-bottom p {
+        font-size: 0.47rem;
+        letter-spacing: 0.23em;
+    }
+
+    .portfolio-hub .hub-bottom small {
+        font-size: 0.42rem;
+        letter-spacing: 0.17em;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-hub .portfolio-choice {
+        transition: none;
+    }
+}
