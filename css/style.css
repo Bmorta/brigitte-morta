@@ -1229,7 +1229,8 @@ html[data-theme="light"] .glow {
 
 /* =========================================================
    CERTIFICATES
-   Five visible cards on desktop. Circulates one certificate at a time.
+   Five visible certificates on desktop.
+   Uses the original image files from /images.
 ========================================================= */
 
 .certificates-section {
@@ -1267,23 +1268,33 @@ html[data-theme="light"] .glow {
     width: 100%;
     aspect-ratio: 1.5 / 1;
     padding: 0;
-    background-color: var(--surface);
-    background-image: url("../certificates/certificates-sprite.webp");
-    background-repeat: no-repeat;
-    background-size: 500% 300%;
-    background-position: 0% 0%;
+    overflow: hidden;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
     box-shadow: var(--shadow);
     cursor: pointer;
-    transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        transform 0.25s var(--ease),
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.certificate-image-src {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: var(--surface);
 }
 
 .certificate-image:hover,
 .certificate-image:focus-visible {
     transform: translateY(-4px);
     border-color: rgba(56, 189, 248, 0.55);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24), 0 0 18px rgba(56, 189, 248, 0.08);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.24),
+        0 0 18px rgba(56, 189, 248, 0.08);
     outline: none;
 }
 
@@ -1323,7 +1334,10 @@ html[data-theme="light"] .glow {
     border-radius: 50%;
     background: var(--border);
     cursor: pointer;
-    transition: width 0.25s var(--ease), background-color 0.25s ease, transform 0.25s var(--ease);
+    transition:
+        width 0.25s var(--ease),
+        background-color 0.2s ease,
+        transform 0.25s var(--ease);
 }
 
 .certificate-dot.active {
@@ -1363,14 +1377,21 @@ html[data-theme="light"] .glow {
 
 .certificate-modal-image {
     width: 100%;
-    aspect-ratio: 1.5 / 1;
-    background-color: var(--surface);
-    background-image: url("../certificates/certificates-sprite.webp");
-    background-repeat: no-repeat;
-    background-size: 500% 300%;
-    background-position: 0% 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 12px;
+    overflow: auto;
+}
+
+.certificate-modal-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 78vh;
+    object-fit: contain;
 }
 
 @media (max-width: 767.98px) {
@@ -1378,7 +1399,6 @@ html[data-theme="light"] .glow {
         gap: 12px;
     }
 }
-
 /* =========================================================
    CONTACT
 ========================================================= */
