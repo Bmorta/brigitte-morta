@@ -4794,3 +4794,14 @@ html[data-theme="light"] .glow {
     .portfolio-hub .admin-choice { padding-left: 24px; padding-right: 24px; }
     .portfolio-hub .hub-background::after { width: 60vw; }
 }
+
+
+/* Keep Admin / VA card alignment unchanged; shift only Programmer copy clear of portrait. */
+@media (min-width: 1101px) {
+    .portfolio-hub .admin-choice { padding-left: 30px; }
+    .portfolio-hub .programmer-choice { padding-left: 30px; padding-right: clamp(88px, 7.5vw, 130px); }
+}
+@media (min-width: 821px) and (max-width: 1100px) {
+    .portfolio-hub .admin-choice { padding-left: 30px; }
+    .portfolio-hub .programmer-choice { padding-right: 65px; }
+}
