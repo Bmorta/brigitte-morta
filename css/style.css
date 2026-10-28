@@ -5797,3 +5797,28 @@ html[data-theme="light"] .glow {
   .admin-portfolio-page .admin-work-grid, .admin-portfolio-page .admin-quote-grid { grid-template-columns: 1fr; }
   .admin-portfolio-page .admin-work-card, .admin-portfolio-page .admin-quote-grid blockquote { padding: 22px; }
 }
+
+/* Admin portfolio navigation, scoped to the admin page only */
+.admin-portfolio-page { scroll-behavior: smooth; }
+.admin-portfolio-page [id] { scroll-margin-top: 90px; }
+.admin-portfolio-page .admin-site-header { position: sticky; top: 0; z-index: 1100; background: rgba(250,244,235,.96); border-bottom: 1px solid #e6d8c6; backdrop-filter: blur(16px); }
+.admin-portfolio-page .admin-nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.admin-portfolio-page .admin-nav-brand { display: flex; align-items: center; gap: 11px; text-decoration: none; color: #3b2b1d; font-weight: 800; white-space: nowrap; }
+.admin-portfolio-page .admin-nav-brand img { width: 43px; height: 43px; object-fit: contain; }
+.admin-portfolio-page .admin-nav-brand small { display: block; font-size: .57rem; letter-spacing: .13em; color: #9a6c3b; }
+.admin-portfolio-page .admin-nav-links { display: flex; align-items: center; gap: clamp(10px,1.5vw,23px); }
+.admin-portfolio-page .admin-nav-links a { color: #5a4531; font-size: .85rem; font-weight: 650; text-decoration: none; white-space: nowrap; }
+.admin-portfolio-page .admin-nav-links a:hover, .admin-portfolio-page .admin-nav-links a:focus-visible { color: #b67832; }
+.admin-portfolio-page .admin-nav-links .admin-nav-hub { padding: 9px 13px; border-radius: 999px; background: #4d3623; color: #fff; }
+.admin-portfolio-page .admin-menu-toggle { display: none; border: 1px solid #dfc9b1; border-radius: 12px; width: 44px; height: 44px; background: #fffaf3; color: #5a3b20; font-size: 1.45rem; align-items: center; justify-content: center; }
+.admin-portfolio-page .admin-tool-list span { display: inline-flex; align-items: center; gap: 9px; }
+.admin-portfolio-page .admin-tool-list span i { color: #a16a32; font-size: 1.25rem; }
+@media (max-width: 991.98px) {
+  .admin-portfolio-page .admin-nav { min-height: 68px; }
+  .admin-portfolio-page .admin-menu-toggle { display: inline-flex; }
+  .admin-portfolio-page .admin-nav-links { display: none; position: absolute; left: 12px; right: 12px; top: calc(100% + 4px); padding: 16px; flex-direction: column; align-items: stretch; gap: 0; background: #fffaf3; border: 1px solid #e4d3bd; border-radius: 16px; box-shadow: 0 18px 35px rgba(45,28,10,.17); }
+  .admin-portfolio-page .admin-nav-links.is-open { display: flex; }
+  .admin-portfolio-page .admin-nav-links a { padding: 12px 10px; }
+  .admin-portfolio-page .admin-nav-links .admin-nav-hub { margin-top: 8px; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) { .admin-portfolio-page { scroll-behavior: auto; } }
