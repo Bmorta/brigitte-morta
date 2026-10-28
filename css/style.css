@@ -5636,3 +5636,16 @@ html[data-theme="light"] .glow {
   .portfolio-hub .programmer-choice { order: 1; }
   .portfolio-hub .admin-choice { order: 2; }
 }
+
+
+/* Mobile: remove Programmer/Admin floor reflections; keep center portrait reflection. */
+@media (max-width: 820px) {
+  .portfolio-hub .floor-card-programmer,
+  .portfolio-hub .floor-card-admin {
+    display: none !important;
+  }
+  .portfolio-hub .programmer-choice,
+  .portfolio-hub .admin-choice {
+    -webkit-box-reflect: unset !important;
+  }
+}
