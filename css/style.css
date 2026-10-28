@@ -5221,3 +5221,43 @@ html[data-theme="light"] .glow {
     .portfolio-hub .hub-photo { width: 78%; height: 60%; opacity: .43; }
     .portfolio-hub .hub-background::after { width: 75vw; }
 }
+
+
+/* Subtle glossy-floor reflection beneath the central portrait.
+   Uses the existing portrait asset, so no new image is required. */
+@media (min-width: 821px) {
+    .portfolio-hub .hub-bottom {
+        isolation: isolate;
+    }
+    .portfolio-hub .hub-bottom::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        left: 50%;
+        top: -8px;
+        width: min(36vw, 440px);
+        height: 155px;
+        transform: translateX(-50%) scaleY(-1);
+        transform-origin: center top;
+        background: url("../images/landing-center-portrait.png") center bottom / contain no-repeat;
+        opacity: .15;
+        filter: blur(6px) saturate(.8);
+        -webkit-mask-image: linear-gradient(to top, transparent 5%, rgba(0,0,0,.65) 75%, #000 100%);
+        mask-image: linear-gradient(to top, transparent 5%, rgba(0,0,0,.65) 75%, #000 100%);
+    }
+    .portfolio-hub .hub-bottom::after {
+        content: "";
+        position: absolute;
+        z-index: -2;
+        pointer-events: none;
+        left: 50%;
+        top: -16px;
+        width: min(62vw, 780px);
+        height: 110px;
+        transform: translateX(-50%);
+        background: radial-gradient(ellipse at 30% 0%, rgba(39,157,255,.17), transparent 58%),
+                    radial-gradient(ellipse at 70% 0%, rgba(255,187,84,.16), transparent 58%);
+        filter: blur(19px);
+    }
+}
