@@ -6103,3 +6103,75 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     animation: none !important;
   }
 }
+
+/* Version 2: mascots perch OUTSIDE the card silhouette.
+   Preserve existing card transforms and hover interactions. */
+.portfolio-hub .portfolio-choice {
+  overflow: visible;
+}
+.portfolio-hub .hub-mascot-3d {
+  top: -86px;
+  right: -36px;
+  width: clamp(112px, 11vw, 158px);
+  z-index: 8;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .28));
+}
+.portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+  top: -86px;
+  right: -36px;
+  left: auto;
+  width: clamp(112px, 11vw, 158px);
+  transform: rotate(5deg);
+}
+.portfolio-hub .programmer-choice::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 32px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(137, 240, 255, .85), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+}
+@keyframes hubCardCornerImpact {
+  0%, 25%, 35%, 100% { opacity: 0; transform: scale(.75); }
+  29% { opacity: .9; transform: scale(1.3); }
+  33% { opacity: 0; transform: scale(1.5); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-hub .programmer-choice::after {
+    animation: hubCardCornerImpact 2.8s linear infinite;
+  }
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .hub-mascot-3d {
+    top: -60px;
+    right: -14px;
+    width: 108px;
+  }
+  .portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+    top: -60px;
+    right: -14px;
+    left: auto;
+    width: 108px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .hub-mascot-3d {
+    top: -48px;
+    right: -5px;
+    width: 86px;
+  }
+  .portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+    top: -48px;
+    right: -5px;
+    left: auto;
+    width: 86px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .programmer-choice::after { animation: none; }
+}
