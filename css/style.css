@@ -6199,3 +6199,32 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     right: auto;
   }
 }
+
+/* Version 2 side-profile repair pose: robot stands just above the left card rim. */
+.portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+  top: -132px;
+  left: -18px;
+  right: auto;
+  width: clamp(160px, 15vw, 218px);
+  transform: none;
+}
+.portfolio-hub .programmer-choice::after {
+  left: 132px;
+  right: auto;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    top: -104px;
+    left: -10px;
+    width: 165px;
+  }
+  .portfolio-hub .programmer-choice::after { left: 112px; }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    top: -82px;
+    left: -5px;
+    width: 130px;
+  }
+  .portfolio-hub .programmer-choice::after { left: 88px; }
+}
