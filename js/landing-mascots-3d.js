@@ -26,7 +26,7 @@ function initializeMascot(T, mount) {
   const robot = mount.classList.contains("hub-mascot-robot");
   const scene = new T.Scene();
   const camera = new T.PerspectiveCamera(35, 1, 0.1, 100);
-  camera.position.set(0, 1.2, 9.5);
+  camera.position.set(0, 1.2, robot ? 9.5 : 6.3);
   camera.lookAt(0, 0.35, 0);
   const renderer = new T.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "low-power" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
@@ -82,7 +82,7 @@ function initializeMascot(T, mount) {
     return mesh;
   }
 
-  let hammer, leftHand, rightHand, head, sparks = [], icons = [];
+  let hammer, leftHand, rightHand, head, activeFolder, sparks = [], icons = [];
   if (robot) {
     // Side-profile repair robot, facing RIGHT toward the Programmer card edge.
     // Rounded white shell, blue joints and visor inspired by the supplied reference.
@@ -138,7 +138,7 @@ function initializeMascot(T, mount) {
     const folderCream = mat(0xf5c67d);
     const paper = mat(0xfff6e8);
     const ink = mat(0x5e6473);
-    root.rotation.y = -0.22;
+    root.rotation.y = 0.05;
     root.position.y = -0.04;
 
     // Kneeling pose: shoes rest on the card rim.
@@ -157,14 +157,14 @@ function initializeMascot(T, mount) {
     root.add(head);
     ball(head, 0.55, chestnut, -0.1, 0.12, -0.12, 1.04, 1.04, 0.82);
     ball(head, 0.46, skin, 0.04, -0.06, 0.18, 0.94, 1.04, 0.84);
-    ball(head, 0.39, chestnut, -0.38, 0.62, -0.12, 1, 0.95, 0.9);
-    ball(head, 0.19, chestnut, -0.13, 0.86, -0.16, 1.2, 0.85, 1);
+    ball(head, 0.29, chestnut, -0.36, 0.58, -0.3, 1, 1, 0.9);
+    ball(head, 0.2, chestnut, -0.27, 0.91, -0.22, 1.2, 0.85, 1);
     ball(head, 0.11, skin, 0.43, -0.1, 0.1);
-    ball(head, 0.045, ink, 0.23, -0.08, 0.54);
+    ball(head, 0.055, ink, 0.23, -0.08, 0.57);
     // Glasses in front of the visible eye.
     const glasses = new T.MeshBasicMaterial({ color: 0x4a302c });
     const rim = new T.Mesh(new T.TorusGeometry(0.18, 0.025, 6, 20), glasses);
-    rim.position.set(0.21, -0.07, 0.57);
+    rim.position.set(0.21, -0.07, 0.65);
     head.add(rim);
 
     // Pastel document binders on the card surface.
@@ -177,7 +177,7 @@ function initializeMascot(T, mount) {
       ball(root, 0.055, ink, -1.31, -1.1 + i * 0.25, 0.79);
     });
     // One upright folder being actively handled.
-    const activeFolder = new T.Group();
+    activeFolder = new T.Group();
     activeFolder.position.set(-0.54, -0.45, 0.52);
     activeFolder.rotation.z = -0.17;
     root.add(activeFolder);
@@ -260,11 +260,13 @@ function initializeMascot(T, mount) {
         } else {
           leftHand.position.y = -0.35 + Math.sin(t * 3.8) * 0.055;
           rightHand.position.y = -0.4 + Math.sin(t * 3.8 + 1.5) * 0.05;
-          head.rotation.z = Math.sin(t * 1.2) * 0.08;
+          head.rotation.z = -0.16 + Math.sin(t * 1.2) * 0.045;
+          activeFolder.rotation.z = -0.17 + Math.sin(t * 3.8) * 0.045;
           icons.forEach((icon, i) => {
             const phase = ((t + i * 3) % 6) / 6;
             icon.visible = phase > 0.16 && phase < 0.63;
-            icon.position.y = 0.75 + phase * 0.7;
+            const baseY = i === 0 ? 0.52 : i === 1 ? 1.15 : 0.45;
+            icon.position.y = baseY + phase * 0.25;
             icon.rotation.z = Math.sin(t * 1.7 + i) * 0.13;
           });
         }
