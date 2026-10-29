@@ -84,24 +84,48 @@ function initializeMascot(T, mount) {
 
   let hammer, leftHand, rightHand, head, sparks = [], icons = [];
   if (robot) {
-    box(root, 1.25, 0.8, 0.72, blue, 0, -0.65, 0);
-    ball(root, 0.26, blueLight, -0.38, -1.16, 0.08, 1, 0.6, 1);
-    ball(root, 0.26, blueLight, 0.38, -1.16, 0.08, 1, 0.6, 1);
-    box(root, 1.75, 1.2, 0.86, blue, 0, 0.48, 0);
-    box(root, 1.42, 0.75, 0.9, navy, 0, 0.5, 0.06);
-    ball(root, 0.15, glow, -0.4, 0.56, 0.53, 0.8, 1.15, 0.45);
-    ball(root, 0.15, glow, 0.4, 0.56, 0.53, 0.8, 1.15, 0.45);
-    rod(root, [0, 1.08, 0], [0, 1.36, 0], 0.045, blueLight);
-    ball(root, 0.11, glow, 0, 1.42, 0);
-    rod(root, [-0.78, -0.43, 0], [-1.15, -0.78, 0.12], 0.17, blueLight);
+    // Side-profile repair robot, facing RIGHT toward the Programmer card edge.
+    // Rounded white shell, blue joints and visor inspired by the supplied reference.
+    const shell = mat(0xe9f1ff, 0.25, 0.26);
+    const trim = mat(0x26354e, 0.35, 0.32);
+    const cyan = new T.MeshBasicMaterial({ color: 0x19c9ff });
+    const steel = mat(0x8895a9, 0.8, 0.28);
+    root.position.set(-0.18, -0.05, 0);
+    root.rotation.y = -0.28;
+    // Feet stand on the card's upper border; torso leans toward the strike.
+    ball(root, 0.3, shell, -0.62, -1.14, 0.22, 1.5, 0.42, 0.8);
+    ball(root, 0.3, shell, 0.18, -1.14, 0.18, 1.5, 0.42, 0.8);
+    rod(root, [-0.55, -0.95, 0], [-0.46, -0.54, 0], 0.2, trim);
+    rod(root, [0.16, -0.95, 0], [0.12, -0.55, 0], 0.2, trim);
+    ball(root, 0.48, shell, -0.22, -0.36, 0, 1.08, 1.1, 0.8);
+    ball(root, 0.26, trim, -0.76, -0.35, 0.06);
+    ball(root, 0.14, cyan, -0.76, -0.35, 0.29);
+    // Helmet and dark face visor, shifted toward the right for side silhouette.
+    ball(root, 0.77, shell, -0.04, 0.62, 0.05, 1.04, 0.95, 0.86);
+    ball(root, 0.55, navy, 0.32, 0.55, 0.41, 0.98, 0.78, 0.42);
+    ball(root, 0.23, cyan, 0.57, 0.54, 0.62, 0.45, 0.17, 0.12);
+    ball(root, 0.3, trim, -0.48, 0.7, 0.52);
+    ball(root, 0.22, cyan, -0.48, 0.7, 0.7);
+    rod(root, [-0.38, 1.27, 0], [-0.55, 1.57, 0], 0.08, shell);
+    ball(root, 0.1, cyan, -0.55, 1.57, 0);
+    // Shoulder and articulated forearm reach toward the card corner.
+    ball(root, 0.27, trim, 0.1, -0.1, 0.52);
+    rod(root, [0.1, -0.1, 0.52], [0.62, -0.38, 0.54], 0.19, shell);
+    ball(root, 0.19, trim, 0.62, -0.38, 0.54);
+    rod(root, [0.62, -0.38, 0.54], [0.92, -0.56, 0.58], 0.16, shell);
+    ball(root, 0.2, shell, 0.92, -0.56, 0.58);
+    // Pivot is the gripping hand; hammer head strikes downward to the right.
     hammer = new T.Group();
-    hammer.position.set(0.8, -0.15, 0.12);
+    hammer.position.set(0.92, -0.56, 0.58);
     root.add(hammer);
-    rod(hammer, [0, 0, 0], [0.64, 1.1, 0], 0.09, gold);
-    box(hammer, 0.8, 0.3, 0.34, blueLight, 0.64, 1.12, 0);
-    sparks = Array.from({ length: 5 }, (_, i) => {
-      const spark = ball(root, 0.055, sparkMat, 1.35, -0.9, 0.45);
-      spark.userData.angle = (i / 5) * Math.PI * 2;
+    rod(hammer, [0, 0, 0], [0.65, 0.54, 0], 0.075, gold);
+    const headMesh = box(hammer, 0.36, 0.6, 0.38, steel, 0.65, 0.54, 0);
+    headMesh.rotation.z = -0.1;
+    // Sparks originate at the real contact side, not near the robot's torso.
+    sparks = Array.from({ length: 7 }, (_, i) => {
+      const spark = ball(root, 0.055, sparkMat, 1.48, -1.06, 0.64);
+      spark.userData.angle = (i / 7) * Math.PI * 2;
+      spark.visible = false;
       return spark;
     });
   } else {
@@ -165,16 +189,18 @@ function initializeMascot(T, mount) {
       if (!reducedMotion.matches) {
         if (robot) {
           const phase = (t % 2.8) / 2.8;
-          const swing = phase < 0.26 ? -0.55 + phase / 0.26 * 1.35 :
-            phase < 0.34 ? 0.8 - (phase - 0.26) / 0.08 * 1.25 : -0.45;
+          const swing = phase < 0.21 ? 0.45 :
+            phase < 0.29 ? 0.45 - (phase - 0.21) / 0.08 * 1.22 :
+            phase < 0.41 ? -0.77 + (phase - 0.29) / 0.12 * 1.22 : 0.45;
           hammer.rotation.z = swing;
-          const impact = phase > 0.25 && phase < 0.34;
-          root.position.y = impact ? Math.sin(t * 110) * 0.035 : 0;
-          sparks.forEach((spark, i) => {
+          const impact = phase >= 0.285 && phase < 0.36;
+          root.position.y = -0.05 + (impact ? Math.sin(t * 100) * 0.022 : 0);
+          sparks.forEach((spark) => {
             spark.visible = impact;
-            const a = spark.userData.angle;
-            spark.position.set(1.24 + Math.cos(a) * (phase - 0.25) * 3,
-              -0.95 + Math.sin(a) * (phase - 0.25) * 3, 0.45);
+            const angle = spark.userData.angle;
+            const distance = (phase - 0.285) * 4;
+            spark.position.set(1.48 + Math.cos(angle) * distance,
+              -1.06 + Math.sin(angle) * distance, 0.64);
           });
         } else {
           leftHand.position.y = -0.9 + Math.sin(t * 17) * 0.07;
