@@ -6014,3 +6014,75 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
   margin-top: 0;
   text-align: center;
 }
+
+
+/* Landing 2.5D mascots: inline vectors, compositor-friendly animations.
+   The card itself is never transformed by mascot animations, preserving tilt. */
+.portfolio-hub .portfolio-choice { isolation: isolate; }
+.portfolio-hub .hub-mascot {
+  position: absolute;
+  top: 2px;
+  right: 68px;
+  width: clamp(76px, 7.5vw, 112px);
+  aspect-ratio: 120 / 108;
+  display: block;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 8px rgba(0,0,0,.28));
+  transform-origin: 50% 100%;
+}
+.portfolio-hub .hub-mascot svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.portfolio-hub .hub-mascot-assistant { right: auto; left: 68px; width: clamp(78px, 8vw, 118px); aspect-ratio: 130 / 110; }
+.portfolio-hub .hub-robot-hammer { transform-box: fill-box; transform-origin: 10% 90%; }
+.portfolio-hub .hub-robot-sparks { opacity: 0; transform-origin: center; }
+.portfolio-hub .hub-office-hands { transform-box: fill-box; transform-origin: center; }
+.portfolio-hub .hub-office-document,
+.portfolio-hub .hub-office-check { opacity: 0; }
+@keyframes hubHammerStrike {
+  0%, 15%, 55%, 100% { transform: rotate(-25deg); }
+  30% { transform: rotate(15deg); }
+  38% { transform: rotate(19deg); }
+  44% { transform: rotate(-12deg); }
+}
+@keyframes hubHammerSparks {
+  0%, 27%, 45%, 100% { opacity: 0; transform: scale(.55); }
+  32% { opacity: 1; transform: scale(1.2); }
+  39% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes hubRobotImpact {
+  0%, 29%, 39%, 100% { translate: 0 0; }
+  32% { translate: 0 2px; }
+  35% { translate: 1px -1px; }
+}
+@keyframes hubTyping {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(2px) rotate(2deg); }
+  50% { transform: translateY(-1px) rotate(-2deg); }
+  75% { transform: translateY(2px) rotate(1deg); }
+}
+@keyframes hubOfficePop {
+  0%, 15%, 65%, 100% { opacity: 0; transform: translateY(8px) scale(.8); }
+  25%, 50% { opacity: 1; transform: translateY(-5px) scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-hub .hub-robot-hammer { animation: hubHammerStrike 2.8s ease-in-out infinite; }
+  .portfolio-hub .hub-robot-sparks { animation: hubHammerSparks 2.8s ease-out infinite; }
+  .portfolio-hub .hub-mascot-robot { animation: hubRobotImpact 2.8s ease-in-out infinite; }
+  .portfolio-hub .hub-office-hands { animation: hubTyping .48s ease-in-out infinite; }
+  .portfolio-hub .hub-office-document { animation: hubOfficePop 6s ease-in-out infinite; }
+  .portfolio-hub .hub-office-check { animation: hubOfficePop 6s ease-in-out 3s infinite; }
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .hub-mascot { right: 52px; width: 72px; }
+  .portfolio-hub .hub-mascot-assistant { right: auto; left: 52px; width: 76px; }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .hub-mascot { right: 48px; width: 58px; top: 0; }
+  .portfolio-hub .hub-mascot-assistant { right: auto; left: 48px; width: 62px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .hub-mascot,
+  .portfolio-hub .hub-mascot * { animation: none !important; transition: none !important; }
+  .portfolio-hub .hub-robot-hammer { transform: rotate(-20deg); }
+  .portfolio-hub .hub-office-document { opacity: 1; }
+}
