@@ -129,28 +129,83 @@ function initializeMascot(T, mount) {
       return spark;
     });
   } else {
-    box(root, 1.5, 0.92, 0.7, gold, 0, -0.65, -0.12);
-    ball(root, 0.39, skin, 0, 0.55, 0.12, 1, 1.15, 0.83);
+    // Side-facing miniature administrator perched on the card, sorting folders.
+    const white = mat(0xf7e9db, 0.04, 0.65);
+    const trousers = mat(0x31303e, 0.1, 0.75);
+    const chestnut = mat(0x653c31, 0.1, 0.72);
+    const folderBlue = mat(0x7da6d4);
+    const folderPink = mat(0xd998a3);
+    const folderCream = mat(0xf5c67d);
+    const paper = mat(0xfff6e8);
+    const ink = mat(0x5e6473);
+    root.rotation.y = -0.22;
+    root.position.y = -0.04;
+
+    // Kneeling pose: shoes rest on the card rim.
+    ball(root, 0.47, trousers, 0.1, -0.72, -0.1, 1.35, 0.62, 0.9);
+    ball(root, 0.28, trousers, 0.64, -0.92, 0.08, 1.25, 0.48, 0.85);
+    ball(root, 0.21, white, 0.84, -1.13, 0.3, 1.45, 0.42, 0.85);
+    ball(root, 0.2, white, -0.28, -1.14, 0.12, 1.5, 0.4, 0.85);
+
+    // White blouse and collar, leaning toward the folders.
+    ball(root, 0.48, white, -0.2, -0.05, 0, 1.1, 1.2, 0.75);
+    box(root, 0.28, 0.22, 0.12, paper, -0.05, 0.24, 0.34).rotation.z = 0.35;
+    ball(root, 0.19, skin, -0.15, 0.42, 0.04);
     head = new T.Group();
-    head.position.set(0, 0.55, 0.12);
+    head.position.set(-0.18, 0.75, 0.12);
+    head.rotation.z = -0.16;
     root.add(head);
-    ball(head, 0.42, hair, 0, 0.12, -0.12, 1.06, 1.1, 0.8);
-    ball(head, 0.34, skin, 0, -0.04, 0.19, 1, 1.05, 0.68);
-    ball(head, 0.035, hair, -0.13, -0.02, 0.42);
-    ball(head, 0.035, hair, 0.13, -0.02, 0.42);
-    rod(root, [-0.7, -0.45, 0.05], [-0.48, -0.91, 0.6], 0.13, skin);
-    rod(root, [0.7, -0.45, 0.05], [0.48, -0.91, 0.6], 0.13, skin);
-    leftHand = ball(root, 0.14, skin, -0.48, -0.9, 0.6, 1, 0.6, 1);
-    rightHand = ball(root, 0.14, skin, 0.48, -0.9, 0.6, 1, 0.6, 1);
-    box(root, 1.4, 0.84, 0.09, laptop, 0, -0.62, 0.94).rotation.x = -0.17;
-    box(root, 1.65, 0.08, 0.66, laptop, 0, -1.12, 1.2);
-    const iconMat = new T.MeshBasicMaterial({ color: 0xfff3d9, transparent: true, opacity: 0.95 });
-    for (let i = 0; i < 2; i++) {
+    ball(head, 0.55, chestnut, -0.1, 0.12, -0.12, 1.04, 1.04, 0.82);
+    ball(head, 0.46, skin, 0.04, -0.06, 0.18, 0.94, 1.04, 0.84);
+    ball(head, 0.39, chestnut, -0.38, 0.62, -0.12, 1, 0.95, 0.9);
+    ball(head, 0.19, chestnut, -0.13, 0.86, -0.16, 1.2, 0.85, 1);
+    ball(head, 0.11, skin, 0.43, -0.1, 0.1);
+    ball(head, 0.045, ink, 0.23, -0.08, 0.54);
+    // Glasses in front of the visible eye.
+    const glasses = new T.MeshBasicMaterial({ color: 0x4a302c });
+    const rim = new T.Mesh(new T.TorusGeometry(0.18, 0.025, 6, 20), glasses);
+    rim.position.set(0.21, -0.07, 0.57);
+    head.add(rim);
+
+    // Pastel document binders on the card surface.
+    [folderCream, folderPink, folderBlue].forEach((material, i) => {
+      const binder = box(root, 0.9, 0.23, 0.63, material,
+        -0.95, -1.12 + i * 0.25, 0.45);
+      binder.rotation.z = i === 1 ? 0.05 : -0.02;
+      box(root, 0.54, 0.09, 0.02, paper,
+        -0.95, -1.11 + i * 0.25, 0.78);
+      ball(root, 0.055, ink, -1.31, -1.1 + i * 0.25, 0.79);
+    });
+    // One upright folder being actively handled.
+    const activeFolder = new T.Group();
+    activeFolder.position.set(-0.54, -0.45, 0.52);
+    activeFolder.rotation.z = -0.17;
+    root.add(activeFolder);
+    box(activeFolder, 0.73, 0.68, 0.12, folderBlue, 0, 0, 0);
+    box(activeFolder, 0.5, 0.47, 0.04, paper, 0, 0.02, 0.09);
+    for (let i = 0; i < 3; i++) {
+      box(activeFolder, 0.37, 0.022, 0.05, ink, 0, 0.16 - i * 0.12, 0.13);
+    }
+    // Hands move while sorting the upright folder.
+    rod(root, [-0.42, 0.04, 0.2], [-0.67, -0.35, 0.56], 0.14, white);
+    rod(root, [0.16, -0.03, 0.2], [-0.22, -0.4, 0.59], 0.14, white);
+    leftHand = ball(root, 0.16, skin, -0.67, -0.35, 0.56);
+    rightHand = ball(root, 0.16, skin, -0.22, -0.4, 0.59);
+
+    // Open laptop on the opposite side of the character.
+    box(root, 0.9, 0.065, 0.62, laptop, 1.0, -1.13, 0.53);
+    box(root, 0.85, 0.6, 0.07, laptop, 1.23, -0.83, 0.26).rotation.y = -0.18;
+
+    // Floating checklist sheets remain lightweight geometric objects.
+    for (let i = 0; i < 3; i++) {
       const icon = new T.Group();
-      const paper = box(icon, 0.42, 0.56, 0.035, iconMat, 0, 0, 0);
-      box(icon, 0.23, 0.035, 0.04, gold, 0, 0.08, 0.04);
-      box(icon, 0.23, 0.035, 0.04, gold, 0, -0.04, 0.04);
-      icon.position.set(i ? 1.38 : -1.38, 0.9, 0);
+      box(icon, 0.38, 0.5, 0.035, paper, 0, 0, 0);
+      for (let row = 0; row < 3; row++) {
+        box(icon, 0.055, 0.055, 0.045, folderBlue, -0.11, 0.13 - row * 0.13, 0.04);
+        box(icon, 0.16, 0.022, 0.045, ink, 0.06, 0.13 - row * 0.13, 0.04);
+      }
+      icon.position.set(i === 0 ? -1.42 : i === 1 ? 1.05 : 1.58,
+        i === 0 ? 0.52 : i === 1 ? 1.15 : 0.45, 0);
       root.add(icon);
       icons.push(icon);
     }
@@ -203,8 +258,8 @@ function initializeMascot(T, mount) {
               -1.06 + Math.sin(angle) * distance, 0.64);
           });
         } else {
-          leftHand.position.y = -0.9 + Math.sin(t * 17) * 0.07;
-          rightHand.position.y = -0.9 + Math.sin(t * 17 + Math.PI) * 0.07;
+          leftHand.position.y = -0.35 + Math.sin(t * 3.8) * 0.055;
+          rightHand.position.y = -0.4 + Math.sin(t * 3.8 + 1.5) * 0.05;
           head.rotation.z = Math.sin(t * 1.2) * 0.08;
           icons.forEach((icon, i) => {
             const phase = ((t + i * 3) % 6) / 6;
