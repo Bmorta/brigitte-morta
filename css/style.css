@@ -6086,3 +6086,20 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
   .portfolio-hub .hub-robot-hammer { transform: rotate(-20deg); }
   .portfolio-hub .hub-office-document { opacity: 1; }
 }
+
+/* Version 2 only: Three.js canvas inside existing decorative mascot slots. */
+.portfolio-hub .hub-mascot-3d {
+  overflow: visible;
+  contain: layout style;
+}
+.portfolio-hub .hub-mascot-3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .hub-mascot-3d {
+    animation: none !important;
+  }
+}
