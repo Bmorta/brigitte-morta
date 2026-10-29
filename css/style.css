@@ -6320,3 +6320,25 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
 @media (prefers-reduced-motion: reduce) {
   .portfolio-hub .admin-choice .hub-mascot-art { animation: none !important; }
 }
+
+/* Updated transparent admin illustration (850x708): preserve its natural ratio. */
+.portfolio-hub .admin-choice .hub-mascot-art {
+  aspect-ratio: 850 / 708;
+  top: -230px;
+  right: -26px;
+  width: clamp(270px, 25vw, 365px);
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -170px;
+    right: -14px;
+    width: 270px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -112px;
+    right: -6px;
+    width: 180px;
+  }
+}
