@@ -5924,3 +5924,32 @@ html[data-theme="light"] .glow {
     width: 100%;
   }
 }
+
+
+/* Programmer header: hub link is a navigation action, never a fixed overlay.
+   Override the legacy global .portfolio-hub-link position at every width. */
+body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > .portfolio-hub-link {
+  position: static;
+  inset: auto;
+  z-index: auto;
+  transform: none;
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 40px;
+  margin: 0;
+  padding: 0 13px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+@media (max-width: 1199.98px) {
+  body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > .portfolio-hub-link {
+    width: 40px;
+    padding: 0;
+  }
+  body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > .portfolio-hub-link .hub-link-label {
+    display: none;
+  }
+}
