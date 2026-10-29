@@ -32,8 +32,8 @@ def edit(name, new_center, new_extents=None):
     else:
         mesh.vertices += np.asarray(new_center) - old_center
 
-edit("hand_left", (-0.32, -0.29, 1.075))
-edit("hand_right", (0.32, -0.29, 1.075))
+edit("hand_left", (-0.34, -0.79, 1.10))  # Visible in front of laptop lid
+edit("hand_right", (0.34, -0.79, 1.10))  # Opposite hand
 edit("laptop_screen", (0, -0.54, 1.17), (0.74, 0.06, 0.51))
 edit("laptop_display", (0, -0.588, 1.18), (0.62, 0.015, 0.39))
 edit("laptop_icon", (0, -0.604, 1.20), (0.12, 0.015, 0.085))
