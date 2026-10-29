@@ -5953,3 +5953,29 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     display: none;
   }
 }
+
+
+/* Landing cards: slightly stronger, balanced inward perspective tilt.
+   Preserve the existing hover lift, card content and mobile stacking. */
+@media (min-width: 1101px) {
+  .portfolio-hub .programmer-choice {
+    transform-origin: left center;
+    transform: rotateY(8deg);
+  }
+  .portfolio-hub .admin-choice {
+    transform-origin: right center;
+    transform: rotateY(-8deg);
+  }
+  .portfolio-hub .programmer-choice:hover,
+  .portfolio-hub .programmer-choice:focus-visible {
+    transform: rotateY(8deg) translateY(-6px);
+  }
+  .portfolio-hub .admin-choice:hover,
+  .portfolio-hub .admin-choice:focus-visible {
+    transform: rotateY(-8deg) translateY(-6px);
+  }
+  .portfolio-hub .admin-choice h2 {
+    font-size: clamp(1.5rem, 2.3vw, 2.65rem);
+    overflow-wrap: normal;
+  }
+}
