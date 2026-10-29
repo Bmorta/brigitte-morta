@@ -96,8 +96,9 @@ async function start() {
   const right = find("hand_right");
   const bun = find("bun");
   const folder = find("folder_2");
+  const paper = find("checklist_board");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const initial = new Map([left, right, bun, folder].filter(Boolean).map(obj => [obj, obj.position.clone()]));
+  const initial = new Map([left, right, bun, folder, paper].filter(Boolean).map(obj => [obj, obj.position.clone()]));
   let visible = true;
   const visibility = new IntersectionObserver((entries) => { visible = entries[0]?.isIntersecting ?? false; });
   visibility.observe(mount);
@@ -139,6 +140,11 @@ async function start() {
       }
       if (bun) bun.position.z = initial.get(bun).z + (move ? Math.sin(t * 1.5) * 0.012 : 0);
       if (folder) folder.rotation.z = move ? Math.sin(t * 0.9) * 0.025 : 0;
+      // Gentle floating paper motion; leave all other mascot behavior intact.
+      if (paper) {
+        paper.position.z = initial.get(paper).z + (move ? Math.sin(t * 2.2) * 0.065 : 0);
+        paper.rotation.y = move ? Math.sin(t * 1.6) * 0.055 : 0;
+      }
       renderer.render(scene, camera);
     }
     frame = requestAnimationFrame(animate);
