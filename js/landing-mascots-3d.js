@@ -6,7 +6,7 @@
 const robotMount = document.querySelector(".hub-mascot-robot");
 const assistantMount = document.querySelector(".hub-mascot-assistant");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const mounts = [robotMount].filter(Boolean);
+const mounts = [robotMount, assistantMount].filter(Boolean);
 
 if (mounts.length && "WebGLRenderingContext" in window) {
   const observer = new IntersectionObserver(async (entries) => {
@@ -26,7 +26,7 @@ function initializeMascot(T, mount) {
   const robot = mount.classList.contains("hub-mascot-robot");
   const scene = new T.Scene();
   const camera = new T.PerspectiveCamera(35, 1, 0.1, 100);
-  camera.position.set(0, 1.2, robot ? 9.5 : 6.3);
+  camera.position.set(0, 1.2, robot ? 9.5 : 8.2);
   camera.lookAt(0, 0.35, 0);
   const renderer = new T.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "low-power" });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
@@ -138,7 +138,7 @@ function initializeMascot(T, mount) {
     const folderCream = mat(0xf5c67d);
     const paper = mat(0xfff6e8);
     const ink = mat(0x5e6473);
-    root.rotation.y = 0.05;
+    root.rotation.y = 0.12;
     root.position.y = -0.04;
 
     // Kneeling pose: shoes rest on the card rim.
@@ -186,15 +186,15 @@ function initializeMascot(T, mount) {
     for (let i = 0; i < 3; i++) {
       box(activeFolder, 0.37, 0.022, 0.05, ink, 0, 0.16 - i * 0.12, 0.13);
     }
-    // Hands move while sorting the upright folder.
+    // Arms extend toward the laptop, so typing is readable at mascot size.
     rod(root, [-0.42, 0.04, 0.2], [-0.67, -0.35, 0.56], 0.14, white);
     rod(root, [0.16, -0.03, 0.2], [-0.22, -0.4, 0.59], 0.14, white);
-    leftHand = ball(root, 0.16, skin, -0.67, -0.35, 0.56);
-    rightHand = ball(root, 0.16, skin, -0.22, -0.4, 0.59);
+    leftHand = ball(root, 0.16, skin, 0.34, -0.97, 0.93);
+    rightHand = ball(root, 0.16, skin, 0.72, -0.97, 0.93);
 
-    // Open laptop on the opposite side of the character.
-    box(root, 0.9, 0.065, 0.62, laptop, 1.0, -1.13, 0.53);
-    box(root, 0.85, 0.6, 0.07, laptop, 1.23, -0.83, 0.26).rotation.y = -0.18;
+    // Open laptop in front of the assistant; hands reach toward its keyboard.
+    box(root, 0.9, 0.065, 0.62, laptop, 0.65, -1.13, 0.72);
+    box(root, 0.85, 0.6, 0.07, laptop, 0.95, -0.83, 0.42).rotation.y = -0.18;
 
     // Floating checklist sheets remain lightweight geometric objects.
     for (let i = 0; i < 3; i++) {
@@ -258,8 +258,8 @@ function initializeMascot(T, mount) {
               -1.06 + Math.sin(angle) * distance, 0.64);
           });
         } else {
-          leftHand.position.y = -0.35 + Math.sin(t * 3.8) * 0.055;
-          rightHand.position.y = -0.4 + Math.sin(t * 3.8 + 1.5) * 0.05;
+          leftHand.position.y = -0.97 + Math.sin(t * 12) * 0.055;
+          rightHand.position.y = -0.97 + Math.sin(t * 12 + Math.PI) * 0.055;
           head.rotation.z = -0.16 + Math.sin(t * 1.2) * 0.045;
           activeFolder.rotation.z = -0.17 + Math.sin(t * 3.8) * 0.045;
           icons.forEach((icon, i) => {
