@@ -6,7 +6,7 @@
 const robotMount = document.querySelector(".hub-mascot-robot");
 const assistantMount = document.querySelector(".hub-mascot-assistant");
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const mounts = [robotMount, assistantMount].filter(Boolean);
+const mounts = [robotMount].filter(Boolean);
 
 if (mounts.length && "WebGLRenderingContext" in window) {
   const observer = new IntersectionObserver(async (entries) => {
