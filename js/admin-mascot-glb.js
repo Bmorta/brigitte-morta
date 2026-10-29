@@ -27,10 +27,13 @@ async function start() {
   mount.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
-  scene.add(new THREE.HemisphereLight(0xffffff, 0x8e715f, 2.6));
-  const light = new THREE.DirectionalLight(0xffffff, 3);
+  scene.add(new THREE.HemisphereLight(0xfff5e7, 0x927c79, 2.9));
+  const light = new THREE.DirectionalLight(0xffedda, 2.5);
   light.position.set(-3, 6, 8);
   scene.add(light);
+  const fill = new THREE.DirectionalLight(0xd6efff, 1.25);
+  fill.position.set(4, 2, 3);
+  scene.add(fill);
   const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 50);
   camera.position.set(4.2, 2.8, 7.5);
 
@@ -40,13 +43,41 @@ async function start() {
   // Rotate the complete asset so its head points upward and the desk stays level.
   model.rotation.x = -Math.PI / 2;
   scene.add(model);
+
+  // Warm, colorful palette applied at runtime: no GLB download or Python rerun.
+  // Preserve the original asset and assign colors by named mesh.
+  const palette = {
+    hair_back: 0x794331, hair_cap: 0x794331, side_fringe: 0x874936,
+    bun: 0x96533c, bun_highlight: 0xc27b52,
+    face: 0xffcfae, neck: 0xffc9a7, nose: 0xf3a58d,
+    hand_left: 0xffc9a7, hand_right: 0xffc9a7,
+    torso: 0xfff8e9, sleeve_left: 0xfff8e9, sleeve_right: 0xfff8e9,
+    skirt: 0x617da2, shoe_left: 0x66535b, shoe_right: 0x66535b,
+    laptop_keyboard: 0x76c9c5, laptop_screen: 0x57b6b6,
+    laptop_display: 0x203f59, laptop_icon: 0x9df5e7,
+    folder_0: 0xffa98c, folder_1: 0xffd46e, folder_2: 0x82d8c0,
+    checklist_board: 0xfff8e8
+  };
+  model.traverse((part) => {
+    if (!part.isMesh) return;
+    const namedColor = palette[part.name];
+    if (namedColor === undefined) return;
+    const material = new THREE.MeshStandardMaterial({
+      color: namedColor,
+      roughness: 0.64,
+      metalness: part.name.startsWith("laptop") ? 0.14 : 0.02
+    });
+    part.material = material;
+  });
+
   const bounds = new THREE.Box3().setFromObject(model);
   const center = bounds.getCenter(new THREE.Vector3());
   model.position.sub(center);
   camera.lookAt(0, 0, 0);
   const height = bounds.getSize(new THREE.Vector3()).y;
   const distance = height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) * 1.45;
-  // Bring the character closer within the existing robot-sized canvas.\n  camera.position.set(distance * 0.30, distance * 0.19, distance * 0.80);
+  // Bring the character closer within the existing robot-sized canvas.
+  camera.position.set(distance * 0.30, distance * 0.19, distance * 0.80);
   camera.lookAt(0, 0, 0);
 
   const find = (name) => model.getObjectByName(name);
