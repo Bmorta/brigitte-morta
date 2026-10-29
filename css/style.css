@@ -6228,3 +6228,26 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
   }
   .portfolio-hub .programmer-choice::after { left: 88px; }
 }
+
+/* Version 2 admin mascot: perched document organizer, clear of card copy. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+  top: -133px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
