@@ -6342,3 +6342,27 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     width: 180px;
   }
 }
+
+/* Version 2 3D admin prototype: same footprint as the programmer robot. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+  top: -132px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  aspect-ratio: 120 / 108;
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
