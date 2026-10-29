@@ -32,11 +32,15 @@ def edit(name, new_center, new_extents=None):
     else:
         mesh.vertices += np.asarray(new_center) - old_center
 
-edit("hand_left", (-0.43, -0.26, 1.075))
-edit("hand_right", (0.43, -0.26, 1.075))
-edit("laptop_screen", (0, -0.54, 1.21), (0.896, 0.07, 0.64))
-edit("laptop_display", (0, -0.588, 1.23), (0.748, 0.015, 0.484))
-edit("laptop_icon", (0, -0.604, 1.26), (0.157, 0.015, 0.107))
+edit("hand_left", (-0.32, -0.29, 1.075))
+edit("hand_right", (0.32, -0.29, 1.075))
+edit("laptop_screen", (0, -0.54, 1.17), (0.74, 0.06, 0.51))
+edit("laptop_display", (0, -0.588, 1.18), (0.62, 0.015, 0.39))
+edit("laptop_icon", (0, -0.604, 1.20), (0.12, 0.015, 0.085))
+# Replace the broad tabletop with a compact floating work surface.
+# This keeps the silhouette tidy above the card without changing its CSS.
+if "desk_top" in scene.geometry:
+    edit("desk_top", (0.0, -0.40, 0.93), (1.65, 0.72, 0.075))
 # Turn the entire laptop around its vertical (Z) axis.
 # The mascot sits behind the desk (positive Y); the display should face her,
 # while the keyboard moves toward her hands. Rotate ALL laptop components together.
@@ -52,4 +56,4 @@ if not rotated:
 print("Turned laptop toward mascot:", ", ".join(rotated))
 scene.export(MODEL)
 print(f"Refined model saved: {MODEL}")
-print("Colors unchanged. Laptop faces mascot. Refresh Live Server with Ctrl+Shift+R.")
+print("Compact desk and laptop updated; colors preserved. Refresh Live Server with Ctrl+Shift+R.")
