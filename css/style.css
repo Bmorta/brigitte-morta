@@ -5979,3 +5979,38 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     overflow-wrap: normal;
   }
 }
+
+
+/* Landing footer: override legacy five-column grid so the decorative icons,
+   tagline and supporting text share one centered vertical axis. */
+.portfolio-hub .hub-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: min(720px, 100%);
+  margin-inline: auto;
+  text-align: center;
+}
+.portfolio-hub .hub-bottom-rule,
+.portfolio-hub .hub-bottom-icons,
+.portfolio-hub .hub-bottom p,
+.portfolio-hub .hub-bottom small {
+  flex: 0 0 auto;
+  grid-column: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+.portfolio-hub .hub-bottom-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.portfolio-hub .hub-bottom p,
+.portfolio-hub .hub-bottom small {
+  width: 100%;
+  margin-top: 0;
+  text-align: center;
+}
