@@ -186,7 +186,7 @@ function initializeMascot(T, mount) {
     for (let i = 0; i < 3; i++) {
       box(activeFolder, 0.37, 0.022, 0.05, ink, 0, 0.16 - i * 0.12, 0.13);
     }
-    // Hands move while sorting the upright folder.
+    // Arms extend toward the laptop, so typing is readable at mascot size.
     rod(root, [-0.42, 0.04, 0.2], [-0.67, -0.35, 0.56], 0.14, white);
     rod(root, [0.16, -0.03, 0.2], [-0.22, -0.4, 0.59], 0.14, white);
     leftHand = ball(root, 0.16, skin, 0.34, -0.97, 0.93);
