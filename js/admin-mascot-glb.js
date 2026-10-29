@@ -87,8 +87,8 @@ async function start() {
   camera.lookAt(0, 0, 0);
   const height = bounds.getSize(new THREE.Vector3()).y;
   const distance = height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) * 1.45;
-  // Bring the character closer within the existing robot-sized canvas.
-  camera.position.set(distance * 0.30, distance * 0.19, distance * 0.80);
+  // Pull back to reduce mascot size without changing its card or canvas.
+  camera.position.set(distance * 0.39, distance * 0.25, distance * 1.05);
   camera.lookAt(0, 0, 0);
 
   const find = (name) => model.getObjectByName(name);
@@ -116,7 +116,7 @@ async function start() {
   // Brief pauses make the alternating hands look more like intentional typing.
   const tap = (time, phase) => {
     const beat = Math.sin(time * 10 + phase);
-    return Math.pow(Math.max(0, beat), 2) * 0.065;
+    return Math.pow(Math.max(0, beat), 2) * 0.11;
   };
   let frame = 0;
   function animate() {
