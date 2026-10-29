@@ -46,7 +46,7 @@ async function start() {
   camera.lookAt(0, 0, 0);
   const height = bounds.getSize(new THREE.Vector3()).y;
   const distance = height / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))) * 1.45;
-  camera.position.set(distance * 0.38, distance * 0.23, distance);
+  // Bring the character closer within the existing robot-sized canvas.\n  camera.position.set(distance * 0.30, distance * 0.19, distance * 0.80);
   camera.lookAt(0, 0, 0);
 
   const find = (name) => model.getObjectByName(name);
@@ -81,8 +81,8 @@ async function start() {
     if (visible && !document.hidden) {
       const t = clock.getElapsedTime();
       const move = !reduced.matches;
-      if (left) left.position.y = initial.get(left).y + (move ? Math.sin(t * 11) * 0.035 : 0);
-      if (right) right.position.y = initial.get(right).y + (move ? Math.sin(t * 11 + Math.PI) * 0.035 : 0);
+      if (left) left.position.y = initial.get(left).y + (move ? Math.sin(t * 8) * 0.025 : 0);
+      if (right) right.position.y = initial.get(right).y + (move ? Math.sin(t * 8 + Math.PI) * 0.025 : 0);
       if (bun) bun.position.y = initial.get(bun).y + (move ? Math.sin(t * 1.5) * 0.015 : 0);
       if (folder) folder.rotation.z = move ? Math.sin(t * 0.9) * 0.025 : 0;
       renderer.render(scene, camera);
