@@ -112,6 +112,12 @@ async function start() {
   resizeObserver.observe(mount);
   resize();
   const clock = new THREE.Clock();
+  // GLB uses Z-up: animate local Z for vertical finger taps, not local Y.
+  // Brief pauses make the alternating hands look more like intentional typing.
+  const tap = (time, phase) => {
+    const beat = Math.sin(time * 10 + phase);
+    return Math.pow(Math.max(0, beat), 2) * 0.065;
+  };
   let frame = 0;
   function animate() {
     if (!mount.isConnected) {
@@ -123,9 +129,15 @@ async function start() {
     if (visible && !document.hidden) {
       const t = clock.getElapsedTime();
       const move = !reduced.matches;
-      if (left) left.position.y = initial.get(left).y + (move ? Math.sin(t * 8) * 0.025 : 0);
-      if (right) right.position.y = initial.get(right).y + (move ? Math.sin(t * 8 + Math.PI) * 0.025 : 0);
-      if (bun) bun.position.y = initial.get(bun).y + (move ? Math.sin(t * 1.5) * 0.015 : 0);
+      if (left) {
+        left.position.z = initial.get(left).z + (move ? tap(t, 0) : 0);
+        left.position.y = initial.get(left).y + (move ? Math.sin(t * 5) * 0.015 : 0);
+      }
+      if (right) {
+        right.position.z = initial.get(right).z + (move ? tap(t, Math.PI * 0.85) : 0);
+        right.position.y = initial.get(right).y + (move ? Math.sin(t * 5 + Math.PI) * 0.015 : 0);
+      }
+      if (bun) bun.position.z = initial.get(bun).z + (move ? Math.sin(t * 1.5) * 0.012 : 0);
       if (folder) folder.rotation.z = move ? Math.sin(t * 0.9) * 0.025 : 0;
       renderer.render(scene, camera);
     }
