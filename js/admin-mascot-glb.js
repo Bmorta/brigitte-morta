@@ -97,8 +97,13 @@ async function start() {
   const bun = find("bun");
   const folder = find("folder_2");
   const paper = find("checklist_board");
+  // Checklist lines belong to the same floating paper.
+  const paperLines = [];
+  model.traverse((part) => {
+    if (part.name.startsWith("checklist_line")) paperLines.push(part);
+  });
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const initial = new Map([left, right, bun, folder, paper].filter(Boolean).map(obj => [obj, obj.position.clone()]));
+  const initial = new Map([left, right, bun, folder, paper, ...paperLines].filter(Boolean).map(obj => [obj, obj.position.clone()]));
   let visible = true;
   const visibility = new IntersectionObserver((entries) => { visible = entries[0]?.isIntersecting ?? false; });
   visibility.observe(mount);
@@ -144,6 +149,20 @@ async function start() {
       if (paper) {
         paper.position.z = initial.get(paper).z + (move ? Math.sin(t * 2.2) * 0.065 : 0);
         paper.rotation.y = move ? Math.sin(t * 1.6) * 0.055 : 0;
+      }
+      // Keep each printed line synchronized with the paper's translation and tilt.
+      // Mesh origins may differ, so move line geometry using the same rotation
+      // around the paper's visual center instead of rotating each line in place.
+      if (paper && paperLines.length) {
+        const dz = paper.position.z - initial.get(paper).z;
+        const angle = paper.rotation.y;
+        const pivot = new THREE.Box3().setFromObject(paper).getCenter(new THREE.Vector3());
+        for (const line of paperLines) {
+          const origin = initial.get(line);
+          line.position.copy(origin);
+          line.position.z += dz;
+          line.rotation.y = angle;
+        }
       }
       renderer.render(scene, camera);
     }
