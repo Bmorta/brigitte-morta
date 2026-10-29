@@ -60,36 +60,24 @@ async function start() {
   };
   model.traverse((part) => {
     if (!part.isMesh) return;
-    // The GLB carries vertex colors. Neutralize those per-vertex tints
-    // before applying our palette so they cannot multiply colors to black.
-    const attribute = part.geometry.getAttribute("color");
-    if (attribute) {
-      const neutral = attribute.clone();
-      for (let i = 0; i < neutral.count; i++) {
-        neutral.setXYZ(i, 1, 1, 1);
-        if (neutral.itemSize === 4) neutral.setW(i, 1);
-      }
-      part.geometry = part.geometry.clone();
-      part.geometry.setAttribute("color", neutral);
+    // Remove the original GLB's vertex-color and PBR interactions entirely.
+    // Basic materials display the requested colors independent of lighting.
+    const name = part.name;
+    if (name.startsWith("desk_leg_")) {
+      part.visible = false;
+      return;
     }
-    const name = part.name.replace(/_\\d+$/, "");
-    const namedColor = palette[part.name] ?? palette[name];
-    // Keep unlisted details visible instead of inheriting a broken dark material.
-    const fallback = part.name.startsWith("glasses") ? 0x65433c
-      : part.name.startsWith("eye") ? 0x343445
-      : part.name.startsWith("checklist_line") ? 0x75b4c4
-      : part.name.startsWith("folder_tab") ? 0xfff8e9
-      : part.name === "desk_top" ? 0xc9986a : 0xf4d8bd;
-    const color = namedColor ?? fallback;
-    part.material = new THREE.MeshStandardMaterial({
-      color,
+    const fallback = name.startsWith("glasses") ? 0x65433c
+      : name.startsWith("eye") ? 0x343445
+      : name.startsWith("checklist_line") ? 0x75b4c4
+      : name.startsWith("folder_tab") ? 0xfff8e9
+      : name === "desk_top" ? 0xc9986a : 0xf4d8bd;
+    part.material = new THREE.MeshBasicMaterial({
+      color: palette[name] ?? fallback,
       vertexColors: false,
-      emissive: color,
-      emissiveIntensity: 0.12,
-      roughness: 0.7,
-      metalness: part.name.startsWith("laptop") ? 0.1 : 0
+      side: THREE.DoubleSide,
+      toneMapped: false
     });
-    part.material.needsUpdate = true;
   });
 
   const bounds = new THREE.Box3().setFromObject(model);
