@@ -32,8 +32,14 @@ def edit(name, new_center, new_extents=None):
     else:
         mesh.vertices += np.asarray(new_center) - old_center
 
-edit("hand_left", (-0.34, -0.79, 1.10))  # Visible in front of laptop lid
-edit("hand_right", (0.34, -0.79, 1.10))  # Opposite hand
+# Keep the hands on the mascot side of the screen, enlarged enough to peek
+# above its edges while retaining the existing typing animation.
+for hand_name, hand_center in (
+    ("hand_left", (-0.36, -0.35, 1.16)),
+    ("hand_right", (0.36, -0.35, 1.16)),
+):
+    hand = scene.geometry[hand_name]
+    edit(hand_name, hand_center, hand.extents * 1.5)
 edit("laptop_screen", (0, -0.54, 1.17), (0.74, 0.06, 0.51))
 edit("laptop_display", (0, -0.588, 1.18), (0.62, 0.015, 0.39))
 edit("laptop_icon", (0, -0.604, 1.20), (0.12, 0.015, 0.085))
