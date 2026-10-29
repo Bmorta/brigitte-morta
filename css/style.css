@@ -6391,3 +6391,8 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     width: 130px;
   }
 }
+
+/* Version 2: hide only the decorative outlined circles on portfolio cards. */
+.portfolio-hub .portfolio-choice .choice-corner {
+  display: none;
+}
