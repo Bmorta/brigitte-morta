@@ -72,12 +72,9 @@ async function start() {
       : name.startsWith("checklist_line") ? 0x75b4c4
       : name.startsWith("folder_tab") ? 0xfff8e9
       : name === "desk_top" ? 0xc9986a : 0xf4d8bd;
-    const baseColor = new THREE.Color(palette[name] ?? fallback);
-    // Preserve bright pastels with emissive fill; diffuse light adds depth.
-    part.material = new THREE.MeshLambertMaterial({
-      color: baseColor.clone().multiplyScalar(0.40),
-      emissive: baseColor,
-      emissiveIntensity: 0.60,
+    // Known-good pastel rendering: independent of GLB normals and lighting.
+    part.material = new THREE.MeshBasicMaterial({
+      color: palette[name] ?? fallback,
       vertexColors: false,
       side: THREE.DoubleSide,
       toneMapped: false
