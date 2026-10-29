@@ -36,6 +36,9 @@ async function start() {
 
   const gltf = await new GLTFLoader().loadAsync("models/admin-assistant-3d.glb");
   const model = gltf.scene;
+  // trimesh exports Z-up GLB geometry; Three.js expects Y-up.
+  // Rotate the complete asset so its head points upward and the desk stays level.
+  model.rotation.x = -Math.PI / 2;
   scene.add(model);
   const bounds = new THREE.Box3().setFromObject(model);
   const center = bounds.getCenter(new THREE.Vector3());
