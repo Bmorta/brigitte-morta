@@ -6366,3 +6366,28 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
     width: 130px;
   }
 }
+
+/* Temporary clean illustrated admin mascot while a rigged GLB replacement is prepared.
+   Match the programmer robot footprint; never show the rejected procedural model. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+  top: -132px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  aspect-ratio: 850 / 708;
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
