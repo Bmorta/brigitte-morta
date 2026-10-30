@@ -1,319 +1,1082 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Brigitte Morta — Administrative and Virtual Assistant portfolio." />
-    <meta name="author" content="Brigitte Morta" />
-    <meta name="theme-color" content="#1b160f" />
-    <title>Brigitte Morta | Admin / VA Portfolio</title>
-
-    <link rel="icon" type="image/png" href="images/logo.png" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Brigitte Morta — organized, thoughtful administrative and virtual assistant support. Explore my services, work samples, tools, and training.">
+    <meta name="theme-color" content="#f8f5ef">
+    <title>Brigitte Morta | Admin &amp; Virtual Assistant</title>
+    <link rel="icon" href="images/admin-va/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/admin-fonts.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="js/admin.js" defer></script>
   </head>
-
-  <body class="admin-portfolio-page">
-    <header class="admin-site-header">
-      <nav class="container admin-nav" aria-label="Admin portfolio navigation">
-        <a class="admin-nav-brand" href="#top"><img src="images/logo.png" alt="" /> <span>Brigitte Morta<small>ADMIN / VIRTUAL ASSISTANT</small></span></a>
-        <button class="admin-menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="adminMenu"><i class="bi bi-list"></i></button>
-        <div class="admin-nav-links" id="adminMenu">
-          <a href="#top">Home</a><a href="#services">Services</a><a href="#work">Portfolio</a><a href="#skills">Skills &amp; Tools</a><a href="#certificates">Certificates</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
-          <a class="admin-nav-hub" href="index.html"><i class="bi bi-grid-1x2-fill"></i> Portfolio Hub</a>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="container navigation" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="Brigitte Morta, home">
+          <span class="monogram">B<span>m</span>
+          </span>
+          <span>Brigitte Morta<small>ADMIN &amp; VIRTUAL ASSISTANT</small>
+          </span>
+        </a>
+        <button class="menu-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a class="nav-hub" href="index.html">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M19 12H5m6-6-6 6 6 6"></path>
+            </svg>Back to landing page</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Selected work</a>
+          <a href="#skills">Skills &amp; tools</a>
+          <a href="#certificates">Certificates</a>
+          <a href="#contact" class="nav-contact">Let’s talk <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10"></path>
+            </svg>
+          </a>
         </div>
       </nav>
     </header>
-    <main class="admin-page-main">
-
-      <section class="admin-hero" id="top">
-        <div class="container">
-          <div class="admin-hero-grid">
-            <div class="admin-copy reveal">
-              <div class="admin-opportunity"><span class="admin-status-dot" aria-hidden="true"></span> Open to Opportunities</div>
-              <p class="eyebrow admin-eyebrow">ADMINISTRATIVE · VIRTUAL ASSISTANT</p>
-              <p class="admin-script">Hi, I’m</p>
-              <h1>Brigitte <span>Morta</span></h1>
-              <h2>Your Productivity Partner, Anytime, Anywhere.</h2>
-              <p class="admin-lead">
-                I help businesses stay organized through administrative support, scheduling,
-                client coordination, document management, and creative digital services.
-                From everyday operations to online content, I focus on reliable,
-                detail-oriented support that makes work easier.
-              </p>
-
-              <div class="admin-actions">
-                <a href="#services" class="admin-btn admin-btn-primary">Explore Services <i class="bi bi-arrow-down-right"></i></a>
-                <a href="portfolio-download.html" class="admin-btn admin-btn-secondary"><i class="bi bi-download"></i> Download My Portfolio</a>
-                <a href="#work" class="admin-btn admin-btn-secondary">View My Work <i class="bi bi-arrow-down-right"></i></a>
-                <a href="programmer.html" class="admin-btn admin-btn-secondary">View Programmer Portfolio <i class="bi bi-code-slash"></i></a>
-              </div>
-              <div class="admin-hero-socials" aria-label="Connect with me">
-                <a href="https://www.linkedin.com/in/brigittemorta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                <a href="https://github.com/Bmorta" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-                <a href="mailto:brigittemorta@gmail.com" aria-label="Email Brigitte" title="Email"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <a class="availability" href="#contact">
+              <span class="status-dot"></span> Open for opportunities <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10"></path>
+              </svg>
+            </a>
+            <p class="eyebrow">A LITTLE INTRODUCTION</p>
+            <h1 id="hero-title">Hi, I’m<br>Brigitte <em>Morta.</em>
+            </h1>
+            <h2>Your productivity partner,<br>
+              <span>anytime, anywhere.</span>
+            </h2>
+            <p class="hero-description">I bring order to the details, care to your clients, and a creative touch to your business — so you have more room to focus on what’s next.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#work">Explore my work <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14m-5-5 5 5-5 5"></path>
+                </svg>
+              </a>
+              <a class="button secondary" href="https://brigitte-morta-admin-va.jauntyaspen26.chatgpt.site/files/Brigitte-Morta-Portfolio.pdf" target="_blank" rel="noopener noreferrer" title="Opens the portfolio PDF in a new tab; use the viewer to download">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3v12m-4-4 4 4 4-4M5 15v5h14v-5"></path>
+                </svg> Download portfolio</a>
+            </div>
+            <div class="hero-bottom">
+              <span>
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"></path>
+                  <circle cx="12" cy="10" r="2"></circle>
+                </svg> Davao City, Philippines</span>
+              <div class="socials" aria-label="Social profiles">
+                <a href="https://www.linkedin.com/in/brigittemorta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                    <path d="M7 10v7m0-10v.1M11 17v-7m0 3c0-4 6-4 6 0v4"></path>
+                  </svg>
+                </a>
+                <a href="https://github.com/Bmorta" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M9 19c-4 1-4-2-6-2m13 5v-4c0-1-.4-2-1-2 4-.5 6-2 6-6 0-2-.5-3-2-4 0-1 0-3-.5-4-2 0-4 2-4 2a14 14 0 0 0-6 0S6.5 2 4.5 2C4 3 4 5 4 6c-1.5 1-2 2-2 4 0 4 2 5.5 6 6-.6.5-1 1-1 2v4"></path>
+                  </svg>
+                </a>
+                <a href="https://www.facebook.com/brigittecreatives" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M14 22v-9h3l.5-4H14V7c0-1 .5-2 2-2h2V1h-3c-4 0-6 2-6 6v2H6v4h3v9"></path>
+                  </svg>
+                </a>
               </div>
             </div>
-
-            <div class="admin-profile reveal reveal-delay">
-              <div class="admin-art-glow" aria-hidden="true"></div>
-              <img
-                src="images/admin-portfolio-hero.png"
-                alt="Brigitte Morta — Administrative and Virtual Assistant"
-                class="admin-hero-art"
-              />
+          </div>
+          <div class="hero-visual">
+            <div class="portrait-halo" aria-hidden="true"></div>
+            <div class="portrait-orbit" aria-hidden="true"></div>
+            <img class="hero-portrait" src="images/admin-va/hero-portrait.webp" width="1000" height="910" alt="Brigitte Morta, administrative and virtual assistant, with organized workflow graphics" fetchpriority="high">
+            <span class="visual-caption">
+              <span class="small-line"></span> PEOPLE. PROCESSES. PROGRESS.</span>
+          </div>
+        </div>
+        <div class="hero-ribbon">
+          <div class="container">
+            <span>
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"></path>
+              </svg> Detail-oriented support</span>
+            <span>
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"></path>
+              </svg> Thoughtful communication</span>
+            <span>
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"></path>
+              </svg> A creative, practical approach</span>
+            <a href="#about">A little more about me <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="section about-section" id="about">
+        <div class="container about-grid">
+          <div class="about-visual">
+            <div class="about-photo">
+              <img src="images/admin-va/about-portrait.webp" alt="Brigitte Morta’s portrait from her original portfolio" width="520" height="773" loading="lazy">
             </div>
+            <span class="photo-note">A thoughtful partner,<br>
+              <em>behind the scenes.</em>
+            </span>
+            <span class="about-star" aria-hidden="true">✳</span>
+          </div>
+          <div class="about-copy">
+            <p class="eyebrow">THE PERSON BEHIND THE DETAILS</p>
+            <h2>A clearer workflow.<br>A calmer workday.</h2>
+            <p class="intro-text">Hello! I’m Brigitte, a virtual assistant with a passion for streamlining processes and enhancing productivity.</p>
+            <p>I combine administrative experience, digital tools, and creative skills to help everyday work run smoothly. From a well-organized inbox to a carefully prepared report, I believe the small details make a real difference.</p>
+            <p>With Microsoft Office, Google Workspace, QuickBooks, and web design in my toolkit, I bring both practical support and proactive problem-solving to the table.</p>
+            <div class="about-strengths">
+              <span>
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9H3Z"></path>
+                  <path d="M3 11h18"></path>
+                </svg> Organized by nature</span>
+              <span>
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"></path>
+                </svg> Creative in approach</span>
+              <span>
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m5 12 4 4L19 6"></path>
+                </svg> Reliable in the details</span>
+            </div>
+            <a class="text-link" href="#contact">Let’s make your workday easier <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10"></path>
+              </svg>
+            </a>
           </div>
         </div>
       </section>
-
-      <section id="services" class="admin-section">
+      <section class="section services-section" id="services">
         <div class="container">
-          <div class="admin-section-heading">
-            <p class="eyebrow admin-eyebrow">WHAT I SUPPORT</p>
-            <h2>Practical support for the work that keeps a business running.</h2>
-          </div>
-
-          <div class="admin-service-grid">
-            <article class="admin-service-card">
-              <span><i class="bi bi-kanban"></i></span>
-              <h3>Administrative Support</h3>
-              <p>Day-to-day coordination, scheduling, file organization, follow-ups, and operational support.</p>
-            </article>
-
-            <article class="admin-service-card">
-              <span><i class="bi bi-buildings"></i></span>
-              <h3>Real Estate Administration</h3>
-              <p>Buyer payment monitoring, contracts, client files, commission computations, and reporting.</p>
-            </article>
-
-            <article class="admin-service-card">
-              <span><i class="bi bi-bar-chart"></i></span>
-              <h3>Data & Reporting</h3>
-              <p>Data processing, spreadsheets, summaries, tracking sheets, and business-ready reports.</p>
-            </article>
-
-            <article class="admin-service-card">
-              <span><i class="bi bi-laptop"></i></span>
-              <h3>Digital Assistance</h3>
-              <p>Canva, social media support, document preparation, email workflows, and productivity tools.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="admin-section admin-work-section">
-        <div class="container">
-          <div class="admin-section-heading">
-            <p class="eyebrow admin-eyebrow">EXPERIENCE &amp; CAPABILITIES</p>
-            <h2>From organized workflows to creative digital support.</h2>
-            <p>Explore the work areas and platforms featured in my previous portfolio.</p>
-          </div>
-          <div class="admin-work-grid">
-            <article class="admin-work-card"><i class="bi bi-calendar-check"></i><h3>Appointment &amp; Calendar Management</h3><p>Coordinate appointments, manage schedules, set reminders, and keep teams informed using Google Calendar and Gmail.</p><span>Google Calendar · Gmail</span></article>
-            <article class="admin-work-card"><i class="bi bi-folder2-open"></i><h3>File &amp; Document Management</h3><p>Organize, maintain, share, and retrieve documents to support clear, collaborative workflows.</p><span>Google Drive · Google Docs</span></article>
-            <article class="admin-work-card"><i class="bi bi-envelope-paper"></i><h3>Email &amp; Inbox Management</h3><p>Prioritize messages, organize inboxes with labels and filters, and configure professional vacation responses.</p><span>Gmail</span></article>
-            <article class="admin-work-card"><i class="bi bi-people"></i><h3>Client Relationship Management</h3><p>Support client records, contact organization, lead tracking, and scheduling through CRM workflows.</p><span>Salesforce · Contacts · Leads</span></article>
-            <article class="admin-work-card"><i class="bi bi-kanban"></i><h3>Project &amp; Team Coordination</h3><p>Track tasks and progress, organize project boards, and coordinate team communication.</p><span>Trello · Slack</span></article>
-            <article class="admin-work-card"><i class="bi bi-send"></i><h3>Email Marketing</h3><p>Design email campaigns, organize audiences, create engaging content, and review campaign performance.</p><span><i class="bi bi-envelope-paper-heart" aria-hidden="true"></i>Flodesk</span></article>
-            <article class="admin-work-card"><i class="bi bi-megaphone"></i><h3>Social Media Management</h3><p>Plan and schedule posts, support audience engagement, and configure page messages and replies.</p><span>Facebook · Meta Business tools</span></article>
-            <article class="admin-work-card"><i class="bi bi-bullseye"></i><h3>Facebook Advertising</h3><p>Support campaign structure, audience targeting, ad sets, and creative preparation.</p><span><i class="bi bi-meta" aria-hidden="true"></i>Facebook Ads</span></article>
-            <article class="admin-work-card"><i class="bi bi-receipt"></i><h3>Bookkeeping Support</h3><p>Assist with invoices, expense tracking, customer and supplier records, and payroll-related organization.</p><span><i class="bi bi-calculator" aria-hidden="true"></i>QuickBooks</span></article>
-            <article class="admin-work-card"><i class="bi bi-window"></i><h3>Website Design</h3><p>Create and update easy-to-navigate, responsive websites that support a business's online presence.</p><span>WordPress · Wix</span></article>
-            <article class="admin-work-card"><i class="bi bi-palette"></i><h3>Graphic Design</h3><p>Create social graphics, promotional materials, branding assets, and marketing visuals.</p><span><i class="bi bi-palette" aria-hidden="true"></i>Canva</span></article>
-            <article class="admin-work-card"><i class="bi bi-camera-reels"></i><h3>Photo &amp; Video Editing</h3><p>Refine images and video content through editing, color adjustments, and visual storytelling.</p><span>CapCut · Adobe Photoshop</span></article>
-          </div>
-        </div>
-      </section>
-
-      <section class="admin-section admin-proof-section" id="testimonials">
-        <div class="container">
-          <div class="admin-section-heading">
-            <p class="eyebrow admin-eyebrow">CLIENT &amp; COLLEAGUE FEEDBACK</p>
-            <h2>What others say about my work.</h2>
-          </div>
-          <div class="admin-quote-grid">
-            <blockquote><p>“Brigitte is an outstanding Administrative Officer who consistently ensures our operations run smoothly with their attention to detail and organizational skills.”</p><cite>Lulu Jane Elamparo</cite></blockquote>
-            <blockquote><p>“Brigitte is exceptionally skilled in photo and video editing, delivering high-quality, visually captivating work that elevates every project.”</p><cite>Josephine Morta</cite></blockquote>
-            <blockquote><p>“Brigitte is a talented graphic designer with a keen eye for aesthetics, consistently creating visually engaging and impactful designs.”</p><cite>Rose Marnelli Surban</cite></blockquote>
-            <blockquote><p>“Brigitte has outstanding soft skills, effortlessly combining strong communication, empathy, and adaptability.”</p><cite>Delfin Dan Apolonio</cite></blockquote>
-          </div>
-          
-        </div>
-      </section>
-
-      <section class="admin-section admin-certificates-section" id="certificates"><div class="container"><div class="admin-section-heading"><p class="eyebrow admin-eyebrow">CERTIFICATES &amp; TRAINING</p><h2>Credentials that support my work.</h2><p>Administrative, bookkeeping, creative, and technical training certificates. Tap any certificate to view it larger.</p></div><div class="admin-cert-carousel" aria-label="Certificates carousel"><div class="admin-cert-viewport"><div class="admin-cert-grid"><article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Administrative Virtual Assistant (AVA)"><img src="images/certificate-04-administrative-virtual-assistant.png" alt="Administrative Virtual Assistant (AVA) certificate" loading="lazy"></button><h3>Administrative Virtual Assistant (AVA)</h3><p>SURGE Marketplace · 2024</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Administrative Virtual Assistant Training"><img src="images/certificate-12-administrative-assistant.png" alt="Administrative Virtual Assistant Training certificate" loading="lazy"></button><h3>Administrative Virtual Assistant Training</h3><p>SURGE Marketplace · 2024</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Online Bookkeeping Using QuickBooks"><img src="images/certificate-11-online-bookkeeping-quickbooks.png" alt="Online Bookkeeping Using QuickBooks certificate" loading="lazy"></button><h3>Online Bookkeeping Using QuickBooks</h3><p>SURGE Marketplace · 2024</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Bookkeeping with Philippine Taxation and QuickBooks Online"><img src="images/certificate-10-bookkeeping-taxation-quickbooks.jpg" alt="Bookkeeping with Philippine Taxation and QuickBooks Online certificate" loading="lazy"></button><h3>Bookkeeping with Philippine Taxation and QuickBooks Online</h3><p>EZAcc Training Center · 2023</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Microsoft Excel Automation Workshop"><img src="images/certificate-08-excel-automation.jpg" alt="Microsoft Excel Automation Workshop certificate" loading="lazy"></button><h3>Microsoft Excel Automation Workshop</h3><p>MSTCONNECT PH · 2026</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Selling Digital Products Using Canva &amp; AI Marketing"><img src="images/certificate-09-digital-products-canva-ai.jpg" alt="Selling Digital Products Using Canva &amp; AI Marketing certificate" loading="lazy"></button><h3>Selling Digital Products Using Canva &amp; AI Marketing</h3><p>MSTCONNECT PH · 2025</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Viral Creator Online Bootcamp"><img src="images/certificate-05-viral-creator.jpg" alt="Viral Creator Online Bootcamp certificate" loading="lazy"></button><h3>Viral Creator Online Bootcamp</h3><p>LUCEED · 2025</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: CapCut Workshop"><img src="images/certificate-06-capcut-workshop.jpg" alt="CapCut Workshop certificate" loading="lazy"></button><h3>CapCut Workshop</h3><p>MSTCONNECT PH · 2025</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Adobe Premiere Pro Master Class"><img src="images/certificate-07-adobe-premiere-pro.png" alt="Adobe Premiere Pro Master Class certificate" loading="lazy"></button><h3>Adobe Premiere Pro Master Class</h3><p>Graphics Media Training Philippines · 2024</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Full-Stack Web Development Intensive Bootcamp"><img src="images/certificate-01-full-stack-web-development.jpg" alt="Full-Stack Web Development Intensive Bootcamp certificate" loading="lazy"></button><h3>Full-Stack Web Development Intensive Bootcamp</h3><p>MSTCONNECT PH · 2026</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: Python Programming for Beginners"><img src="images/certificate-02-python-programming.jpg" alt="Python Programming for Beginners certificate" loading="lazy"></button><h3>Python Programming for Beginners</h3><p>MSTCONNECT PH · 2026</p></article>
-<article class="admin-cert-card"><button type="button" class="admin-cert-preview" aria-label="Enlarge certificate: JavaScript 101: Learn JavaScript from Scratch"><img src="images/certificate-03-javascript-101.jpg" alt="JavaScript 101: Learn JavaScript from Scratch certificate" loading="lazy"></button><h3>JavaScript 101: Learn JavaScript from Scratch</h3><p>MSTCONNECT PH · 2023</p></article></div></div><div class="admin-cert-dots" aria-label="Select certificate"></div></div></div></section><dialog class="admin-cert-dialog" aria-label="Certificate preview"><button type="button" class="admin-cert-close" aria-label="Close certificate preview"><i class="bi bi-x-lg"></i></button><img alt="Selected certificate enlarged"></dialog>
-      <section class="admin-section admin-tools-section" id="skills">
-        <div class="container">
-          <div class="admin-split">
+          <div class="section-heading split-heading">
             <div>
-              <p class="eyebrow admin-eyebrow">TOOLS</p>
-              <h2>Tools I use to keep work efficient.</h2>
+              <p class="eyebrow">HOW I CAN HELP</p>
+              <h2>Room for your big ideas.<br>Support for the small details.</h2>
             </div>
-            <div class="admin-tool-list">
-              <span><i class="bi bi-file-earmark-word" aria-hidden="true"></i>Microsoft Office</span>
-              <span><i class="bi bi-google" aria-hidden="true"></i>Google Workspace</span>
+            <p>Flexible administrative and digital support, shaped around the way you work.</p>
+          </div>
+          <div class="services-grid">
+            <article class="service-card">
+              <div class="service-top">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 7a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9H3Z"></path>
+                  <path d="M3 11h18"></path>
+                </svg>
+                <span>01</span>
+              </div>
+              <h3>Administrative support</h3>
+              <p>The everyday details, taken care of.</p>
+              <ul>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Scheduling &amp; inbox management</li>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Documents, files &amp; follow-ups</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <div class="service-top">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 21V7h10v14M14 11h6v10M2 21h20M7 10h4m-4 4h4m-4 4h4m6-4h1m-1 4h1"></path>
+                </svg>
+                <span>02</span>
+              </div>
+              <h3>Real estate administration</h3>
+              <p>A dependable hand behind every transaction.</p>
+              <ul>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Client coordination &amp; records</li>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Payment tracking &amp; documentation</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <div class="service-top">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 3v17h17M8 16v-5m5 5V7m5 9v-8"></path>
+                </svg>
+                <span>03</span>
+              </div>
+              <h3>Data &amp; bookkeeping support</h3>
+              <p>Clear records. A clearer picture.</p>
+              <ul>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Spreadsheets &amp; business reports</li>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>QuickBooks records &amp; invoices</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <div class="service-top">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"></path>
+                </svg>
+                <span>04</span>
+              </div>
+              <h3>Creative &amp; digital support</h3>
+              <p>Thoughtful content for your online presence.</p>
+              <ul>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Social media &amp; email campaigns</li>
+                <li>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m5 12 4 4L19 6"></path>
+                  </svg>Design, editing &amp; website updates</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="section work-section" id="work">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="eyebrow">A LOOK INSIDE MY WORK</p>
+              <h2>Organized. Considered.<br>
+                <em>Made to be useful.</em>
+              </h2>
+            </div>
+            <p>A collection of administrative workflows and creative samples from my portfolio. Select a project to take a closer look.</p>
+          </div>
+          <div class="work-toolbar">
+            <div class="filters" role="group" aria-label="Filter work samples">
+              <button class="filter active" data-filter="All" aria-pressed="true">All work <span>12</span>
+              </button>
+              <button class="filter" data-filter="Administration" aria-pressed="false">Administration</button>
+              <button class="filter" data-filter="Marketing" aria-pressed="false">Marketing</button>
+              <button class="filter" data-filter="Creative" aria-pressed="false">Creative</button>
+            </div>
+            <span class="results-label" id="work-count" role="status">Showing 6 of 12 samples</span>
+          </div>
+          <div class="work-grid">
+            <article class="work-card" data-category="Administration">
+              <button class="work-preview" data-project="0" aria-label="Explore Appointments &amp; file organization">
+                <div class="work-image">
+                  <img src="images/admin-va/work-04.webp" alt="Google Calendar · Google Drive work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Appointments &amp; file organization</h3>
+                <p>Google Calendar · Google Drive</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Administration">
+              <button class="work-preview" data-project="1" aria-label="Explore Inbox, sorted.">
+                <div class="work-image">
+                  <img src="images/admin-va/work-05.webp" alt="Gmail · Labels · Filters work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Inbox, sorted.</h3>
+                <p>Gmail · Labels · Filters</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Administration">
+              <button class="work-preview" data-project="2" aria-label="Explore A calendar that works for you">
+                <div class="work-image">
+                  <img src="images/admin-va/work-06.webp" alt="Google Calendar work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>A calendar that works for you</h3>
+                <p>Google Calendar</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Administration">
+              <button class="work-preview" data-project="3" aria-label="Explore Client relationships, connected">
+                <div class="work-image">
+                  <img src="images/admin-va/work-07.webp" alt="Salesforce · Contacts · Leads work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Client relationships, connected</h3>
+                <p>Salesforce · Contacts · Leads</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Administration">
+              <button class="work-preview" data-project="4" aria-label="Explore Projects moving forward">
+                <div class="work-image">
+                  <img src="images/admin-va/work-08.webp" alt="Trello · Slack work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Projects moving forward</h3>
+                <p>Trello · Slack</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Marketing">
+              <button class="work-preview" data-project="5" aria-label="Explore Emails with a little personality">
+                <div class="work-image">
+                  <img src="images/admin-va/work-09.webp" alt="Flodesk · Email campaigns work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Marketing</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Emails with a little personality</h3>
+                <p>Flodesk · Email campaigns</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Marketing" hidden>
+              <button class="work-preview" data-project="6" aria-label="Explore An intentional social presence">
+                <div class="work-image">
+                  <img src="images/admin-va/work-10.webp" alt="Facebook · Meta Business tools work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Marketing</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>An intentional social presence</h3>
+                <p>Facebook · Meta Business tools</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Marketing" hidden>
+              <button class="work-preview" data-project="7" aria-label="Explore Campaigns, from setup to creative">
+                <div class="work-image">
+                  <img src="images/admin-va/work-11.webp" alt="Facebook Ads · Ad sets work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Marketing</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Campaigns, from setup to creative</h3>
+                <p>Facebook Ads · Ad sets</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Administration" hidden>
+              <button class="work-preview" data-project="8" aria-label="Explore Every detail accounted for">
+                <div class="work-image">
+                  <img src="images/admin-va/work-12.webp" alt="QuickBooks · Bookkeeping support work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Administration</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Every detail accounted for</h3>
+                <p>QuickBooks · Bookkeeping support</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Creative" hidden>
+              <button class="work-preview" data-project="9" aria-label="Explore A considered home on the web">
+                <div class="work-image">
+                  <img src="images/admin-va/work-13.webp" alt="WordPress · Wix work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Creative</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>A considered home on the web</h3>
+                <p>WordPress · Wix</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Creative" hidden>
+              <button class="work-preview" data-project="10" aria-label="Explore Design that feels like your brand">
+                <div class="work-image">
+                  <img src="images/admin-va/work-14.webp" alt="Canva · Marketing assets work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Creative</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Design that feels like your brand</h3>
+                <p>Canva · Marketing assets</p>
+              </button>
+            </article>
+            <article class="work-card" data-category="Creative" hidden>
+              <button class="work-preview" data-project="11" aria-label="Explore Stories, thoughtfully edited">
+                <div class="work-image">
+                  <img src="images/admin-va/work-15.webp" alt="CapCut · Adobe Photoshop work sample from Brigitte’s portfolio" loading="lazy" width="900" height="600">
+                  <span class="preview-action">
+                    <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                    </svg> View sample</span>
+                </div>
+                <div class="work-meta">
+                  <span class="work-category">Creative</span>
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M7 7h10v10"></path>
+                  </svg>
+                </div>
+                <h3>Stories, thoughtfully edited</h3>
+                <p>CapCut · Adobe Photoshop</p>
+              </button>
+            </article>
+          </div>
+          <div class="work-more">
+            <button class="button secondary" id="more-work">View all 12 samples <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14m-5-5 5 5-5 5"></path>
+              </svg>
+            </button>
+            <span>Want the complete picture? <a href="https://brigitte-morta-admin-va.jauntyaspen26.chatgpt.site/files/Brigitte-Morta-Portfolio.pdf" target="_blank" rel="noopener noreferrer" title="Opens the portfolio PDF in a new tab; use the viewer to download">Browse my original portfolio <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7M7 7h10v10"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </section>
+      <section class="section tools-section" id="skills">
+        <div class="container">
+          <div class="tools-heading">
+            <div>
+              <p class="eyebrow">MY EVERYDAY TOOLKIT</p>
+              <h2>The right tools.<br>A human touch.</h2>
+            </div>
+            <p>From spreadsheets to creative suites, these are the platforms I use to keep things moving.</p>
+          </div>
+          <div class="tools-grid">
+            <div class="tool">
+              <span class="tool-mark office" aria-hidden="true">
+                <span class="office-squares">
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                  <i></i>
+                </span>
+              </span>
+              <span>Microsoft Office</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark google" aria-hidden="true">G</span>
+              <span>Google Workspace</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark sheets" aria-hidden="true">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 3v17h17M8 16v-5m5 5V7m5 9v-8"></path>
+                </svg>
+              </span>
+              <span>Google Sheets</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark quickbooks" aria-hidden="true">qb</span>
               <span>QuickBooks</span>
-              <span>Canva</span>
-              <span><i class="bi bi-film" aria-hidden="true"></i>CapCut</span>
-              <span><i class="bi bi-wordpress" aria-hidden="true"></i>WordPress</span>
-              <span><i class="bi bi-file-earmark-spreadsheet" aria-hidden="true"></i>Google Sheets</span>
-              <span><i class="bi bi-slack" aria-hidden="true"></i>Slack</span>
-              <span><i class="bi bi-kanban" aria-hidden="true"></i>Trello</span>
-              <span><i class="bi bi-cloud" aria-hidden="true"></i>Salesforce</span>
-              <span>Flodesk</span>
-              <span>Facebook Ads</span>
-              <span><i class="bi bi-image" aria-hidden="true"></i>Adobe Photoshop</span>
             </div>
+            <div class="tool">
+              <span class="tool-mark salesforce" aria-hidden="true">
+                <span>sales<br>force</span>
+              </span>
+              <span>Salesforce</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark trello" aria-hidden="true">
+                <span class="trello-bars">
+                  <i></i>
+                  <i></i>
+                </span>
+              </span>
+              <span>Trello</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark slack" aria-hidden="true">#</span>
+              <span>Slack</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark flodesk" aria-hidden="true">f.</span>
+              <span>Flodesk</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark meta" aria-hidden="true">∞</span>
+              <span>Meta Ads</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark canva" aria-hidden="true">C</span>
+              <span>Canva</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark capcut" aria-hidden="true">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"></path>
+                </svg>
+              </span>
+              <span>CapCut</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark photoshop" aria-hidden="true">Ps</span>
+              <span>Adobe Photoshop</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark wordpress" aria-hidden="true">W</span>
+              <span>WordPress</span>
+            </div>
+            <div class="tool">
+              <span class="tool-mark wix" aria-hidden="true">WIX</span>
+              <span>Wix</span>
+            </div>
+          </div>
+          <div class="skills-strip">
+            <span>Calendar &amp; inbox management</span>
+            <span>Client coordination</span>
+            <span>Data &amp; reporting</span>
+            <span>Content creation</span>
           </div>
         </div>
       </section>
-
-      <section class="admin-contact" id="contact">
+      <section class="section certificates-section" id="certificates">
         <div class="container">
-          <div class="admin-contact-card">
+          <div class="section-heading split-heading">
             <div>
-              <p class="eyebrow admin-eyebrow">LET’S WORK TOGETHER</p>
-              <h2>Need reliable administrative support?</h2>
-              <p>Let’s connect and discuss the workflow, tasks, and support your business needs.</p>
+              <p class="eyebrow">ALWAYS LEARNING</p>
+              <h2>Skills with a foundation.<br>Curiosity that keeps growing.</h2>
             </div>
-            <div class="admin-contact-actions">
-              <a href="mailto:brigittemorta@gmail.com" class="admin-btn admin-btn-primary">Email Me <i class="bi bi-envelope"></i></a>
-              <a href="https://www.linkedin.com/in/brigittemorta" target="_blank" rel="noopener noreferrer" class="admin-btn admin-btn-secondary">LinkedIn <i class="bi bi-linkedin"></i></a>
+            <p>Administrative, bookkeeping, creative, and technical training. Select a certificate to view it in full.</p>
+          </div>
+          <div class="cert-carousel" role="region" aria-roledescription="carousel" aria-label="Training certificates">
+            <div class="cert-viewport" tabindex="0" aria-label="Certificate slides. Swipe or use the arrow controls.">
+              <div class="cert-track">
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="0" aria-label="Enlarge Administrative Virtual Assistant (AVA)">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-04-administrative-virtual-assistant.webp" alt="Administrative Virtual Assistant (AVA) credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Administrative Virtual Assistant (AVA)</strong>
+                      <span>SURGE Marketplace · 2024</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="1" aria-label="Enlarge Administrative Virtual Assistant Training">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-12-administrative-assistant.webp" alt="Administrative Virtual Assistant Training credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Administrative Virtual Assistant Training</strong>
+                      <span>SURGE Marketplace · 2024</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="2" aria-label="Enlarge Masterclass Virtual Assistant">
+                    <span class="cert-image">
+                      <img src="images/admin-va/pdf-credential-4.webp" alt="Masterclass Virtual Assistant credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Masterclass Virtual Assistant</strong>
+                      <span>SURGE Marketplace · 2024</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="3" aria-label="Enlarge Online Bookkeeping Using QuickBooks">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-11-online-bookkeeping-quickbooks.webp" alt="Online Bookkeeping Using QuickBooks credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Online Bookkeeping Using QuickBooks</strong>
+                      <span>SURGE Marketplace · 2024</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="4" aria-label="Enlarge Bookkeeping with Philippine Taxation &amp; QuickBooks Online">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-10-bookkeeping-taxation-quickbooks.webp" alt="Bookkeeping with Philippine Taxation &amp; QuickBooks Online credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Bookkeeping with Philippine Taxation &amp; QuickBooks Online</strong>
+                      <span>EZAcc Training Center · 2023</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="5" aria-label="Enlarge Microsoft Excel Automation Workshop">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-08-excel-automation.webp" alt="Microsoft Excel Automation Workshop credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Microsoft Excel Automation Workshop</strong>
+                      <span>MSTCONNECT PH · 2026</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="6" aria-label="Enlarge Selling Digital Products Using Canva &amp; AI Marketing">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-09-digital-products-canva-ai.webp" alt="Selling Digital Products Using Canva &amp; AI Marketing credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Selling Digital Products Using Canva &amp; AI Marketing</strong>
+                      <span>MSTCONNECT PH · 2025</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="7" aria-label="Enlarge Viral Creator Online Bootcamp">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-05-viral-creator.webp" alt="Viral Creator Online Bootcamp credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Viral Creator Online Bootcamp</strong>
+                      <span>LUCEED · 2025</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="8" aria-label="Enlarge CapCut Workshop">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-06-capcut-workshop.webp" alt="CapCut Workshop credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>CapCut Workshop</strong>
+                      <span>MSTCONNECT PH · 2025</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="9" aria-label="Enlarge Short Form Video Editing">
+                    <span class="cert-image">
+                      <img src="images/admin-va/pdf-credential-6.webp" alt="Short Form Video Editing credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Short Form Video Editing</strong>
+                      <span>Edit By Media Easy Program</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="10" aria-label="Enlarge Adobe Premiere Pro Master Class">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-07-adobe-premiere-pro.webp" alt="Adobe Premiere Pro Master Class credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Adobe Premiere Pro Master Class</strong>
+                      <span>Graphics Media Training Philippines · 2024</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="11" aria-label="Enlarge Full-Stack Web Development Intensive Bootcamp">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-01-full-stack-web-development.webp" alt="Full-Stack Web Development Intensive Bootcamp credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Full-Stack Web Development Intensive Bootcamp</strong>
+                      <span>MSTCONNECT PH · 2026</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="12" aria-label="Enlarge Python Programming for Beginners">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-02-python-programming.webp" alt="Python Programming for Beginners credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>Python Programming for Beginners</strong>
+                      <span>MSTCONNECT PH · 2026</span>
+                    </span>
+                  </button>
+                </article>
+                <article class="cert-card">
+                  <button class="cert-preview" data-certificate="13" aria-label="Enlarge JavaScript 101: Learn JavaScript from Scratch">
+                    <span class="cert-image">
+                      <img src="images/admin-va/certificate-03-javascript-101.webp" alt="JavaScript 101: Learn JavaScript from Scratch credential awarded to Brigitte Morta" loading="lazy" width="800" height="566">
+                      <span class="cert-expand">
+                        <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"></path>
+                        </svg>
+                      </span>
+                    </span>
+                    <span class="cert-label">
+                      <strong>JavaScript 101: Learn JavaScript from Scratch</strong>
+                      <span>MSTCONNECT PH · 2023</span>
+                    </span>
+                  </button>
+                </article>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <div class="carousel-position">
+                <span id="certificate-range">1–5</span>
+                <span class="muted"> / 14 credentials</span>
+              </div>
+              <div class="cert-dots" role="group" aria-label="Choose certificate position"></div>
+              <div class="carousel-buttons">
+                <button class="circle-button" id="cert-prev" aria-label="Previous certificates">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m15 5-7 7 7 7"></path>
+                  </svg>
+                </button>
+                <button class="circle-button" id="cert-autoplay" aria-label="Pause automatic certificate scrolling" aria-pressed="false">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M8 5v14M16 5v14"></path>
+                  </svg>
+                </button>
+                <button class="circle-button" id="cert-next" aria-label="Next certificates">
+                  <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <p class="carousel-hint">Swipe to explore · Hover or focus to pause · Click to enlarge</p>
+        </div>
+      </section>
+      <section class="section testimonials-section" id="testimonials">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">IN THEIR WORDS</p>
+            <h2>Good work starts<br>with good relationships.</h2>
+            <p>Feedback from clients and colleagues, shared in my original portfolio.</p>
+          </div>
+          <div class="quotes-grid">
+            <figure class="quote-card">
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 5C5 5 3 9 3 14v5h7v-7H6c0-3 1-4 4-4Zm11 0c-5 0-7 4-7 9v5h7v-7h-4c0-3 1-4 4-4Z"></path>
+              </svg>
+              <blockquote>“Brigitte is an outstanding Administrative Officer who consistently ensures our operations run smoothly with their attention to detail and organizational skills.”</blockquote>
+              <figcaption>
+                <span class="avatar">LE</span>
+                <cite>Lulu Jane Elamparo</cite>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 5C5 5 3 9 3 14v5h7v-7H6c0-3 1-4 4-4Zm11 0c-5 0-7 4-7 9v5h7v-7h-4c0-3 1-4 4-4Z"></path>
+              </svg>
+              <blockquote>“Brigitte is exceptionally skilled in photo and video editing, delivering high-quality, visually captivating work that elevates every project.”</blockquote>
+              <figcaption>
+                <span class="avatar">JM</span>
+                <cite>Josephine Morta</cite>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 5C5 5 3 9 3 14v5h7v-7H6c0-3 1-4 4-4Zm11 0c-5 0-7 4-7 9v5h7v-7h-4c0-3 1-4 4-4Z"></path>
+              </svg>
+              <blockquote>“Brigitte is a talented graphic designer with a keen eye for aesthetics, consistently creating visually engaging and impactful designs.”</blockquote>
+              <figcaption>
+                <span class="avatar">RS</span>
+                <cite>Rose Marnelli Surban</cite>
+              </figcaption>
+            </figure>
+            <figure class="quote-card">
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 5C5 5 3 9 3 14v5h7v-7H6c0-3 1-4 4-4Zm11 0c-5 0-7 4-7 9v5h7v-7h-4c0-3 1-4 4-4Z"></path>
+              </svg>
+              <blockquote>“Brigitte has outstanding soft skills, effortlessly combining strong communication, empathy, and adaptability.”</blockquote>
+              <figcaption>
+                <span class="avatar">DA</span>
+                <cite>Delfin Dan Apolonio</cite>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+      <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">LET’S MAKE THINGS HAPPEN</p>
+            <h2>A little support.<br>
+              <em>A lot of possibility.</em>
+            </h2>
+            <p>Have a project in mind or need an extra hand?<br>Let’s talk about how I can help.</p>
+            <a class="button primary" href="mailto:brigittemorta@gmail.com?subject=Let%E2%80%99s%20work%20together">Let’s work together <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="contact-details">
+            <a class="contact-email" href="mailto:brigittemorta@gmail.com">
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <path d="m3 6 9 7 9-7"></path>
+              </svg>
+              <span>
+                <small>DROP ME A NOTE</small>brigittemorta@gmail.com</span>
+              <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10"></path>
+              </svg>
+            </a>
+            <div class="contact-mini">
+              <span>
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 0 1 14 0Z"></path>
+                  <circle cx="12" cy="10" r="2"></circle>
+                </svg> Davao City, Philippines</span>
+              <a href="tel:+639067242784">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M8 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-4l-5-2-2 3a12 12 0 0 1-7-7l3-2Z"></path>
+                </svg> +63 906 724 2784</a>
+            </div>
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/brigittemorta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="3"></rect>
+                  <path d="M7 10v7m0-10v.1M11 17v-7m0 3c0-4 6-4 6 0v4"></path>
+                </svg>
+              </a>
+              <a href="https://github.com/Bmorta" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9 19c-4 1-4-2-6-2m13 5v-4c0-1-.4-2-1-2 4-.5 6-2 6-6 0-2-.5-3-2-4 0-1 0-3-.5-4-2 0-4 2-4 2a14 14 0 0 0-6 0S6.5 2 4.5 2C4 3 4 5 4 6c-1.5 1-2 2-2 4 0 4 2 5.5 6 6-.6.5-1 1-1 2v4"></path>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/brigittecreatives" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M14 22v-9h3l.5-4H14V7c0-1 .5-2 2-2h2V1h-3c-4 0-6 2-6 6v2H6v4h3v9"></path>
+                </svg>
+              </a>
+              <a href="mailto:brigittemorta@gmail.com" aria-label="Email Brigitte">
+                <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <path d="m3 6 9 7 9-7"></path>
+                </svg>
+              </a>
+              <span>Let’s stay connected.</span>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="admin-footer">
+    <footer class="footer">
       <div class="container">
-        <div class="admin-footer-top">
-          <div class="admin-footer-about">
-            <a href="#top" class="admin-footer-brand"><img src="images/logo.png" alt="" /> Brigitte Morta</a>
-            <p>Administrative &amp; Virtual Assistant<br>Your Productivity Partner, Anytime, Anywhere.</p>
-          </div>
-          <nav class="admin-footer-links" aria-label="Footer navigation">
-            <h2>Explore</h2>
-            <a href="#top">Home</a>
+        <div class="footer-top">
+          <a class="brand" href="#top">
+            <span class="monogram">B<span>m</span>
+            </span>
+            <span>Brigitte Morta<small>PEOPLE. PROCESSES. PROGRESS.</small>
+            </span>
+          </a>
+          <div class="footer-links">
             <a href="#services">Services</a>
             <a href="#work">Portfolio</a>
-            <a href="#skills">Skills &amp; Tools</a>
-            <a href="#certificates">Certificates</a>
+            <a href="#testimonials">Testimonials</a>
             <a href="#contact">Contact</a>
-          </nav>
-          <div class="admin-footer-connect">
-            <h2>Let's Connect</h2>
-            <a href="mailto:brigittemorta@gmail.com" class="admin-footer-email"><i class="bi bi-envelope" aria-hidden="true"></i> Email Me</a>
-            <div class="admin-footer-socials">
-              <a href="https://www.linkedin.com/in/brigittemorta/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-              <a href="https://github.com/Bmorta" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-              <a href="mailto:brigittemorta@gmail.com" aria-label="Email"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
-            </div>
+          </div>
+          <a class="back-to-top" href="#top">Back to top <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M7 7h10v10"></path>
+            </svg>
+          </a>
+        </div>
+        <div class="footer-bottom">
+          <p>© <span id="year">2026</span> Brigitte Morta. All rights reserved.</p>
+          <div>
+            <a href="index.html" target="_blank" rel="noopener">Portfolio hub <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M7 7h10v10"></path>
+              </svg>
+            </a>
+            <a href="https://bmorta.github.io/brigitte-morta/programmer.html" target="_blank" rel="noopener">Programmer portfolio <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-15-2 18"></path>
+              </svg>
+            </a>
+            <a href="admin-portfolio-download.html">Print-friendly version <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3v12m-4-4 4 4 4-4M5 15v5h14v-5"></path>
+              </svg>
+            </a>
           </div>
         </div>
-        <div class="admin-footer-bottom"><span>© 2026 Brigitte Morta. All rights reserved.</span><a href="index.html"><i class="bi bi-grid-1x2-fill" aria-hidden="true"></i> Portfolio Hub</a></div>
       </div>
     </footer>
-    <script>
-      (() => {
-        const carousel = document.querySelector(".admin-cert-carousel");
-        const viewport = carousel?.querySelector(".admin-cert-viewport");
-        const track = carousel?.querySelector(".admin-cert-grid");
-        const cards = Array.from(track?.querySelectorAll(".admin-cert-card") || []);
-        const dots = carousel?.querySelector(".admin-cert-dots");
-        if (!carousel || !viewport || !track || !cards.length || !dots) return;
-        let index = 0;
-        let timer;
-        const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-        const visibleCount = () => window.innerWidth <= 575 ? 1 : window.innerWidth <= 767 ? 2 : window.innerWidth <= 991 ? 3 : window.innerWidth <= 1199 ? 4 : 5;
-        const gap = () => window.innerWidth <= 767 ? 12 : 16;
-        const draw = (animate = true) => {
-          const count = visibleCount();
-          const width = (viewport.clientWidth - (count - 1) * gap()) / count;
-          track.style.setProperty("--admin-cert-width", width + "px");
-          track.style.gap = gap() + "px";
-          track.style.transition = animate && !reducedMotion.matches ? "transform .55s ease" : "none";
-          track.style.transform = "translate3d(" + (-index * (width + gap())) + "px,0,0)";
-          dots.querySelectorAll("button").forEach((dot, i) => {
-            dot.classList.toggle("active", i === index);
-            dot.setAttribute("aria-current", String(i === index));
-          });
-        };
-        const go = (next) => { index = (next + cards.length) % cards.length; draw(); };
-        cards.forEach((_, i) => {
-          const dot = document.createElement("button");
-          dot.type = "button";
-          dot.setAttribute("aria-label", "Show certificate " + (i + 1));
-          dot.addEventListener("click", () => { go(i); restart(); });
-          dots.appendChild(dot);
-        });
-        const pause = () => clearInterval(timer);
-        const restart = () => {
-          pause();
-          if (!reducedMotion.matches && !document.hidden) timer = setInterval(() => go(index + 1), 3500);
-        };
-        carousel.addEventListener("mouseenter", pause);
-        carousel.addEventListener("mouseleave", restart);
-        carousel.addEventListener("focusin", pause);
-        carousel.addEventListener("focusout", event => { if (!carousel.contains(event.relatedTarget)) restart(); });
-        document.addEventListener("visibilitychange", restart);
-        reducedMotion.addEventListener?.("change", () => { draw(false); restart(); });
-        window.addEventListener("resize", () => draw(false));
-        draw(false);
-        restart();
-      })();
-
-      (() => {
-        const dialog = document.querySelector(".admin-cert-dialog");
-        const preview = dialog?.querySelector("img");
-        document.querySelectorAll(".admin-cert-preview").forEach(button => button.addEventListener("click", () => {
-          const img = button.querySelector("img");
-          if (!dialog || !preview || !img) return;
-          preview.src = img.src;
-          preview.alt = img.alt;
-          if (!dialog.open) dialog.showModal();
-        }));
-        dialog?.querySelector(".admin-cert-close")?.addEventListener("click", () => dialog.close());
-        dialog?.addEventListener("click", event => { if (event.target === dialog) dialog.close(); });
-      })();
-      (() => {
-        const button = document.querySelector(".admin-menu-toggle");
-        const menu = document.getElementById("adminMenu");
-        if (!button || !menu) return;
-        const close = () => {
-          menu.classList.remove("is-open");
-          button.setAttribute("aria-expanded", "false");
-          button.querySelector("i").className = "bi bi-list";
-        };
-        button.addEventListener("click", () => {
-          const open = menu.classList.toggle("is-open");
-          button.setAttribute("aria-expanded", String(open));
-          button.querySelector("i").className = open ? "bi bi-x-lg" : "bi bi-list";
-        });
-        menu.querySelectorAll("a").forEach(link => link.addEventListener("click", close));
-        document.addEventListener("keydown", event => { if (event.key === "Escape") close(); });
-        document.addEventListener("click", event => { if (!event.target.closest(".admin-nav")) close(); });
-      })();
-    </script>
+    <dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow" id="preview-type">PORTFOLIO SAMPLE</p>
+          <h2 id="preview-title"></h2>
+          <p id="preview-subtitle"></p>
+        </div>
+        <button class="circle-button dialog-close" aria-label="Close preview">
+          <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 6 12 12M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-image">
+        <img id="preview-image" alt="">
+      </div>
+      <p class="dialog-description" id="preview-description"></p>
+      <div class="dialog-footer">
+        <a class="text-link" id="preview-source" target="_blank" rel="noopener">Open original portfolio <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M7 7h10v10"></path>
+          </svg>
+        </a>
+        <a class="button primary" id="preview-external" target="_blank" rel="noopener" hidden></a>
+        <div class="dialog-arrows">
+          <button class="circle-button" id="preview-prev" aria-label="Previous preview">
+            <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m15 5-7 7 7 7"></path>
+            </svg>
+          </button>
+          <span id="preview-position"></span>
+          <button class="circle-button" id="preview-next" aria-label="Next preview">
+            <svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m9 5 7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </dialog>
+    <script id="portfolio-data" type="application/json">{"projects": [{"title": "Appointments & file organization", "cat": "Administration", "tools": "Google Calendar · Google Drive", "page": 4, "desc": "Coordinate appointments and keep files organized, current, and easy to retrieve. A practical workflow for seamless scheduling and document sharing."}, {"title": "Inbox, sorted.", "cat": "Administration", "tools": "Gmail · Labels · Filters", "page": 5, "desc": "Prioritize incoming messages with labels and filters, and set up professional vacation replies so communication stays clear while you’re away."}, {"title": "A calendar that works for you", "cat": "Administration", "tools": "Google Calendar", "page": 6, "desc": "Organize meetings, reminders, and schedule changes to help everyone stay informed and avoid conflicting appointments."}, {"title": "Client relationships, connected", "cat": "Administration", "tools": "Salesforce · Contacts · Leads", "page": 7, "desc": "Organize contact records, manage leads, and coordinate calendars through a connected Salesforce workflow."}, {"title": "Projects moving forward", "cat": "Administration", "tools": "Trello · Slack", "page": 8, "desc": "Bring tasks, deadlines, and team conversations together with Trello boards and organized Slack channels."}, {"title": "Emails with a little personality", "cat": "Marketing", "tools": "Flodesk · Email campaigns", "page": 9, "desc": "Build visually cohesive email campaigns with thoughtful content and audience organization. Explore the original campaign featured in my portfolio.", "url": "https://view.flodesk.com/emails/6733543f216bee8162f3a158", "link": "View email campaign"}, {"title": "An intentional social presence", "cat": "Marketing", "tools": "Facebook · Meta Business tools", "page": 10, "desc": "Plan content, schedule posts, and organize instant replies and away messages to support consistent audience communication."}, {"title": "Campaigns, from setup to creative", "cat": "Marketing", "tools": "Facebook Ads · Ad sets", "page": 11, "desc": "Structure campaigns and ad sets, prepare creative, and organize audience targeting for a clear advertising workflow."}, {"title": "Every detail accounted for", "cat": "Administration", "tools": "QuickBooks · Bookkeeping support", "page": 12, "desc": "Support invoices, expenses, and customer and supplier records. Keep financial information organized and ready for review.", "url": "https://drive.google.com/drive/folders/11wob61u9HeYqvxxuoKExGJb0m2jNkm3I?usp=drive_link", "link": "View QuickBooks portfolio"}, {"title": "A considered home on the web", "cat": "Creative", "tools": "WordPress · Wix", "page": 13, "desc": "Create and update clean, responsive websites with a clear layout, thoughtful navigation, and a consistent brand presence."}, {"title": "Design that feels like your brand", "cat": "Creative", "tools": "Canva · Marketing assets", "page": 14, "desc": "Create promotional designs, social graphics, and marketing materials with a consistent visual direction. These are original samples from my portfolio."}, {"title": "Stories, thoughtfully edited", "cat": "Creative", "tools": "CapCut · Adobe Photoshop", "page": 15, "desc": "Shape photos and video through editing, color adjustments, and visual storytelling. A look at the editing work and process featured in my portfolio."}], "certificates": [{"title": "Administrative Virtual Assistant (AVA)", "issuer": "SURGE Marketplace · 2024", "file": "certificate-04-administrative-virtual-assistant"}, {"title": "Administrative Virtual Assistant Training", "issuer": "SURGE Marketplace · 2024", "file": "certificate-12-administrative-assistant"}, {"title": "Masterclass Virtual Assistant", "issuer": "SURGE Marketplace · 2024", "file": "pdf-credential-4"}, {"title": "Online Bookkeeping Using QuickBooks", "issuer": "SURGE Marketplace · 2024", "file": "certificate-11-online-bookkeeping-quickbooks"}, {"title": "Bookkeeping with Philippine Taxation & QuickBooks Online", "issuer": "EZAcc Training Center · 2023", "file": "certificate-10-bookkeeping-taxation-quickbooks"}, {"title": "Microsoft Excel Automation Workshop", "issuer": "MSTCONNECT PH · 2026", "file": "certificate-08-excel-automation"}, {"title": "Selling Digital Products Using Canva & AI Marketing", "issuer": "MSTCONNECT PH · 2025", "file": "certificate-09-digital-products-canva-ai"}, {"title": "Viral Creator Online Bootcamp", "issuer": "LUCEED · 2025", "file": "certificate-05-viral-creator"}, {"title": "CapCut Workshop", "issuer": "MSTCONNECT PH · 2025", "file": "certificate-06-capcut-workshop"}, {"title": "Short Form Video Editing", "issuer": "Edit By Media Easy Program", "file": "pdf-credential-6"}, {"title": "Adobe Premiere Pro Master Class", "issuer": "Graphics Media Training Philippines · 2024", "file": "certificate-07-adobe-premiere-pro"}, {"title": "Full-Stack Web Development Intensive Bootcamp", "issuer": "MSTCONNECT PH · 2026", "file": "certificate-01-full-stack-web-development"}, {"title": "Python Programming for Beginners", "issuer": "MSTCONNECT PH · 2026", "file": "certificate-02-python-programming"}, {"title": "JavaScript 101: Learn JavaScript from Scratch", "issuer": "MSTCONNECT PH · 2023", "file": "certificate-03-javascript-101"}]}</script>
   </body>
 </html>

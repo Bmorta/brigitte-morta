@@ -1,0 +1,9 @@
+# Admin / VA portfolio
+
+Open `admin.html` from the existing portfolio landing page. This buildless page has isolated styles in `css/admin.css`, font declarations in `css/admin-fonts.css`, interactions in `js/admin.js`, and optimized images in `images/admin-va/`.
+
+The PDF is intentionally not stored in this repository. PDF links currently point to the original document on the public Admin/VA Site. When a Google Drive share link is ready, replace that PDF URL in `admin.html`, `admin-portfolio-download.html`, and `js/admin.js`. The Drive file must allow access to intended visitors. Work preview links currently use PDF page fragments, which a Drive viewer may handle differently.
+
+The separate `admin-portfolio-download.html` route provides a printable summary. Existing `portfolio-download.html`, `programmer.html`, and shared CSS/JavaScript are unchanged.
+
+Validation: desktop 1363px, mobile 390px/320px, navigation, preview image paths, certificate preview, and local assets checked. The hosted version was previously validated at tablet 768px as well. See the pull request for the full validation record.
