@@ -204,7 +204,7 @@
     previewImage.alt = type === 'work' ? `Original portfolio page ${item.page}: ${item.title}` : `${item.title} certificate awarded to Brigitte Morta`;
     description.textContent = type === 'work' ? item.desc : '';
     description.hidden = type !== 'work';
-    sourceLink.href = type === 'work' ? `https://brigitte-morta-admin-va.jauntyaspen26.chatgpt.site/files/Brigitte-Morta-Portfolio.pdf#page=${item.page}` : `images/admin-va/${item.file}.webp`;
+    sourceLink.href = type === 'work' ? `https://drive.google.com/file/d/1PDuwoEhfDVWv-k0FV95VNDAHnQTMYa2T/view?usp=drive_link` : `images/admin-va/${item.file}.webp`;
     sourceLink.firstChild.textContent = type === 'work' ? `Open original PDF · page ${item.page} ` : 'Open full-size certificate ';
     externalLink.hidden = !item.url;
     if (item.url) {
