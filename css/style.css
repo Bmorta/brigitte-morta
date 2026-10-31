@@ -6086,3 +6086,313 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
   .portfolio-hub .hub-robot-hammer { transform: rotate(-20deg); }
   .portfolio-hub .hub-office-document { opacity: 1; }
 }
+
+/* Version 2 only: Three.js canvas inside existing decorative mascot slots. */
+.portfolio-hub .hub-mascot-3d {
+  overflow: visible;
+  contain: layout style;
+}
+.portfolio-hub .hub-mascot-3d canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .hub-mascot-3d {
+    animation: none !important;
+  }
+}
+
+/* Version 2: mascots perch OUTSIDE the card silhouette.
+   Preserve existing card transforms and hover interactions. */
+.portfolio-hub .portfolio-choice {
+  overflow: visible;
+}
+.portfolio-hub .hub-mascot-3d {
+  top: -86px;
+  right: -36px;
+  width: clamp(112px, 11vw, 158px);
+  z-index: 8;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 10px 10px rgba(0, 0, 0, .28));
+}
+.portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+  top: -86px;
+  right: -36px;
+  left: auto;
+  width: clamp(112px, 11vw, 158px);
+  transform: rotate(5deg);
+}
+.portfolio-hub .programmer-choice::after {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 32px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(137, 240, 255, .85), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+}
+@keyframes hubCardCornerImpact {
+  0%, 25%, 35%, 100% { opacity: 0; transform: scale(.75); }
+  29% { opacity: .9; transform: scale(1.3); }
+  33% { opacity: 0; transform: scale(1.5); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-hub .programmer-choice::after {
+    animation: hubCardCornerImpact 2.8s linear infinite;
+  }
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .hub-mascot-3d {
+    top: -60px;
+    right: -14px;
+    width: 108px;
+  }
+  .portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+    top: -60px;
+    right: -14px;
+    left: auto;
+    width: 108px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .hub-mascot-3d {
+    top: -48px;
+    right: -5px;
+    width: 86px;
+  }
+  .portfolio-hub .hub-mascot-assistant.hub-mascot-3d {
+    top: -48px;
+    right: -5px;
+    left: auto;
+    width: 86px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .programmer-choice::after { animation: none; }
+}
+
+/* Version 2 refinement: robot on the OUTER LEFT edge of Programmer card.
+   Office assistant remains on the right edge of its card. */
+.portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+  left: -36px;
+  right: auto;
+  transform: rotate(8deg);
+}
+.portfolio-hub .programmer-choice::after {
+  left: 2px;
+  right: auto;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    left: -14px;
+    right: auto;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    left: -5px;
+    right: auto;
+  }
+}
+
+/* Version 2 side-profile repair pose: robot stands just above the left card rim. */
+.portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+  top: -132px;
+  left: -18px;
+  right: auto;
+  width: clamp(160px, 15vw, 218px);
+  transform: none;
+}
+.portfolio-hub .programmer-choice::after {
+  left: 132px;
+  right: auto;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    top: -104px;
+    left: -10px;
+    width: 165px;
+  }
+  .portfolio-hub .programmer-choice::after { left: 112px; }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .programmer-choice .hub-mascot-robot.hub-mascot-3d {
+    top: -82px;
+    left: -5px;
+    width: 130px;
+  }
+  .portfolio-hub .programmer-choice::after { left: 88px; }
+}
+
+/* Version 2 admin mascot: perched document organizer, clear of card copy. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+  top: -133px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
+
+/* Version 2: give the office assistant enough visual space to read as a person
+   sorting folders, rather than an indistinct miniature. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+  top: -196px;
+  right: -30px;
+  left: auto;
+  width: clamp(240px, 22vw, 318px);
+  aspect-ratio: 1 / 1;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -150px;
+    right: -16px;
+    width: 245px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -106px;
+    right: -8px;
+    width: 168px;
+  }
+}
+
+/* Version 2: lightweight image mascot replaces the procedural admin figure.
+   Keep the original card geometry, tilt, and navigation untouched. */
+.portfolio-hub .admin-choice .hub-mascot-art {
+  top: -196px;
+  right: -26px;
+  left: auto;
+  width: clamp(280px, 26vw, 390px);
+  aspect-ratio: 680 / 393;
+  transform: none;
+  animation: none;
+  filter: drop-shadow(0 9px 12px rgba(0, 0, 0, .25));
+}
+.portfolio-hub .hub-mascot-art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@keyframes hubOfficeArtFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -5px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    animation: hubOfficeArtFloat 5s ease-in-out infinite;
+  }
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -150px;
+    right: -14px;
+    width: 285px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -100px;
+    right: -6px;
+    width: 190px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-hub .admin-choice .hub-mascot-art { animation: none !important; }
+}
+
+/* Updated transparent admin illustration (850x708): preserve its natural ratio. */
+.portfolio-hub .admin-choice .hub-mascot-art {
+  aspect-ratio: 850 / 708;
+  top: -230px;
+  right: -26px;
+  width: clamp(270px, 25vw, 365px);
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -170px;
+    right: -14px;
+    width: 270px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-art {
+    top: -112px;
+    right: -6px;
+    width: 180px;
+  }
+}
+
+/* Version 2 3D admin prototype: same footprint as the programmer robot. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+  top: -132px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  aspect-ratio: 120 / 108;
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-3d {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
+
+/* Temporary clean illustrated admin mascot while a rigged GLB replacement is prepared.
+   Match the programmer robot footprint; never show the rejected procedural model. */
+.portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+  top: -132px;
+  right: -18px;
+  left: auto;
+  width: clamp(160px, 15vw, 218px);
+  aspect-ratio: 850 / 708;
+  transform: none;
+}
+@media (max-width: 1100px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+    top: -104px;
+    right: -10px;
+    width: 165px;
+  }
+}
+@media (max-width: 520px) {
+  .portfolio-hub .admin-choice .hub-mascot-assistant.hub-mascot-art {
+    top: -82px;
+    right: -5px;
+    width: 130px;
+  }
+}
+
+/* Version 2: hide only the decorative outlined circles on portfolio cards. */
+.portfolio-hub .portfolio-choice .choice-corner {
+  display: none;
+}
