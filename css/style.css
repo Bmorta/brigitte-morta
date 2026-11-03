@@ -6396,3 +6396,15 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
 .portfolio-hub .portfolio-choice .choice-corner {
   display: none;
 }
+
+/* Programmer certificates: Admin-style carousel navigation controls. */
+.certificates-carousel .programmer-certificate-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 24px; }
+.certificates-carousel .programmer-certificate-progress { margin: 0; min-width: 145px; color: var(--text-muted); font-size: .82rem; }
+.certificates-carousel .certificates-dots { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; flex: 1; }
+.certificates-carousel .programmer-certificate-buttons { display: flex; gap: 10px; }
+.certificates-carousel .programmer-cert-control { display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); color: var(--text); cursor: pointer; transition: background .2s ease, transform .2s ease; }
+.certificates-carousel .programmer-cert-control:hover { background: var(--bg-soft); transform: translateY(-2px); }
+.certificates-carousel .programmer-cert-control:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+.certificates-carousel .programmer-certificate-hint { margin: 20px 0 0; text-align: center; font-size: .78rem; color: var(--text-muted); }
+@media (max-width: 767.98px) { .certificates-carousel .programmer-certificate-toolbar { flex-wrap: wrap; } .certificates-carousel .certificates-dots { order: 3; flex-basis: 100%; } .certificates-carousel .programmer-certificate-progress { min-width: 0; } }
+@media (prefers-reduced-motion: reduce) { .certificates-carousel .programmer-cert-control { transition: none; } }

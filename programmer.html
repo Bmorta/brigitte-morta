@@ -1499,7 +1499,9 @@
                 </article>
               </div>
             </div>
-            <div class="certificates-dots" aria-label="Certificate navigation">
+            <div class="programmer-certificate-toolbar" aria-label="Certificate carousel controls">
+              <p class="programmer-certificate-progress" id="programmerCertificateProgress" aria-live="off">1–5 / 14 credentials</p>
+              <div class="certificates-dots" aria-label="Certificate navigation">
 
                 <button
                   type="button"
@@ -1576,6 +1578,13 @@
                 <button type="button" class="certificate-dot" data-certificate-slide="12" aria-label="Show certificate 13"></button>
                 <button type="button" class="certificate-dot" data-certificate-slide="13" aria-label="Show certificate 14"></button>
             </div>
+              <div class="programmer-certificate-buttons">
+                <button type="button" class="programmer-cert-control" id="programmerCertPrev" aria-label="Previous certificate"><i class="bi bi-chevron-left" aria-hidden="true"></i></button>
+                <button type="button" class="programmer-cert-control" id="programmerCertPause" aria-label="Pause automatic certificate scrolling" aria-pressed="false"><i class="bi bi-pause" aria-hidden="true"></i></button>
+                <button type="button" class="programmer-cert-control" id="programmerCertNext" aria-label="Next certificate"><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
+              </div>
+            </div>
+            <p class="programmer-certificate-hint">Swipe to explore · Hover or focus to pause · Click to enlarge</p>
           </div>
         </div>
       </section>
