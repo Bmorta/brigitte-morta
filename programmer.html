@@ -164,6 +164,7 @@
                   Download CV <i class="bi bi-download"></i>
                 </a>
                 <a href="#contact" class="btn secondary-btn"> Let's Connect </a>
+                <a href="programmer-print.html" class="btn secondary-btn"><i class="bi bi-printer"></i> Print-Friendly Version</a>
               </div>
 
               <div class="hero-meta">
@@ -1725,6 +1726,28 @@
         </div>
       </div>
     </footer>
+
+
+<button id="programmerBackToTop" class="programmer-back-to-top" type="button" aria-label="Back to top" title="Back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></button>
+<style>
+.programmer-back-to-top{position:fixed;right:22px;bottom:22px;z-index:1000;width:48px;height:48px;border:1px solid #ffffff55;border-radius:50%;background:#2563eb;color:white;box-shadow:0 8px 25px #0005;display:grid;place-items:center;font-size:23px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .2s,transform .2s,visibility .2s}
+.programmer-back-to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.programmer-back-to-top:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+@media(max-width:600px){.programmer-back-to-top{right:16px;bottom:16px;width:44px;height:44px}}
+@media(prefers-reduced-motion:reduce){.programmer-back-to-top{transition:none}}
+</style>
+<script>
+(() => {
+ const button=document.getElementById('programmerBackToTop');
+ const update=()=>button.classList.toggle('is-visible',window.scrollY>500);
+ window.addEventListener('scroll',update,{passive:true});
+ update();
+ button.addEventListener('click',()=>{
+   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   window.scrollTo({top:0,behavior:reduced?'instant':'smooth'});
+ });
+})();
+</script>
 
     <!-- Bootstrap -->
     <script
