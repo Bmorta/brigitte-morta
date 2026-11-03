@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const certificateCarousel = document.querySelector(".certificates-carousel");
 
     if (certificateTrack && certificateItems.length) {
-        const totalCertificates = 12;
+        const totalCertificates = certificateItems.length;
         let certificateIndex = 0;
         let certificateTimer = null;
 
@@ -306,6 +306,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     '" alt="' +
                     (button.dataset.certificateTitle || "Certificate") +
                     '">';
+
+                const pdfWrap = document.getElementById("certificatePdfLinkWrap");
+                const pdfLink = document.getElementById("certificatePdfLink");
+                const pdfPath = button.dataset.certificatePdf;
+                if (pdfWrap && pdfLink) {
+                    pdfWrap.hidden = !pdfPath;
+                    if (pdfPath) pdfLink.href = pdfPath;
+                }
 
                 modalTitle.textContent =
                     button.dataset.certificateTitle ||
