@@ -356,7 +356,8 @@ document.addEventListener("DOMContentLoaded", () => {
             renderDots();
             if (certificateProgress) {
                 const start = (certificateIndex % totalCertificates) + 1;
-                certificateProgress.textContent = `${start}–${Math.min(start + getVisibleCount() - 1, totalCertificates)} / ${totalCertificates} credentials`;
+                const end = Math.min(start + getVisibleCount() - 1, totalCertificates);
+                certificateProgress.textContent = `${start}–${end} / ${totalCertificates} credentials`;
             }
         };
 
