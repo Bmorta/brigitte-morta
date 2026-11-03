@@ -229,6 +229,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const totalCertificates = certificateDots.length;
         let certificateIndex = 0;
         let certificateTimer = null;
+        let certificatePaused = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const certificateProgress = document.getElementById("programmerCertificateProgress");
+        const certificatePrev = document.getElementById("programmerCertPrev");
+        const certificateNext = document.getElementById("programmerCertNext");
+        const certificatePause = document.getElementById("programmerCertPause");
 
         const getVisibleCount = () => {
             if (window.innerWidth <= 575.98) return 1;
@@ -349,6 +354,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 "px, 0, 0)";
 
             renderDots();
+            if (certificateProgress) {
+                const start = (certificateIndex % totalCertificates) + 1;
+                certificateProgress.textContent = `${start}–${Math.min(start + getVisibleCount() - 1, totalCertificates)} / ${totalCertificates} credentials`;
+            }
         };
 
         const resetLoop = () => {
@@ -373,8 +382,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const restartTimer = () => {
             clearInterval(certificateTimer);
-            certificateTimer = setInterval(advance, 3500);
+            if (!certificatePaused && !certificateCarousel.matches(":hover") && !certificateCarousel.matches(":focus-within")) {
+                certificateTimer = setInterval(advance, 3500);
+            }
         };
+
+        const stepCertificate = (direction) => {
+            certificateIndex = (certificateIndex + direction + totalCertificates) % totalCertificates;
+            move(true);
+            restartTimer();
+        };
+        certificatePrev?.addEventListener("click", () => stepCertificate(-1));
+        certificateNext?.addEventListener("click", () => stepCertificate(1));
+        const updatePauseButton = () => {
+            if (!certificatePause) return;
+            certificatePause.innerHTML = certificatePaused
+                ? '<i class="bi bi-play-fill" aria-hidden="true"></i>'
+                : '<i class="bi bi-pause" aria-hidden="true"></i>';
+            certificatePause.setAttribute("aria-pressed", String(certificatePaused));
+            certificatePause.setAttribute("aria-label", certificatePaused ? "Resume automatic certificate scrolling" : "Pause automatic certificate scrolling");
+        };
+        certificatePause?.addEventListener("click", () => {
+            certificatePaused = !certificatePaused;
+            updatePauseButton();
+            restartTimer();
+        });
+        updatePauseButton();
 
         certificateDots.forEach((dot) => {
             dot.addEventListener("click", () => {
