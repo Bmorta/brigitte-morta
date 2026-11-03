@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const certificateCarousel = document.querySelector(".certificates-carousel");
 
     if (certificateTrack && certificateItems.length) {
-        const totalCertificates = certificateItems.length;
+        const totalCertificates = certificateDots.length;
         let certificateIndex = 0;
         let certificateTimer = null;
 
