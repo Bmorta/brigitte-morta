@@ -6433,3 +6433,18 @@ body:not(.portfolio-hub):not(.admin-portfolio-page) .site-header .nav-actions > 
         grid-column: auto;
     }
 }
+
+
+/* Programmer additional projects: three aligned cards on desktop. */
+@media (min-width: 1200px) {
+    .mini-projects-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .mini-projects-grid > .mini-project-card {
+        min-width: 0;
+        height: 100%;
+        padding: 22px;
+    }
+}
